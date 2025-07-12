@@ -1877,5 +1877,72 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 
 
 
+
+<!-- Fixed WhatsApp Icon -->
+<a href="https://wa.me/2349113180149" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    padding: 16px;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: transform 0.3s ease;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #1ebe57;
+  }
+</style>
+
+
+<!-- Fixed WhatsApp Icon with Animation -->
+<a href="https://wa.me/2349113180149" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    animation: bounceIn 2s ease infinite;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #1ebe57;
+  }
+
+  @keyframes bounceIn {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+  }
+</style>
+
 </body>
 </html>
