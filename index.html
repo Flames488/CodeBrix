@@ -2491,5 +2491,74 @@ $(document).ready(function(){
 });
 </script>
 
+
+<!-- Social Proof Popup -->
+<div id="social-proof" style="position: fixed; bottom: 100px; left: 30px; background: var(--dark-secondary); padding: 1rem 1.5rem; border-radius: 10px; border: 1px solid var(--primary-color); box-shadow: 0 4px 20px rgba(255,107,53,0.2); display: none; z-index: 999; max-width: 300px;">
+    <div style="display: flex; gap: 0.8rem; align-items: start;">
+        <div style="background: var(--primary-color); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+            <i class="fas fa-user"></i>
+        </div>
+        <div>
+            <p style="margin: 0; color: var(--text-light); font-size: 0.9rem;">
+                <strong>Someone from Ikeja</strong> just requested a quote
+            </p>
+            <span style="color: var(--text-gray); font-size: 0.8rem;">Just now</span>
+        </div>
+    </div>
+    <button onclick="closeSocialProof()" style="position: absolute; top: 5px; right: 5px; background: none; border: none; color: var(--text-gray); cursor: pointer;">
+        <i class="fas fa-times"></i>
+    </button>
+</div>
+
+<script>
+// Social proof notifications
+const socialProofData = [
+    {name: "Chioma", location: "Lekki", action: "requested a quote"},
+    {name: "Tunde", location: "Victoria Island", action: "downloaded our pricing guide"},
+    {name: "Sarah", location: "Ikeja", action: "booked a consultation"},
+    {name: "David", location: "Surulere", action: "started a project"},
+    {name: "Amina", location: "Yaba", action: "got a free audit"}
+];
+
+function showSocialProof() {
+    const proof = document.getElementById('social-proof');
+    const random = socialProofData[Math.floor(Math.random() * socialProofData.length)];
+    
+    proof.querySelector('strong').textContent = `${random.name} from ${random.location}`;
+    proof.querySelector('p').innerHTML = `<strong>${random.name} from ${random.location}</strong> just ${random.action}`;
+    
+    proof.style.display = 'block';
+    
+    // Auto hide after 8 seconds
+    setTimeout(() => {
+        proof.style.display = 'none';
+    }, 8000);
+}
+
+function closeSocialProof() {
+    document.getElementById('social-proof').style.display = 'none';
+}
+
+// Show first notification after 15 seconds
+setTimeout(showSocialProof, 15000);
+
+// Show random notifications every 30-60 seconds
+setInterval(() => {
+    if (Math.random() > 0.3) { // 70% chance to show
+        showSocialProof();
+    }
+}, 30000 + Math.random() * 30000);
+
+// Hide when user starts to scroll up (leaving)
+let lastScrollTop = 0;
+window.addEventListener('scroll', function() {
+    const st = window.pageYOffset || document.documentElement.scrollTop;
+    if (st < lastScrollTop) { // scrolling up
+        showSocialProof();
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+});
+</script>
+
 </body>
 </html>
