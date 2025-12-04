@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager - REPLACE GTM-XXXXXXX WITH YOUR ACTUAL ID -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Web Development Blog Lagos | CodeBrix - Expert Tips & Guides</title>
+    <meta name="description" content="Expert web development tips, guides, and insights for Lagos businesses. Learn about website costs, e-commerce, SEO, and digital marketing in Nigeria.">
+    <meta name="keywords" content="web development blog Lagos, website cost Nigeria, e-commerce guide, digital marketing Lagos, SEO tips Nigeria">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codebrixweb.com/blog/">
+    <meta property="og:title" content="Web Development Blog Lagos | CodeBrix">
+    <meta property="og:description" content="Expert web development tips and guides for Lagos businesses">
+    <meta property="og:image" content="https://codebrixweb.com/images/blog-og.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://codebrixweb.com/blog/">
+    <meta property="twitter:title" content="Web Development Blog Lagos | CodeBrix">
+    <meta property="twitter:description" content="Expert web development tips and guides for Lagos businesses">
+    <meta property="twitter:image" content="https://codebrixweb.com/images/blog-og.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://codebrixweb.com/blog/">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Schema Markup for Blog -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "CodeBrix Blog",
+        "description": "Expert web development tips and guides for Lagos businesses",
+        "url": "https://codebrixweb.com/blog/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "CodeBrix",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://codebrixweb.com/images/logo.png"
+            }
+        }
+    }
+    </script>
+    
+    <!-- Custom CSS (From index.html) -->
+    <style>
+        :root {
+            --primary-color: #FF6B35; /* Strong orange */
+            --primary-dark: #E55A2B;
+            --primary-light: #FF8C5A;
+            --dark-bg: #0A0A0A;
+            --dark-secondary: #1A1A1A;
+            --light-bg: #FFFFFF;
+            --text-light: #FFFFFF;
+            --text-dark: #333333;
+            --text-gray: #888888;
+            --text-light-gray: #CCCCCC;
+            --border-color: #333333;
+            --section-spacing: 100px;
+            --card-spacing: 60px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* ===== SPACING IMPROVEMENTS ===== */
+        section {
+            padding: var(--section-spacing) 0;
+        }
+        
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--text-light);
+        }
+        
+        .section-title span {
+            color: var(--primary-color);
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+            line-height: 1.8;
+        }
+        
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: rgba(10, 10, 10, 0.98) !important;
+            backdrop-filter: blur(20px);
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color) !important;
+            letter-spacing: -0.5px;
+        }
+        
+        /* ===== FIXED NAVIGATION HOVER EFFECT ===== */
+        .navbar-nav .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem !important;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover::after {
+            width: 80%;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color) !important;
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        .navbar-nav .nav-link.active::after {
+            width: 80%;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color) !important;
+            background: rgba(255, 107, 53, 0.15);
+        }
+        
+        /* Blog Header */
+        .blog-header {
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+        
+        .blog-header h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+        
+        .blog-header h1 span {
+            color: var(--primary-color);
+        }
+        
+        .blog-header p {
+            font-size: 1.3rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Blog Categories */
+        .blog-categories {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .category-pills {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .category-pill {
+            padding: 0.8rem 2rem;
+            background: var(--dark-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .category-pill:hover,
+        .category-pill.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Featured Post */
+        .featured-post {
+            padding: 5rem 0;
+            background: var(--dark-secondary);
+        }
+        
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .featured-image {
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .featured-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .featured-text h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .featured-text h2 a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .featured-text h2 a:hover {
+            color: var(--primary-color);
+        }
+        
+        .featured-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+        
+        .featured-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .featured-excerpt {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        /* ===== BUTTONS ===== */
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--text-light);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Blog Grid */
+        .blog-grid-section {
+            padding: 5rem 0;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .blog-card {
+            background: var(--dark-secondary);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+        
+        .blog-card-image {
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .blog-card-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .blog-card-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-card-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .blog-card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        
+        .blog-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .blog-card h3 a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .blog-card h3 a:hover {
+            color: var(--primary-color);
+        }
+        
+        .blog-card-excerpt {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+        
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+        
+        .read-more:hover {
+            gap: 0.8rem;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            padding: 5rem 0;
+            background: var(--dark-secondary);
+        }
+        
+        .newsletter-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .newsletter h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            background: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--dark-bg);
+            padding: 5rem 0 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-brand h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-brand p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: var(--dark-secondary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links h4 {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #1EBE57;
+        }
+        
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--dark-secondary);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 3rem;
+            }
+            
+            .blog-header h1 {
+                font-size: 3rem;
+            }
+            
+            .featured-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-image {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+            }
+            
+            .blog-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .category-pills {
+                justify-content: flex-start;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .blog-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navigation (Matched from index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-cube"></i> CodeBrix
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#why-us">Why Choose Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#portfolio">See Results</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#contact">Free Audit</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <div class="container">
+            <h1>CodeBrix <span>Blog</span></h1>
+            <p>Expert insights on web development, e-commerce, and digital marketing for Lagos businesses</p>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="blog-categories">
+        <div class="container">
+            <div class="category-pills">
+                <a href="#" class="category-pill active">All Posts</a>
+                <a href="#" class="category-pill">Web Development</a>
+                <a href="#" class="category-pill">E-commerce</a>
+                <a href="#" class="category-pill">SEO & Marketing</a>
+                <a href="#" class="category-pill">Business Tips</a>
+                <a href="#" class="category-pill">Case Studies</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="featured-post">
+        <div class="container">
+            <div class="featured-content">
+                <div class="featured-image">
+                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: bold;">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                </div>
+                <div class="featured-text">
+                    <span class="featured-badge">Featured Post</span>
+                    <h2><a href="/blog/website-cost-lagos-2025/">How Much Does a Website Cost in Lagos? [2025 Guide]</a></h2>
+                    <div class="featured-meta">
+                        <span><i class="far fa-calendar"></i> January 15, 2025</span>
+                        <span><i class="far fa-clock"></i> 8 min read</span>
+                        <span><i class="far fa-user"></i> CodeBrix Team</span>
+                    </div>
+                    <p class="featured-excerpt">
+                        Confused about website pricing in Lagos? Get the complete breakdown of costs, from basic sites (₦150k) to custom e-commerce (₦600k+). Learn what you're actually paying for and how to avoid common pricing traps.
+                    </p>
+                    <a href="/blog/website-cost-lagos-2025/" class="btn btn-primary">
+                        Read Full Guide <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-grid-section">
+        <div class="container">
+            <h2 class="section-title">Latest <span>Articles</span></h2>
+            
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <span class="blog-card-category">Business Tips</span>
+                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-size: 3rem;">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span><i class="far fa-calendar"></i> Jan 12, 2025</span>
+                            <span><i class="far fa-clock"></i> 6 min</span>
+                        </div>
+                        <h3><a href="/blog/signs-business-needs-new-website/">5 Signs Your Business Needs a New Website</a></h3>
+                        <p class="blog-card-excerpt">
+                            Is your website costing you customers? Learn the 5 red flags that mean it's time for a redesign, from slow loading speeds to high bounce rates.
+                        </p>
+                        <a href="/blog/signs-business-needs-new-website/" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <span class="blog-card-category">E-commerce</span>
+                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; font-size: 3rem;">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span><i class="far fa-calendar"></i> Jan 10, 2025</span>
+                            <span><i class="far fa-clock"></i> 12 min</span>
+                        </div>
+                        <h3><a href="/blog/ecommerce-nigeria-complete-guide/">E-commerce in Nigeria: Complete Setup Guide</a></h3>
+                        <p class="blog-card-excerpt">
+                            Everything you need to launch a successful online store in Nigeria - from payment gateways to logistics, legal requirements to marketing strategies.
+                        </p>
+                        <a href="/blog/ecommerce-nigeria-complete-guide/" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <span class="blog-card-category">Digital Marketing</span>
+                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; font-size: 3rem;">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span><i class="far fa-calendar"></i> Jan 8, 2025</span>
+                            <span><i class="far fa-clock"></i> 7 min</span>
+                        </div>
+                        <h3><a href="/blog/website-vs-social-media/">Website vs Social Media: What Lagos Businesses Need</a></h3>
+                        <p class="blog-card-excerpt">
+                            Should you invest in a website or just use Instagram? The truth about why successful Lagos businesses need BOTH - and how to use them together.
+                        </p>
+                        <a href="/blog/website-vs-social-media/" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <span class="blog-card-category">SEO</span>
+                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; font-size: 3rem;">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span><i class="far fa-calendar"></i> Jan 5, 2025</span>
+                            <span><i class="far fa-clock"></i> 10 min</span>
+                        </div>
+                        <h3><a href="/blog/local-seo-lagos-businesses/">Local SEO for Lagos Businesses: Step-by-Step Guide</a></h3>
+                        <p class="blog-card-excerpt">
+                            Get found on Google when Lagos customers search for your services. Complete guide to local SEO, Google My Business, and ranking in Nigerian searches.
+                        </p>
+                        <a href="/blog/local-seo-lagos-businesses/" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <span class="blog-card-category">Web Development</span>
+                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333; font-size: 3rem;">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span><i class="far fa-calendar"></i> Jan 3, 2025</span>
+                            <span><i class="far fa-clock"></i> 5 min</span>
+                        </div>
+                        <h3><a href="/blog/website-speed-matters/">Why Website Speed Matters in Lagos (And How to Fix It)</a></h3>
+                        <p class="blog-card-excerpt">
+                            Slow websites lose customers. Learn why speed is critical in Nigeria's internet environment and how to optimize your site for fast loading.
+                        </p>
+                        <a href="/blog/website-speed-matters/" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <span class="blog-card-category">Web Development</span>
+                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: #333; font-size: 3rem;">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span><i class="far fa-calendar"></i> Dec 28, 2024</span>
+                            <span><i class="far fa-clock"></i> 9 min</span>
+                        </div>
+                        <h3><a href="/blog/mobile-first-design-nigeria/">Mobile-First Design: Why It's Essential for Nigerian Businesses</a></h3>
+                        <p class="blog-card-excerpt">
+                            70% of Nigerians access the web via mobile. Learn how to create mobile-first experiences that convert and why responsive design isn't enough.
+                        </p>
+                        <a href="/blog/mobile-first-design-nigeria/" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Get weekly web development tips, Lagos business insights, and exclusive guides delivered to your inbox.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <p style="font-size: 0.85rem; margin-top: 1rem; color: var(--text-gray);">No spam. Unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Matched from index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><i class="fas fa-cube"></i> CodeBrix</h3>
+                    <p>Creating exceptional digital experiences that drive results and transform businesses. Visit us at codebrixweb.com</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/codebrix_" class="social-link" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/2349113180149" class="social-link" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="tel:+2349113180149" class="social-link">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>CodeBrix Services</h4>
+                    <ul>
+                        <li><a href="/#services">Web Development Lagos</a></li>
+                        <li><a href="/#services">UI/UX Design Nigeria</a></li>
+                        <li><a href="/#services">E-commerce Lagos</a></li>
+                        <li><a href="/#services">Mobile Apps Nigeria</a></li>
+                        <li><a href="/#services">SEO Optimization Lagos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>CodeBrix Company</h4>
+                    <ul>
+                        <li><a href="/#why-us">About CodeBrix</a></li>
+                        <li><a href="/#portfolio">CodeBrix Portfolio</a></li>
+                        <li><a href="/#contact">Contact CodeBrix</a></li>
+                        <li><a href="/#pricing">CodeBrix Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact CodeBrix</h4>
+                    <ul>
+                        <li>Codebrix48@gmail.com</li>
+                        <li>+234 911 318 0149</li>
+                        <li>Ibeju Lekki, Lagos Nigeria</li>
+                        <li>Visit: codebrixweb.com</li>
+                        <li>Mon - Fri: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 <strong>CodeBrix</strong> - Web Development Agency Lagos Nigeria. All rights reserved. | codebrixweb.com | Designed with <i class="fas fa-heart" style="color: var(--primary-color);"></i> for amazing clients.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/2349113180149" class="whatsapp-float" target="_blank" rel="noopener" title="Chat with CodeBrix on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Category Filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryPills = document.querySelectorAll('.category-pill');
+            const blogCards = document.querySelectorAll('.blog-card');
+            
+            categoryPills.forEach(pill => {
+                pill.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all pills
+                    categoryPills.forEach(p => p.classList.remove('active'));
+                    
+                    // Add active class to clicked pill
+                    this.classList.add('active');
+                    
+                    const selectedCategory = this.textContent.trim();
+                    
+                    // Show all cards if "All Posts" is selected
+                    if (selectedCategory === 'All Posts') {
+                        blogCards.forEach(card => {
+                            card.style.display = 'flex';
+                        });
+                    } else {
+                        // Filter cards by category
+                        blogCards.forEach(card => {
+                            const cardCategory = card.querySelector('.blog-card-category').textContent.trim();
+                            if (cardCategory === selectedCategory) {
+                                card.style.display = 'flex';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            });
+            
+            // Newsletter Form Submission
+            const newsletterForm = document.getElementById('newsletterForm');
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                
+                // Here you would typically send this to your backend
+                alert(`Thank you for subscribing with: ${email}`);
+                this.reset();
+            });
+            
+            // Smooth scroll for anchor links (From index.html)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Navbar scroll effect (From index.html)
+            window.addEventListener('scroll', () => {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 100) {
+                    navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+                } else {
+                    navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+                }
+            });
+            
+            // Update reading time dynamically
+            function updateReadingTimes() {
+                const readingTimeElements = document.querySelectorAll('.reading-time');
+                readingTimeElements.forEach(element => {
+                    const text = element.closest('article').querySelector('.blog-card-excerpt').textContent;
+                    const wordCount = text.split(/\s+/).length;
+                    const readingTime = Math.ceil(wordCount / 200); // 200 words per minute
+                    element.textContent = `${readingTime} min read`;
+                });
+            }
+            
+            updateReadingTimes();
+        });
+    </script>
+</body>
+</html>

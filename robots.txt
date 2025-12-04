@@ -1,4 +1,21 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /admin/
+Disallow: /private/
 
 Sitemap: https://codebrixweb.com/sitemap.xml
+
+# Crawl-delay: 10
+# Uncomment above if you want to limit crawl rate
+
+User-agent: Googlebot
+Allow: /
+Disallow: /private/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /private/
+
+User-agent: Slurp
+Allow: /
+Disallow: /private/
