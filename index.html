@@ -1916,6 +1916,40 @@
         </script>
     </section>
 
+    <!-- Add this before the Contact section -->
+<section id="newsletter" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%); padding: 5rem 0;">
+    <div class="container" style="text-align: center;">
+        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">Get Free Website Growth Tips</h2>
+        <p style="color: rgba(255,255,255,0.9); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Join Lagos business owners getting weekly tips to increase their online leads
+        </p>
+        
+        <form id="newsletter-form" style="max-width: 500px; margin: 0 auto; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <input type="email" placeholder="Your email address" required 
+                   style="flex: 1; min-width: 250px; padding: 1rem 1.5rem; border-radius: 50px; border: none; font-size: 1rem;">
+            <button type="submit" class="btn" style="background: white; color: var(--primary-color); font-weight: 600;">
+                <i class="fas fa-paper-plane"></i> Subscribe
+            </button>
+        </form>
+        <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-top: 1rem;">
+            Plus get our free "Website Conversion Checklist" PDF
+        </p>
+    </div>
+</section>
+
+<script>
+// Newsletter form submission
+document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = this.querySelector('input[type="email"]').value;
+    
+    // Send to your email service (Mailchimp, etc.)
+    // For now, show success message
+    alert('Thank you! Check your email for the free checklist.');
+    this.reset();
+});
+</script>
+
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -2426,7 +2460,36 @@ document.addEventListener("DOMContentLoaded", function() {
 });
     </script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.event.move/2.0.0/jquery.event.move.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/js/jquery.twentytwenty.min.js"></script>
 
+<!-- Add this section after the Case Studies section -->
+<section id="before-after" style="background: var(--dark-bg); padding: var(--section-spacing) 0;">
+    <div class="container">
+        <h2 class="section-title">Before & <span>After</span></h2>
+        <p class="section-subtitle">Drag the slider to see how we transformed these websites</p>
+        
+        <div class="twentytwenty-container" style="margin: 3rem auto; max-width: 1000px; border-radius: 15px; overflow: hidden;">
+            <img src="images/before-website.jpg" alt="Website Before CodeBrix" loading="lazy">
+            <img src="images/after-website.jpg" alt="Website After CodeBrix Transformation" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<script>
+$(document).ready(function(){
+    $(".twentytwenty-container").twentytwenty({
+        default_offset_pct: 0.5,
+        orientation: 'horizontal',
+        before_label: 'Before',
+        after_label: 'After',
+        no_overlay: false,
+        move_with_handle_only: true,
+        click_to_move: false
+    });
+});
+</script>
 
 </body>
 </html>
