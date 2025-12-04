@@ -141,18 +141,18 @@
     </script>
 
     <!-- Breadcrumb Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "name": "Home",
-    "item": "https://codebrixweb.com/"
-  }]
-}
-</script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://codebrixweb.com/"
+      }]
+    }
+    </script>
     
     <!-- Google tag (gtag.js) - REPLACE G-XXXXXXXXXX WITH YOUR ACTUAL GA4 ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -839,101 +839,96 @@
             color: var(--text-gray);
         }
         
-
         /* FAQ Accordion Styling */
-.accordion-button:not(.collapsed) {
-    background: var(--dark-secondary) !important;
-    color: var(--primary-color) !important;
-}
-
-.accordion-button:focus {
-    box-shadow: none;
-    border-color: var(--primary-color);
-}
-
-.accordion-button::after {
-    filter: brightness(0) invert(1);
-}
-
-
-/* Professional Tawk.to Customizations for CodeBrix */
-
-/* Chat bubble */
-.tawk-button.tawk-button-circle {
-  background-color: #2563eb !important;
-  border: 2px solid white !important;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
-  transition: all 0.3s ease !important;
-}
-
-.tawk-button.tawk-button-circle:hover {
-  background-color: #1e40af !important;
-  transform: scale(1.1) !important;
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4) !important;
-}
-
-/* Chat window */
-.tawk-min-container {
-  border-radius: 12px 12px 0 0 !important;
-  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.1) !important;
-}
-
-.tawk-header {
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
-  border-radius: 12px 12px 0 0 !important;
-}
-
-/* Input field */
-.tawk-textarea-input {
-  border: 1px solid #e5e7eb !important;
-  border-radius: 8px !important;
-  padding: 12px !important;
-  font-size: 14px !important;
-}
-
-.tawk-textarea-input:focus {
-  border-color: #2563eb !important;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
-  outline: none !important;
-}
-
-/* Messages */
-.tawk-message {
-  border-radius: 18px !important;
-  max-width: 80% !important;
-}
-
-.tawk-message-out {
-  background-color: #2563eb !important;
-  color: white !important;
-}
-
-.tawk-message-in {
-  background-color: #f3f4f6 !important;
-  color: #1f2937 !important;
-}
-
-/* Hide on specific pages */
-.no-chat .tawk-button-container {
-  display: none !important;
-}
-
-/* Mobile optimization */
-@media (max-width: 768px) {
-  .tawk-container {
-    max-width: 100% !important;
-    max-height: 70vh !important;
-  }
-  
-  .tawk-button.tawk-button-circle {
-    bottom: 20px !important;
-    right: 20px !important;
-    width: 56px !important;
-    height: 56px !important;
-  }
-}
-
-
+        .accordion-button:not(.collapsed) {
+            background: var(--dark-secondary) !important;
+            color: var(--primary-color) !important;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: var(--primary-color);
+        }
+        
+        .accordion-button::after {
+            filter: brightness(0) invert(1);
+        }
+        
+        /* Professional Tawk.to Customizations for CodeBrix */
+        .tawk-button.tawk-button-circle {
+            background-color: #2563eb !important;
+            border: 2px solid white !important;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .tawk-button.tawk-button-circle:hover {
+            background-color: #1e40af !important;
+            transform: scale(1.1) !important;
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4) !important;
+        }
+        
+        /* Chat window */
+        .tawk-min-container {
+            border-radius: 12px 12px 0 0 !important;
+            box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .tawk-header {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+            border-radius: 12px 12px 0 0 !important;
+        }
+        
+        /* Input field */
+        .tawk-textarea-input {
+            border: 1px solid #e5e7eb !important;
+            border-radius: 8px !important;
+            padding: 12px !important;
+            font-size: 14px !important;
+        }
+        
+        .tawk-textarea-input:focus {
+            border-color: #2563eb !important;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+            outline: none !important;
+        }
+        
+        /* Messages */
+        .tawk-message {
+            border-radius: 18px !important;
+            max-width: 80% !important;
+        }
+        
+        .tawk-message-out {
+            background-color: #2563eb !important;
+            color: white !important;
+        }
+        
+        .tawk-message-in {
+            background-color: #f3f4f6 !important;
+            color: #1f2937 !important;
+        }
+        
+        /* Hide on specific pages */
+        .no-chat .tawk-button-container {
+            display: none !important;
+        }
+        
+        /* Mobile optimization */
+        @media (max-width: 768px) {
+            .tawk-container {
+                max-width: 100% !important;
+                max-height: 70vh !important;
+            }
+            
+            .tawk-button.tawk-button-circle {
+                bottom: 20px !important;
+                right: 20px !important;
+                width: 56px !important;
+                height: 56px !important;
+            }
+        }
+        
         /* ===== CONTACT SECTION ===== */
         .contact-grid {
             display: grid;
@@ -1121,6 +1116,31 @@
             font-size: 0.9rem;
         }
         
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px; /* Changed from right to left */
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #1EBE57;
+        }
+        
         /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 992px) {
             .section-title {
@@ -1212,6 +1232,15 @@
             .trust-stats {
                 grid-template-columns: 1fr;
             }
+            
+            /* Mobile WhatsApp positioning */
+            .whatsapp-float {
+                bottom: 20px;
+                left: 20px;
+                width: 56px;
+                height: 56px;
+                font-size: 24px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1249,6 +1278,14 @@
                 padding: 1.5rem;
                 margin: 2rem auto;
             }
+            
+            .whatsapp-float {
+                bottom: 15px;
+                left: 15px;
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
         }
         
         /* ===== ANIMATIONS ===== */
@@ -1261,31 +1298,6 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
-        }
-        
-        /* ===== WHATSAPP FLOAT ===== */
-       .whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    left: 30px; /* Changed from 'right' to 'left' */
-    width: 60px;
-    height: 60px;
-    background: #25D366;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-    z-index: 1000;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background: #1EBE57;
         }
         
         /* ===== SCROLLBAR ===== */
@@ -1332,7 +1344,6 @@
                     <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Free Audit</a></li>
                     <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
-
                 </ul>
             </div>
         </div>
@@ -1368,29 +1379,17 @@
                         </div>
                     </div>
                     
-                    <section id="testimonials" style="background: var(--dark-bg);">
-    <div class="container">
-        <h2 class="section-title">What Our <span>Clients Say</span></h2>
-        <p class="section-subtitle">Real results from real businesses in Lagos</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 4rem;">
-            <!-- Testimonial 1 -->
-            <div style="background: var(--dark-secondary); padding: 2.5rem; border-radius: 20px; border: 1px solid var(--border-color);">
-                <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
-                    <img src="images/client1.jpg" alt="Client Adebayo Ogunlesi" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
-                    <div>
-                        <strong style="color: var(--text-light); display: block;">Adebayo Ogunlesi</strong>
-                        <span style="color: var(--text-gray); font-size: 0.9rem;">CEO, TechStart Nigeria</span>
+                    <div class="testimonial-preview">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"CodeBrix transformed our online presence. We went from 5 leads per month to 50+. Best investment we made this year."</p>
+                            <div class="testimonial-author">
+                                <strong>Adebayo Ogunlesi</strong>
+                                <span>CEO, TechStart Nigeria</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div style="color: var(--primary-color); margin-bottom: 1rem; font-size: 1.5rem;">★★★★★</div>
-                <p style="color: var(--text-gray); font-style: italic;">"CodeBrix transformed our online presence. We went from 5 leads per month to 50+. Best investment we made this year."</p>
-            </div>
-            
-            <!-- Add 2-3 more real testimonials -->
-        </div>
-    </div>
-</section>
                 
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary">
@@ -1409,43 +1408,6 @@
         <div class="container">
             <h2 class="section-title">Why Business Owners <span>Choose Us</span></h2>
             <p class="section-subtitle">We're not just developers - we're business growth partners who understand what actually works online.</p>
-            
-            <div style="background: var(--dark-bg); margin: 4rem 0; padding: 4rem 0;">
-                <div class="container">
-                    <h2 class="section-title">See The <span>Difference</span></h2>
-                    
-                    <div style="max-width: 800px; margin: 0 auto; background: var(--dark-secondary); padding: 3rem; border-radius: 20px;">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                            <div>
-                                <h4 style="color: #ff6b6b; margin-bottom: 1rem;">❌ Before CodeBrix</h4>
-                                <ul style="color: var(--text-gray); padding-left: 1.2rem;">
-                                    <li style="margin-bottom: 0.8rem;">Slow, outdated design</li>
-                                    <li style="margin-bottom: 0.8rem;">No clear calls-to-action</li>
-                                    <li style="margin-bottom: 0.8rem;">Doesn't work on mobile</li>
-                                    <li style="margin-bottom: 0.8rem;">1-2 leads per month</li>
-                                    <li style="margin-bottom: 0.8rem;">High bounce rate</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 style="color: #4CAF50; margin-bottom: 1rem;">✅ After CodeBrix</h4>
-                                <ul style="color: var(--text-gray); padding-left: 1.2rem;">
-                                    <li style="margin-bottom: 0.8rem;">Fast, modern design</li>
-                                    <li style="margin-bottom: 0.8rem;">Clear "Book Now" buttons</li>
-                                    <li style="margin-bottom: 0.8rem;">Perfect on all devices</li>
-                                    <li style="margin-bottom: 0.8rem;">15+ leads per week</li>
-                                    <li style="margin-bottom: 0.8rem;">70% lower bounce rate</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div style="text-align: center; margin-top: 3rem;">
-                            <a href="#contact" class="btn btn-primary" style="font-size: 1.2rem;">
-                                <i class="fas fa-chart-bar"></i> Get Your Free Results Analysis
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
             
             <div class="about-grid">
                 <div class="about-content">
@@ -1706,154 +1668,152 @@
         </div>
     </section>
 
-<!-- FAQ Section -->
-<section id="faq" style="background: var(--dark-secondary);">
-    <div class="container">
-        <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
-        <p class="section-subtitle">Got questions? We've got answers. Here's everything you need to know about working with CodeBrix.</p>
-        
-        <div style="max-width: 900px; margin: 0 auto;">
-            <div class="accordion" id="faqAccordion">
-                <!-- Question 1 -->
-                <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
-                            How much does a website cost in Lagos?
-                        </button>
-                    </h3>
-                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
-                            CodeBrix offers website development starting from ₦150,000 for basic websites, ₦350,000 for business websites, and ₦600,000+ for custom e-commerce solutions. The exact cost depends on your specific needs and features.
+    <!-- FAQ Section -->
+    <section id="faq" style="background: var(--dark-secondary);">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+            <p class="section-subtitle">Got questions? We've got answers. Here's everything you need to know about working with CodeBrix.</p>
+            
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="accordion" id="faqAccordion">
+                    <!-- Question 1 -->
+                    <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
+                                How much does a website cost in Lagos?
+                            </button>
+                        </h3>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
+                                CodeBrix offers website development starting from ₦150,000 for basic websites, ₦350,000 for business websites, and ₦600,000+ for custom e-commerce solutions. The exact cost depends on your specific needs and features.
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Question 2 -->
-                <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
-                            How long does it take to build a website?
-                        </button>
-                    </h3>
-                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
-                            CodeBrix typically delivers websites within 30 days, depending on project complexity and client feedback speed. Rush projects can be accommodated for an additional fee.
+                    <!-- Question 2 -->
+                    <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
+                                How long does it take to build a website?
+                            </button>
+                        </h3>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
+                                CodeBrix typically delivers websites within 30 days, depending on project complexity and client feedback speed. Rush projects can be accommodated for an additional fee.
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Question 3 -->
-                <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
-                            Do you provide website maintenance?
-                        </button>
-                    </h3>
-                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
-                            Yes, CodeBrix provides 6 months of free maintenance with Enterprise packages. Extended support and maintenance plans are available for all packages at competitive rates.
+                    <!-- Question 3 -->
+                    <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
+                                Do you provide website maintenance?
+                            </button>
+                        </h3>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
+                                Yes, CodeBrix provides 6 months of free maintenance with Enterprise packages. Extended support and maintenance plans are available for all packages at competitive rates.
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Question 4 -->
-                <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
-                            Do you work with businesses outside Lagos?
-                        </button>
-                    </h3>
-                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
-                            Yes, while CodeBrix is based in Lagos, we serve clients across Nigeria including Abuja, Port Harcourt, Ibadan, and other major cities. We also work with international clients.
+                    <!-- Question 4 -->
+                    <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
+                                Do you work with businesses outside Lagos?
+                            </button>
+                        </h3>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
+                                Yes, while CodeBrix is based in Lagos, we serve clients across Nigeria including Abuja, Port Harcourt, Ibadan, and other major cities. We also work with international clients.
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Question 5 -->
-                <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
-                            What payment methods do you accept?
-                        </button>
-                    </h3>
-                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
-                            CodeBrix accepts bank transfers, Paystack, and Flutterwave payments in Nigerian Naira (₦). We require a 50% deposit to start projects, with the balance due upon completion.
+                    <!-- Question 5 -->
+                    <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
+                                What payment methods do you accept?
+                            </button>
+                        </h3>
+                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
+                                CodeBrix accepts bank transfers, Paystack, and Flutterwave payments in Nigerian Naira (₦). We require a 50% deposit to start projects, with the balance due upon completion.
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Question 6 -->
-                <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
-                            Will my website work on mobile phones?
-                        </button>
-                    </h3>
-                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
-                            Absolutely! All CodeBrix websites are fully responsive and optimized for mobile devices, tablets, and desktops. Mobile-first design is our standard practice.
+                    <!-- Question 6 -->
+                    <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
+                                Will my website work on mobile phones?
+                            </button>
+                        </h3>
+                        <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
+                                Absolutely! All CodeBrix websites are fully responsive and optimized for mobile devices, tablets, and desktops. Mobile-first design is our standard practice.
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "How much does a website cost in Lagos?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "CodeBrix offers website development starting from ₦150,000 for basic websites, ₦350,000 for business websites, and ₦600,000+ for custom e-commerce solutions."
+        
+        <!-- FAQ Schema -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [{
+            "@type": "Question",
+            "name": "How much does a website cost in Lagos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CodeBrix offers website development starting from ₦150,000 for basic websites, ₦350,000 for business websites, and ₦600,000+ for custom e-commerce solutions."
+            }
+          },{
+            "@type": "Question",
+            "name": "How long does it take to build a website?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CodeBrix typically delivers websites within 30 days, depending on project complexity and client feedback speed."
+            }
+          },{
+            "@type": "Question",
+            "name": "Do you provide website maintenance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, CodeBrix provides 6 months of free maintenance with Enterprise packages. Extended support is available for all packages."
+            }
+          },{
+            "@type": "Question",
+            "name": "Do you work with businesses outside Lagos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, while CodeBrix is based in Lagos, we serve clients across Nigeria including Abuja, Port Harcourt, and other major cities."
+            }
+          },{
+            "@type": "Question",
+            "name": "What payment methods do you accept?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CodeBrix accepts bank transfers, Paystack, and Flutterwave payments in Nigerian Naira (₦). We require 50% deposit to start projects."
+            }
+          },{
+            "@type": "Question",
+            "name": "Will my website work on mobile phones?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely! All CodeBrix websites are fully responsive and optimized for mobile devices, tablets, and desktops."
+            }
+          }]
         }
-      },{
-        "@type": "Question",
-        "name": "How long does it take to build a website?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "CodeBrix typically delivers websites within 30 days, depending on project complexity and client feedback speed."
-        }
-      },{
-        "@type": "Question",
-        "name": "Do you provide website maintenance?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, CodeBrix provides 6 months of free maintenance with Enterprise packages. Extended support is available for all packages."
-        }
-      },{
-        "@type": "Question",
-        "name": "Do you work with businesses outside Lagos?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, while CodeBrix is based in Lagos, we serve clients across Nigeria including Abuja, Port Harcourt, and other major cities."
-        }
-      },{
-        "@type": "Question",
-        "name": "What payment methods do you accept?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "CodeBrix accepts bank transfers, Paystack, and Flutterwave payments in Nigerian Naira (₦). We require 50% deposit to start projects."
-        }
-      },{
-        "@type": "Question",
-        "name": "Will my website work on mobile phones?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely! All CodeBrix websites are fully responsive and optimized for mobile devices, tablets, and desktops."
-        }
-      }]
-    }
-    </script>
-</section>
-
-
+        </script>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -1943,10 +1903,10 @@
                         <a href="https://www.instagram.com/codebrix_" class="social-link" target="_blank" rel="noopener" aria-label="Follow CodeBrix on Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/2349113180149" class="social-link" target="_blank" rel="noopener">
+                        <a href="https://wa.me/2349113180149" class="social-link" target="_blank" rel="noopener" aria-label="Chat with CodeBrix on WhatsApp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="tel:+2349113180149" class="social-link">
+                        <a href="tel:+2349113180149" class="social-link" aria-label="Call CodeBrix">
                             <i class="fas fa-phone"></i>
                         </a>
                     </div>
@@ -2000,20 +1960,18 @@
         </div>
     </footer>
 
-    
-
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/2349113180149" class="whatsapp-float" target="_blank" rel="noopener" title="Chat with CodeBrix on WhatsApp">
+    <a href="https://wa.me/2349113180149" class="whatsapp-float" target="_blank" rel="noopener" title="Chat with CodeBrix on WhatsApp" aria-label="Chat with CodeBrix on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        // Google Analytics Event Tracking
+        // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
-            // Track form submissions
+            // Google Analytics Event Tracking with null checks
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
                 contactForm.addEventListener('submit', function() {
@@ -2041,407 +1999,276 @@
 
             // Track phone clicks
             document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-                link.addEventListener('click', function() {
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'click', {
-                            'event_category': 'Contact',
-                            'event_label': 'Phone Call'
-                        });
-                    }
-                });
+                if (link) {
+                    link.addEventListener('click', function() {
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'click', {
+                                'event_category': 'Contact',
+                                'event_label': 'Phone Call'
+                            });
+                        }
+                    });
+                }
             });
 
             // Track CTA button clicks
             document.querySelectorAll('.btn-primary').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'click', {
-                            'event_category': 'CTA',
-                            'event_label': this.textContent.trim()
-                        });
-                    }
-                });
-            });
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                if (btn) {
+                    btn.addEventListener('click', function() {
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'click', {
+                                'event_category': 'CTA',
+                                'event_label': this.textContent.trim()
+                            });
+                        }
                     });
                 }
             });
-        });
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-            } else {
-                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-            }
-            
-            // Update active nav link
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    current = section.getAttribute('id');
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                if (anchor) {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const target = document.querySelector(targetId);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                            
+                            // Update URL without scrolling
+                            history.pushState(null, null, targetId);
+                        }
+                    });
                 }
             });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
 
-        // Scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-        // Animate stats counter
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                    entry.target.classList.add('animated');
-                    const statNumber = entry.target ? entry.target.querySelector('.stat-number') : null;
-                    const text = statNumber.textContent;
-                    const number = parseInt(text.replace(/\D/g, ''));
-                    
-                    if (number) {
-                        let current = 0;
-                        const increment = number / 50;
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= number) {
-                                current = number;
-                                clearInterval(timer);
-                            }
-                            statNumber.textContent = Math.floor(current) + (number > 100 ? '+' : '');
-                        }, 20);
+            // Navbar scroll effect
+            window.addEventListener('scroll', () => {
+                const navbar = document.querySelector('.navbar');
+                if (navbar) {
+                    if (window.scrollY > 100) {
+                        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+                    } else {
+                        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
                     }
+                    
+                    // Update active nav link
+                    const sections = document.querySelectorAll('section[id]');
+                    const navLinks = document.querySelectorAll('.nav-link');
+                    
+                    let current = '';
+                    sections.forEach(section => {
+                        if (section) {
+                            const sectionTop = section.offsetTop - 100;
+                            const sectionHeight = section.clientHeight;
+                            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                                current = section.getAttribute('id');
+                            }
+                        }
+                    });
+                    
+                    navLinks.forEach(link => {
+                        if (link) {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${current}`) {
+                                link.classList.add('active');
+                            }
+                        }
+                    });
                 }
             });
-        }, { threshold: 0.5 });
 
-        document.querySelectorAll('.stat-item').forEach(item => statsObserver.observe(item));
-
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const form = this;
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-            
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Message sent successfully! We\'ll get back to you soon.');
-                    form.reset();
-                } else {
-                    alert('Something went wrong. Please try again.');
-                }
-            })
-            .catch(error => {
-                alert('Network error. Please try again.');
-            })
-            .finally(() => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
+            // Scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.target) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             });
-        });
 
-        // Page load animation
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '0';
-            setTimeout(() => {
-                document.body.style.transition = 'opacity 0.5s ease';
-                document.body.style.opacity = '1';
-            }, 100);
+            document.querySelectorAll('.fade-in').forEach(el => {
+                if (el) observer.observe(el);
+            });
+
+            // Animate stats counter
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.target && !entry.target.classList.contains('animated')) {
+                        entry.target.classList.add('animated');
+                        const statNumber = entry.target.querySelector('.stat-number');
+                        
+                        if (statNumber) {
+                            const text = statNumber.textContent;
+                            const number = parseInt(text.replace(/\D/g, ''));
+                            
+                            if (number && !isNaN(number)) {
+                                let current = 0;
+                                const increment = number / 50;
+                                const timer = setInterval(() => {
+                                    current += increment;
+                                    if (current >= number) {
+                                        current = number;
+                                        clearInterval(timer);
+                                    }
+                                    statNumber.textContent = Math.floor(current) + (number > 100 ? '+' : '');
+                                }, 20);
+                            }
+                        }
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('.stat-item').forEach(item => {
+                if (item) statsObserver.observe(item);
+            });
+
+            // Form submission with validation
+            const form = document.getElementById('contactForm');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    submitBtn.disabled = true;
+                    
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: { 'Accept': 'application/json' }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            alert('Message sent successfully! We\'ll get back to you soon.');
+                            form.reset();
+                        } else {
+                            alert('Something went wrong. Please try again.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Form submission error:', error);
+                        alert('Network error. Please try again.');
+                    })
+                    .finally(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+
+            // Page load animation
+            window.addEventListener('load', () => {
+                document.body.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.style.transition = 'opacity 0.5s ease';
+                    document.body.style.opacity = '1';
+                }, 100);
+            });
         });
     </script>
 
-
-<script>
-  // Get CodeBrix user data (adjust based on your platform)
-  function getCodeBrixUserData() {
-    // Example - get from localStorage, cookies, or global variables
-    return {
-      userId: localStorage.getItem('codebrix_user_id') || '',
-      userEmail: localStorage.getItem('codebrix_user_email') || '',
-      userPlan: localStorage.getItem('codebrix_user_plan') || 'visitor',
-      projects: JSON.parse(localStorage.getItem('codebrix_projects') || '[]'),
-      lastLogin: localStorage.getItem('codebrix_last_login') || ''
-    };
-  }
-
-  // Set user attributes when available
-  function setChatUserAttributes() {
-    const userData = getCodeBrixUserData();
-    
-    if (window.Tawk_API && Tawk_API.setAttributes) {
-      Tawk_API.setAttributes({
-        'name': userData.userEmail ? userData.userEmail.split('@')[0] : 'Visitor',
-        'email': userData.userEmail,
-        'plan': userData.userPlan,
-        'user_id': userData.userId,
-        'projects_count': userData.projects.length,
-        'last_active': userData.lastLogin
-      }, function(error) {
-        if (!error) {
-          console.log('CodeBrix user attributes set successfully');
-        }
-      });
-    }
-  }
-
-  // Call when Tawk.to loads
-  window.addEventListener('load', function() {
-    // Wait for Tawk.to to initialize
-    const checkTawk = setInterval(function() {
-      if (window.Tawk_API) {
-        clearInterval(checkTawk);
-        
-        // Set initial attributes
-        setChatUserAttributes();
-        
-        // Update attributes on user login/change
-        document.addEventListener('userDataUpdated', setChatUserAttributes);
-      }
-    }, 500);
-  });
-</script>
-
-
     <!-- Enhanced Tawk.to Implementation for CodeBrix -->
-<script type="text/javascript">
-  // Configuration object for CodeBrix
-  window.CodeBrixChatConfig = {
-    brand: 'CodeBrix',
-    theme: {
-      primaryColor: '#2563eb',
-      secondaryColor: '#1e40af',
-      widgetPosition: 'bottom-right',
-      hideOnMobile: false
-    },
-    behavior: {
-      autoStart: false,
-      delay: 3000,
-      showOnExit: true,
-      proactiveTriggers: true
-    }
-  };
+    <script type="text/javascript">
+        // Configuration object for CodeBrix
+        window.CodeBrixChatConfig = {
+            brand: 'CodeBrix',
+            theme: {
+                primaryColor: '#2563eb',
+                secondaryColor: '#1e40af',
+                widgetPosition: 'bottom-right',
+                hideOnMobile: false
+            },
+            behavior: {
+                autoStart: false,
+                delay: 3000,
+                showOnExit: true,
+                proactiveTriggers: true
+            }
+        };
 
-  // Tawk.to API configuration
-  var Tawk_API = Tawk_API || {};
-  var Tawk_LoadStart = new Date();
-  
-  // Enhanced onLoad function
-  Tawk_API.onLoad = function() {
-    // Set CodeBrix-specific attributes
-    Tawk_API.setAttributes({
-      'company': 'CodeBrix',
-      'website': window.location.hostname,
-      'page': window.location.pathname,
-      'referrer': document.referrer,
-      'timestamp': new Date().toISOString()
-    }, function(error){});
-    
-    // Customize widget appearance
-    Tawk_API.customize = {
-      themeColor : '#2563eb',      // CodeBrix blue
-      widgetPosition : 'br',       // Bottom right
-      chatMinimized : false,
-      showPopoutButton : true,
-      showChatButton : true
-    };
-    
-    // Initialize proactive triggers after 30 seconds
-    setTimeout(function() {
-      if (shouldShowProactiveChat()) {
-        Tawk_API.maximize();
-        Tawk_API.toggle();
-      }
-    }, 30000);
-  };
+        // Tawk.to API configuration
+        var Tawk_API = Tawk_API || {};
+        var Tawk_LoadStart = new Date();
+        
+        // Enhanced onLoad function
+        Tawk_API.onLoad = function() {
+            // Set CodeBrix-specific attributes
+            if (Tawk_API.setAttributes) {
+                Tawk_API.setAttributes({
+                    'company': 'CodeBrix',
+                    'website': window.location.hostname,
+                    'page': window.location.pathname,
+                    'referrer': document.referrer,
+                    'timestamp': new Date().toISOString()
+                }, function(error){});
+            }
+            
+            // Customize widget appearance
+            if (Tawk_API.customize) {
+                Tawk_API.customize = {
+                    themeColor : '#2563eb',
+                    widgetPosition : 'br',
+                    chatMinimized : false,
+                    showPopoutButton : true,
+                    showChatButton : true
+                };
+            }
+            
+            // Initialize proactive triggers after 30 seconds
+            setTimeout(function() {
+                if (shouldShowProactiveChat()) {
+                    if (Tawk_API.maximize) Tawk_API.maximize();
+                    if (Tawk_API.toggle) Tawk_API.toggle();
+                }
+            }, 30000);
+        };
 
-  // Proactive chat logic
-  function shouldShowProactiveChat() {
-    const excludedPages = ['/checkout', '/thank-you', '/account'];
-    const currentPage = window.location.pathname;
-    
-    // Don't show on excluded pages
-    if (excludedPages.some(page => currentPage.includes(page))) {
-      return false;
-    }
-    
-    // Show based on time on page or scroll depth
-    const timeOnPage = (new Date() - Tawk_LoadStart) / 1000;
-    const scrollDepth = getScrollDepth();
-    
-    return timeOnPage > 60 || scrollDepth > 70;
-  }
-  
-  function getScrollDepth() {
-    const winHeight = window.innerHeight;
-    const docHeight = document.documentElement.scrollHeight;
-    const scrollTop = window.pageYOffset;
-    const trackLength = docHeight - winHeight;
-    return Math.floor((scrollTop / trackLength) * 100);
-  }
-
-  // Load Tawk.to script
-  (function() {
-    var s1 = document.createElement('script'),
-        s0 = document.getElementsByTagName('script')[0];
-    
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/6931502bf1aec6197f66e7ba/1jbka2b07';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-  })();
-</script>
-
-
-<script>
-  class CodeBrixChatTriggers {
-    constructor() {
-      this.triggers = {
-        exitIntent: false,
-        timeBased: false,
-        scrollBased: false,
-        pageSpecific: false
-      };
-      this.init();
-    }
-
-    init() {
-      // Exit intent trigger
-      document.addEventListener('mouseleave', (e) => {
-        if (e.clientY <= 0 && !this.triggers.exitIntent) {
-          this.showExitIntentChat();
-          this.triggers.exitIntent = true;
+        // Proactive chat logic
+        function shouldShowProactiveChat() {
+            const excludedPages = ['/checkout', '/thank-you', '/account'];
+            const currentPage = window.location.pathname;
+            
+            // Don't show on excluded pages
+            if (excludedPages.some(page => currentPage.includes(page))) {
+                return false;
+            }
+            
+            // Show based on time on page or scroll depth
+            const timeOnPage = (new Date() - Tawk_LoadStart) / 1000;
+            const scrollDepth = getScrollDepth();
+            
+            return timeOnPage > 60 || scrollDepth > 70;
         }
-      });
-
-      // Scroll depth trigger (75%)
-      window.addEventListener('scroll', () => {
-        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        if (scrollPercent > 75 && !this.triggers.scrollBased) {
-          this.showScrollChat();
-          this.triggers.scrollBased = true;
+        
+        function getScrollDepth() {
+            const winHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.pageYOffset;
+            const trackLength = docHeight - winHeight;
+            return trackLength > 0 ? Math.floor((scrollTop / trackLength) * 100) : 0;
         }
-      });
 
-      // Time-based trigger (45 seconds)
-      setTimeout(() => {
-        if (!this.triggers.timeBased && this.shouldShowTimeBased()) {
-          this.showTimeBasedChat();
-          this.triggers.timeBased = true;
-        }
-      }, 45000);
-
-      // Page-specific triggers
-      this.checkPageTriggers();
-    }
-
-    shouldShowTimeBased() {
-      const excludedPages = ['/checkout', '/login', '/signup'];
-      const currentPage = window.location.pathname;
-      return !excludedPages.some(page => currentPage.includes(page));
-    }
-
-    showExitIntentChat() {
-      if (window.Tawk_API && this.isBusinessHours()) {
-        Tawk_API.maximize();
-        Tawk_API.sendMessage('👋 Leaving so soon? Need help with anything before you go?');
-      }
-    }
-
-    showScrollChat() {
-      if (window.Tawk_API && this.isBusinessHours()) {
-        Tawk_API.toggle();
-        setTimeout(() => {
-          Tawk_API.sendMessage('📖 You seem interested in this content! Need more details?');
-        }, 1000);
-      }
-    }
-
-    showTimeBasedChat() {
-      if (window.Tawk_API && this.isBusinessHours()) {
-        Tawk_API.toggle();
-        setTimeout(() => {
-          Tawk_API.sendMessage('🕒 You\'ve been here a while! Can I help you find something?');
-        }, 1000);
-      }
-    }
-
-    checkPageTriggers() {
-      const page = window.location.pathname;
-      
-      const pageMessages = {
-        '/pricing': "💰 Need help choosing the right plan for your needs?",
-        '/features': "✨ Want to know more about this feature?",
-        '/docs': "📚 Stuck with our documentation? Let me help!",
-        '/templates': "🎨 Need help customizing a template?"
-      };
-
-      for (const [path, message] of Object.entries(pageMessages)) {
-        if (page.includes(path) && window.Tawk_API && this.isBusinessHours()) {
-          setTimeout(() => {
-            Tawk_API.toggle();
-            Tawk_API.sendMessage(message);
-          }, 10000); // Show after 10 seconds on specific page
-          break;
-        }
-      }
-    }
-
-    isBusinessHours() {
-      const now = new Date();
-      const hour = now.getHours();
-      const day = now.getDay();
-      // Monday-Friday, 9AM-6PM EST
-      return day >= 1 && day <= 5 && hour >= 9 && hour < 18;
-    }
-  }
-
-  // Initialize triggers
-  window.addEventListener('load', () => {
-    new CodeBrixChatTriggers();
-  });
-</script>
-
+        // Load Tawk.to script
+        (function() {
+            var s1 = document.createElement('script'),
+                s0 = document.getElementsByTagName('script')[0];
+            
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6931502bf1aec6197f66e7ba/1jbka2b07';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
 </body>
 </html>
