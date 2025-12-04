@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager - REPLACE GTM-XXXXXXX WITH YOUR ACTUAL ID -->
+    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -41,10 +41,10 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Hreflang Tags (Fixed duplicates) -->
-    <link rel="alternate" hreflang="en-ng" href="https://codebrixweb.com/" />
-    <link rel="alternate" hreflang="en" href="https://codebrixweb.com/" />
-    <link rel="alternate" hreflang="x-default" href="https://codebrixweb.com/" />
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="en-ng" href="https://codebrixweb.com/">
+    <link rel="alternate" hreflang="en" href="https://codebrixweb.com/">
+    <link rel="alternate" hreflang="x-default" href="https://codebrixweb.com/">
     
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -55,121 +55,13 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Add these BEFORE your custom CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/css/twentytwenty.min.css">
-    
-    <!-- Structured Data / Schema Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "CodeBrix",
-        "image": "https://codebrixweb.com/images/logo.png",
-        "@id": "https://codebrixweb.com/",
-        "url": "https://codebrixweb.com/",
-        "telephone": "+2349113180149",
-        "priceRange": "₦150,000 - ₦600,000+",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Ibeju Lekki",
-            "addressLocality": "Lagos",
-            "addressRegion": "LA",
-            "postalCode": "",
-            "addressCountry": "NG"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 6.465422,
-            "longitude": 3.406448
-        },
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday"
-            ],
-            "opens": "09:00",
-            "closes": "18:00"
-        },
-        "sameAs": [
-            "https://www.instagram.com/codebrix_"
-        ]
-    }
-    </script>
-    
-    <!-- Additional Schema for Service -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "Web Development",
-        "provider": {
-            "@type": "LocalBusiness",
-            "name": "CodeBrix"
-        },
-        "areaServed": {
-            "@type": "City",
-            "name": "Lagos"
-        },
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Web Development Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Website Development",
-                        "description": "Custom responsive website development"
-                    },
-                    "price": "150000",
-                    "priceCurrency": "NGN"
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "E-commerce Development",
-                        "description": "Online store development with payment integration"
-                    },
-                    "price": "350000",
-                    "priceCurrency": "NGN"
-                }
-            ]
-        }
-    }
-    </script>
-
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://codebrixweb.com/"
-      }]
-    }
-    </script>
-    
-    <!-- Google tag (gtag.js) - REPLACE G-XXXXXXXXXX WITH YOUR ACTUAL GA4 ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
+    <!-- TwentyTwenty CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/css/twentytwenty.min.css">
     
     <!-- Custom CSS -->
     <style>
         :root {
-            --primary-color: #FF6B35; /* Strong orange */
+            --primary-color: #FF6B35;
             --primary-dark: #E55A2B;
             --primary-light: #FF8C5A;
             --dark-bg: #0A0A0A;
@@ -246,7 +138,7 @@
             letter-spacing: -0.5px;
         }
         
-        /* ===== FIXED NAVIGATION HOVER EFFECT ===== */
+        /* ===== NAVIGATION HOVER EFFECT ===== */
         .navbar-nav .nav-link {
             color: var(--text-light) !important;
             font-weight: 500;
@@ -315,45 +207,6 @@
             color: var(--primary-color);
         }
         
-        .hero p {
-            font-size: 1.3rem;
-            color: var(--text-gray);
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            line-height: 1.8;
-        }
-        
-        .hero-visual {
-            margin-top: 5rem;
-            position: relative;
-            height: 400px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, rgba(255, 107, 53, 0.1) 100%);
-            border-radius: 20px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .hero-visual-content {
-            text-align: center;
-            padding: 3rem;
-            color: var(--text-light);
-        }
-        
-        .hero-visual h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--text-light);
-        }
-        
-        .hero-visual p {
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        /* ===== UPDATED HERO SECTION ===== */
         .hero-subtitle {
             font-size: 1.3rem;
             color: var(--text-gray);
@@ -498,6 +351,58 @@
             transform: translateY(-3px);
         }
         
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            background: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .trust-badge i {
+            color: inherit;
+        }
+        
+        .trust-badge span {
+            color: #333;
+            font-weight: 600;
+        }
+        
+        /* Hero Video */
+        .hero-video {
+            margin-top: 3rem;
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
         /* ===== ABOUT SECTION ===== */
         .about {
             background: var(--dark-secondary);
@@ -598,6 +503,52 @@
             margin-top: 0.5rem;
         }
         
+        /* 3-Step Process */
+        .process-steps {
+            margin-top: 3rem;
+            background: var(--dark-bg);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+        
+        .process-steps h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .steps-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .step h5 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .step p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+        
         /* ===== SERVICES SECTION ===== */
         .services-grid {
             display: grid;
@@ -643,6 +594,51 @@
         .service-card p {
             color: var(--text-gray);
             line-height: 1.8;
+        }
+        
+        /* ===== CASE STUDIES ===== */
+        .case-study {
+            background: var(--dark-secondary);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 3rem;
+        }
+        
+        .case-study h3 {
+            color: var(--text-light);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .case-study-metrics {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .metric {
+            background: var(--dark-bg);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .metric.featured {
+            border-color: var(--primary-color);
+        }
+        
+        .metric strong {
+            color: var(--primary-color);
+            display: block;
+            font-size: 1.2rem;
+        }
+        
+        .case-study h4 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
         
         /* ===== PORTFOLIO SECTION ===== */
@@ -736,6 +732,14 @@
         .portfolio-link:hover {
             color: var(--primary-light);
             gap: 0.8rem;
+        }
+        
+        /* ===== BEFORE & AFTER ===== */
+        .twentytwenty-container {
+            margin: 3rem auto;
+            max-width: 1000px;
+            border-radius: 15px;
+            overflow: hidden;
         }
         
         /* ===== PRICING SECTION ===== */
@@ -842,7 +846,23 @@
             color: var(--text-gray);
         }
         
-        /* FAQ Accordion Styling */
+        /* ===== FAQ SECTION ===== */
+        .accordion-item {
+            background: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .accordion-button {
+            background: var(--dark-bg);
+            color: var(--text-light);
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 1.5rem;
+        }
+        
         .accordion-button:not(.collapsed) {
             background: var(--dark-secondary) !important;
             color: var(--primary-color) !important;
@@ -857,79 +877,40 @@
             filter: brightness(0) invert(1);
         }
         
-        /* Professional Tawk.to Customizations for CodeBrix */
-        .tawk-button.tawk-button-circle {
-            background-color: #2563eb !important;
-            border: 2px solid white !important;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
-            transition: all 0.3s ease !important;
+        .accordion-body {
+            color: var(--text-gray);
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-color);
         }
         
-        .tawk-button.tawk-button-circle:hover {
-            background-color: #1e40af !important;
-            transform: scale(1.1) !important;
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4) !important;
+        /* ===== NEWSLETTER ===== */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            padding: 5rem 0;
         }
         
-        /* Chat window */
-        .tawk-min-container {
-            border-radius: 12px 12px 0 0 !important;
-            box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.1) !important;
+        .newsletter h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
         }
         
-        .tawk-header {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
-            border-radius: 12px 12px 0 0 !important;
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
         
-        /* Input field */
-        .tawk-textarea-input {
-            border: 1px solid #e5e7eb !important;
-            border-radius: 8px !important;
-            padding: 12px !important;
-            font-size: 14px !important;
-        }
-        
-        .tawk-textarea-input:focus {
-            border-color: #2563eb !important;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
-            outline: none !important;
-        }
-        
-        /* Messages */
-        .tawk-message {
-            border-radius: 18px !important;
-            max-width: 80% !important;
-        }
-        
-        .tawk-message-out {
-            background-color: #2563eb !important;
-            color: white !important;
-        }
-        
-        .tawk-message-in {
-            background-color: #f3f4f6 !important;
-            color: #1f2937 !important;
-        }
-        
-        /* Hide on specific pages */
-        .no-chat .tawk-button-container {
-            display: none !important;
-        }
-        
-        /* Mobile optimization */
-        @media (max-width: 768px) {
-            .tawk-container {
-                max-width: 100% !important;
-                max-height: 70vh !important;
-            }
-            
-            .tawk-button.tawk-button-circle {
-                bottom: 20px !important;
-                right: 20px !important;
-                width: 56px !important;
-                height: 56px !important;
-            }
+        .newsletter-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            border: none;
+            font-size: 1rem;
         }
         
         /* ===== CONTACT SECTION ===== */
@@ -1035,6 +1016,77 @@
             box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
         }
         
+        /* ===== PAYMENT METHODS ===== */
+        .payment-methods {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--dark-secondary);
+            border-radius: 15px;
+        }
+        
+        .payment-methods h4 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        .payment-options {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .payment-option {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* ===== SOCIAL PROOF ===== */
+        .social-proof {
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            background: var(--dark-secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--primary-color);
+            box-shadow: 0 4px 20px rgba(255,107,53,0.2);
+            display: none;
+            z-index: 999;
+            max-width: 300px;
+        }
+        
+        .social-proof-content {
+            display: flex;
+            gap: 0.8rem;
+            align-items: start;
+        }
+        
+        .social-proof-avatar {
+            background: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .social-proof-close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: none;
+            border: none;
+            color: var(--text-gray);
+            cursor: pointer;
+        }
+        
         /* ===== FOOTER ===== */
         .footer {
             background: var(--dark-bg);
@@ -1123,7 +1175,7 @@
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
-            left: 30px; /* Changed from right to left */
+            left: 30px;
             width: 60px;
             height: 60px;
             background: #25D366;
@@ -1164,10 +1216,6 @@
                 gap: 4rem;
             }
             
-            .hero-visual {
-                height: 350px;
-            }
-            
             .pricing-card.featured {
                 transform: scale(1);
             }
@@ -1183,7 +1231,7 @@
                 font-size: 2.8rem;
             }
             
-            .hero p {
+            .hero-subtitle {
                 font-size: 1.1rem;
             }
             
@@ -1219,10 +1267,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .hero-visual {
-                height: 300px;
-            }
-            
             .pricing-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -1236,13 +1280,27 @@
                 grid-template-columns: 1fr;
             }
             
-            /* Mobile WhatsApp positioning */
+            .trust-elements {
+                padding: 1.5rem;
+                margin: 2rem auto;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+            
             .whatsapp-float {
                 bottom: 20px;
                 left: 20px;
                 width: 56px;
                 height: 56px;
                 font-size: 24px;
+            }
+            
+            .social-proof {
+                left: 20px;
+                bottom: 80px;
+                max-width: 280px;
             }
         }
         
@@ -1259,27 +1317,13 @@
                 font-size: 2rem;
             }
             
-            .hero-visual {
-                height: 250px;
-                padding: 2rem;
-                margin-top: 3rem;
+            .trust-badges {
+                gap: 1rem;
             }
             
-            .hero-visual h3 {
-                font-size: 1.5rem;
-            }
-            
-            .contact-form {
-                padding: 2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .trust-elements {
-                padding: 1.5rem;
-                margin: 2rem auto;
+            .trust-badge {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
             }
             
             .whatsapp-float {
@@ -1320,7 +1364,129 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--primary-dark);
         }
+        
+        /* Tawk.to Customizations */
+        .tawk-button.tawk-button-circle {
+            background-color: #2563eb !important;
+            border: 2px solid white !important;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .tawk-button.tawk-button-circle:hover {
+            background-color: #1e40af !important;
+            transform: scale(1.1) !important;
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4) !important;
+        }
+        
+        .tawk-min-container {
+            border-radius: 12px 12px 0 0 !important;
+            box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .tawk-header {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+            border-radius: 12px 12px 0 0 !important;
+        }
     </style>
+    
+    <!-- Structured Data / Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "CodeBrix",
+        "image": "https://codebrixweb.com/images/logo.png",
+        "@id": "https://codebrixweb.com/",
+        "url": "https://codebrixweb.com/",
+        "telephone": "+2349113180149",
+        "priceRange": "₦150,000 - ₦600,000+",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Ibeju Lekki",
+            "addressLocality": "Lagos",
+            "addressRegion": "LA",
+            "postalCode": "",
+            "addressCountry": "NG"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 6.465422,
+            "longitude": 3.406448
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+        },
+        "sameAs": ["https://www.instagram.com/codebrix_"]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Web Development",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "CodeBrix"
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Lagos"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Web Development Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Website Development",
+                        "description": "Custom responsive website development"
+                    },
+                    "price": "150000",
+                    "priceCurrency": "NGN"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "E-commerce Development",
+                        "description": "Online store development with payment integration"
+                    },
+                    "price": "350000",
+                    "priceCurrency": "NGN"
+                }
+            ]
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://codebrixweb.com/"
+        }]
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -1398,7 +1564,7 @@
                     <a href="#contact" class="btn btn-primary">
                         <i class="fas fa-calendar-check"></i> Get Your Free Website Audit
                     </a>
-                    <a href="#portfolio" class="btn btn-secondary">
+                    <a href="#before-after" class="btn btn-secondary">
                         <i class="fas fa-play-circle"></i> See Before/After Results
                     </a>
                 </div>
@@ -1406,55 +1572,37 @@
         </div>
     </section>
 
-    <!-- Add this after the CTA buttons in Hero section -->
-<div class="hero-video" style="margin-top: 3rem; max-width: 800px; margin: 3rem auto;">
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; border: 1px solid var(--border-color);">
-        <iframe 
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-            title="CodeBrix Web Development Agency Lagos - Client Success Stories"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen
-            loading="lazy">
-        </iframe>
-    </div>
-    <p style="text-align: center; color: var(--text-gray); margin-top: 1rem; font-size: 0.9rem;">
-        See how we helped Lagos businesses grow online
-    </p>
-</div>
-
-    <!-- Location 1: After the Hero section trust-elements -->
-<div class="trust-badges" style="display: flex; gap: 2rem; justify-content: center; margin: 3rem 0; flex-wrap: wrap;">
-    <div style="background: white; padding: 0.8rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 0.5rem;">
-        <i class="fas fa-lock" style="color: #4CAF50;"></i>
-        <span style="color: #333; font-weight: 600;">SSL Secured</span>
-    </div>
-    <div style="background: white; padding: 0.8rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 0.5rem;">
-        <i class="fas fa-shield-alt" style="color: #FF6B35;"></i>
-        <span style="color: #333; font-weight: 600;">Money-Back Guarantee</span>
-    </div>
-    <div style="background: white; padding: 0.8rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 0.5rem;">
-        <i class="fas fa-certificate" style="color: #2196F3;"></i>
-        <span style="color: #333; font-weight: 600;">Registered Business</span>
-    </div>
-</div>
-
-<!-- Location 2: In Footer before footer-bottom -->
-<div class="payment-methods" style="text-align: center; margin: 2rem 0; padding: 2rem; background: var(--dark-secondary); border-radius: 15px;">
-    <h4 style="color: var(--text-light); margin-bottom: 1rem;">Secure Payment Methods</h4>
-    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-        <div style="background: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; color: #333;">
-            Paystack
+    <!-- Trust Badges -->
+    <div class="trust-badges">
+        <div class="trust-badge" style="color: #4CAF50;">
+            <i class="fas fa-lock"></i>
+            <span>SSL Secured</span>
         </div>
-        <div style="background: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; color: #333;">
-            Flutterwave
+        <div class="trust-badge" style="color: #FF6B35;">
+            <i class="fas fa-shield-alt"></i>
+            <span>Money-Back Guarantee</span>
         </div>
-        <div style="background: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; color: #333;">
-            Bank Transfer
+        <div class="trust-badge" style="color: #2196F3;">
+            <i class="fas fa-certificate"></i>
+            <span>Registered Business</span>
         </div>
     </div>
-</div>
 
+    <!-- Hero Video -->
+    <div class="hero-video">
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                title="CodeBrix Web Development Agency Lagos - Client Success Stories"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+                loading="lazy">
+            </iframe>
+        </div>
+        <p style="text-align: center; color: var(--text-gray); margin-top: 1rem; font-size: 0.9rem;">
+            See how we helped Lagos businesses grow online
+        </p>
+    </div>
 
     <!-- Why Choose CodeBrix? Section -->
     <section id="why-us" class="about">
@@ -1490,23 +1638,23 @@
                         </div>
                     </div>
                     
-                    <div style="margin-top: 3rem; background: var(--dark-bg); padding: 2rem; border-radius: 15px;">
-                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Our Simple 3-Step Process:</h4>
-                        <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
-                            <div style="flex: 1; min-width: 200px;">
-                                <div style="background: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-weight: bold;">1</div>
+                    <div class="process-steps">
+                        <h4>Our Simple 3-Step Process:</h4>
+                        <div class="steps-container">
+                            <div class="step">
+                                <div class="step-number">1</div>
                                 <h5>Free Audit</h5>
-                                <p style="font-size: 0.9rem; color: var(--text-gray);">We analyze your current site and tell you exactly what's not working</p>
+                                <p>We analyze your current site and tell you exactly what's not working</p>
                             </div>
-                            <div style="flex: 1; min-width: 200px;">
-                                <div style="background: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-weight: bold;">2</div>
+                            <div class="step">
+                                <div class="step-number">2</div>
                                 <h5>Build & Test</h5>
-                                <p style="font-size: 0.9rem; color: var(--text-gray);">We create your site and test it with real users before launch</p>
+                                <p>We create your site and test it with real users before launch</p>
                             </div>
-                            <div style="flex: 1; min-width: 200px;">
-                                <div style="background: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-weight: bold;">3</div>
+                            <div class="step">
+                                <div class="step-number">3</div>
                                 <h5>Launch & Support</h5>
-                                <p style="font-size: 0.9rem; color: var(--text-gray);">We launch your site and help you get customers for 6 months</p>
+                                <p>We launch your site and help you get customers for 6 months</p>
                             </div>
                         </div>
                     </div>
@@ -1571,53 +1719,52 @@
         </div>
     </section>
 
-    <!-- Add this after the Services section closing </section> tag -->
-
-<section id="case-studies" style="background: var(--dark-bg); padding: var(--section-spacing) 0;">
-    <div class="container">
-        <h2 class="section-title">Success <span>Stories</span></h2>
-        <p class="section-subtitle">Real results from businesses we've helped transform in Lagos</p>
-        
-        <div class="case-study" style="background: var(--dark-secondary); padding: 3rem; border-radius: 20px; border: 1px solid var(--border-color); margin-bottom: 3rem;">
-            <h3 style="color: var(--text-light); font-size: 1.8rem; margin-bottom: 1.5rem;">How We Increased Leads by 300% for a Lagos Restaurant</h3>
+    <!-- Case Studies Section -->
+    <section id="case-studies" style="background: var(--dark-bg);">
+        <div class="container">
+            <h2 class="section-title">Success <span>Stories</span></h2>
+            <p class="section-subtitle">Real results from businesses we've helped transform in Lagos</p>
             
-            <div class="case-study-metrics" style="display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
-                <div style="background: var(--dark-bg); padding: 1rem 1.5rem; border-radius: 10px; border: 1px solid var(--border-color);">
-                    <strong style="color: var(--primary-color); display: block; font-size: 1.2rem;">Before:</strong>
-                    <span style="color: var(--text-light);">10 leads/month</span>
+            <div class="case-study">
+                <h3>How We Increased Leads by 300% for a Lagos Restaurant</h3>
+                
+                <div class="case-study-metrics">
+                    <div class="metric">
+                        <strong>Before:</strong>
+                        <span style="color: var(--text-light);">10 leads/month</span>
+                    </div>
+                    <div class="metric featured">
+                        <strong>After:</strong>
+                        <span style="color: var(--text-light);">40 leads/month</span>
+                    </div>
+                    <div class="metric">
+                        <strong>Timeline:</strong>
+                        <span style="color: var(--text-light);">60 days</span>
+                    </div>
                 </div>
-                <div style="background: var(--dark-bg); padding: 1rem 1.5rem; border-radius: 10px; border: 1px solid var(--primary-color);">
-                    <strong style="color: var(--primary-color); display: block; font-size: 1.2rem;">After:</strong>
-                    <span style="color: var(--text-light);">40 leads/month</span>
+                
+                <h4>The Challenge:</h4>
+                <p style="color: var(--text-gray); margin-bottom: 2rem;">Restaurant had no online presence, relied only on walk-ins. Website was outdated and not mobile-friendly, leading to zero online reservations.</p>
+                
+                <h4>Our Solution:</h4>
+                <ul style="color: var(--text-gray); margin-bottom: 2rem; padding-left: 1.5rem;">
+                    <li style="margin-bottom: 0.5rem;">Built mobile-first website with online reservation system</li>
+                    <li style="margin-bottom: 0.5rem;">Integrated Instagram feed showing daily specials</li>
+                    <li style="margin-bottom: 0.5rem;">Set up Google Business Profile with customer reviews</li>
+                    <li>Added menu with high-quality food photography</li>
+                </ul>
+                
+                <h4>The Results:</h4>
+                <p style="color: var(--text-gray);">40 qualified leads per month, 25% increase in reservations, and ranking on first page of Google for "best restaurant in [area]".</p>
+                
+                <div style="margin-top: 2rem; text-align: center;">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-chart-line"></i> Get Similar Results
+                    </a>
                 </div>
-                <div style="background: var(--dark-bg); padding: 1rem 1.5rem; border-radius: 10px; border: 1px solid var(--border-color);">
-                    <strong style="color: var(--primary-color); display: block; font-size: 1.2rem;">Timeline:</strong>
-                    <span style="color: var(--text-light);">60 days</span>
-                </div>
-            </div>
-            
-            <h4 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.3rem;">The Challenge:</h4>
-            <p style="color: var(--text-gray); margin-bottom: 2rem;">Restaurant had no online presence, relied only on walk-ins. Website was outdated and not mobile-friendly, leading to zero online reservations.</p>
-            
-            <h4 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.3rem;">Our Solution:</h4>
-            <ul style="color: var(--text-gray); margin-bottom: 2rem; padding-left: 1.5rem;">
-                <li style="margin-bottom: 0.5rem;">Built mobile-first website with online reservation system</li>
-                <li style="margin-bottom: 0.5rem;">Integrated Instagram feed showing daily specials</li>
-                <li style="margin-bottom: 0.5rem;">Set up Google Business Profile with customer reviews</li>
-                <li>Added menu with high-quality food photography</li>
-            </ul>
-            
-            <h4 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.3rem;">The Results:</h4>
-            <p style="color: var(--text-gray);">40 qualified leads per month, 25% increase in reservations, and ranking on first page of Google for "best restaurant in [area]".</p>
-            
-            <div style="margin-top: 2rem; text-align: center;">
-                <a href="#contact" class="btn btn-primary">
-                    <i class="fas fa-chart-line"></i> Get Similar Results
-                </a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
@@ -1688,6 +1835,19 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Section -->
+    <section id="before-after" style="background: var(--dark-bg);">
+        <div class="container">
+            <h2 class="section-title">Before & <span>After</span></h2>
+            <p class="section-subtitle">Drag the slider to see how we transformed these websites</p>
+            
+            <div class="twentytwenty-container">
+                <img src="images/before-website.jpg" alt="Website Before CodeBrix" loading="lazy">
+                <img src="images/after-website.jpg" alt="Website After CodeBrix Transformation" loading="lazy">
             </div>
         </div>
     </section>
@@ -1777,85 +1937,79 @@
             
             <div style="max-width: 900px; margin: 0 auto;">
                 <div class="accordion" id="faqAccordion">
-                    <!-- Question 1 -->
-                    <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
+                    <div class="accordion-item">
                         <h3 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
                                 How much does a website cost in Lagos?
                             </button>
                         </h3>
                         <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
+                            <div class="accordion-body">
                                 CodeBrix offers website development starting from ₦150,000 for basic websites, ₦350,000 for business websites, and ₦600,000+ for custom e-commerce solutions. The exact cost depends on your specific needs and features.
                             </div>
                         </div>
                     </div>
 
-                    <!-- Question 2 -->
-                    <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
+                    <div class="accordion-item">
                         <h3 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
                                 How long does it take to build a website?
                             </button>
                         </h3>
                         <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
+                            <div class="accordion-body">
                                 CodeBrix typically delivers websites within 30 days, depending on project complexity and client feedback speed. Rush projects can be accommodated for an additional fee.
                             </div>
                         </div>
                     </div>
 
-                    <!-- Question 3 -->
-                    <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
+                    <div class="accordion-item">
                         <h3 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
                                 Do you provide website maintenance?
                             </button>
                         </h3>
                         <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
+                            <div class="accordion-body">
                                 Yes, CodeBrix provides 6 months of free maintenance with Enterprise packages. Extended support and maintenance plans are available for all packages at competitive rates.
                             </div>
                         </div>
                     </div>
 
-                    <!-- Question 4 -->
-                    <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
+                    <div class="accordion-item">
                         <h3 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
                                 Do you work with businesses outside Lagos?
                             </button>
                         </h3>
                         <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
+                            <div class="accordion-body">
                                 Yes, while CodeBrix is based in Lagos, we serve clients across Nigeria including Abuja, Port Harcourt, Ibadan, and other major cities. We also work with international clients.
                             </div>
                         </div>
                     </div>
 
-                    <!-- Question 5 -->
-                    <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
+                    <div class="accordion-item">
                         <h3 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
                                 What payment methods do you accept?
                             </button>
                         </h3>
                         <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
+                            <div class="accordion-body">
                                 CodeBrix accepts bank transfers, Paystack, and Flutterwave payments in Nigerian Naira (₦). We require a 50% deposit to start projects, with the balance due upon completion.
                             </div>
                         </div>
                     </div>
 
-                    <!-- Question 6 -->
-                    <div class="accordion-item" style="background: var(--dark-bg); border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 12px; overflow: hidden;">
+                    <div class="accordion-item">
                         <h3 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" style="background: var(--dark-bg); color: var(--text-light); font-size: 1.1rem; font-weight: 600; padding: 1.5rem;">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
                                 Will my website work on mobile phones?
                             </button>
                         </h3>
                         <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body" style="color: var(--text-gray); padding: 1.5rem; border-top: 1px solid var(--border-color);">
+                            <div class="accordion-body">
                                 Absolutely! All CodeBrix websites are fully responsive and optimized for mobile devices, tablets, and desktops. Mobile-first design is our standard practice.
                             </div>
                         </div>
@@ -1867,88 +2021,79 @@
         <!-- FAQ Schema -->
         <script type="application/ld+json">
         {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [{
-            "@type": "Question",
-            "name": "How much does a website cost in Lagos?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "CodeBrix offers website development starting from ₦150,000 for basic websites, ₦350,000 for business websites, and ₦600,000+ for custom e-commerce solutions."
-            }
-          },{
-            "@type": "Question",
-            "name": "How long does it take to build a website?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "CodeBrix typically delivers websites within 30 days, depending on project complexity and client feedback speed."
-            }
-          },{
-            "@type": "Question",
-            "name": "Do you provide website maintenance?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, CodeBrix provides 6 months of free maintenance with Enterprise packages. Extended support is available for all packages."
-            }
-          },{
-            "@type": "Question",
-            "name": "Do you work with businesses outside Lagos?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, while CodeBrix is based in Lagos, we serve clients across Nigeria including Abuja, Port Harcourt, and other major cities."
-            }
-          },{
-            "@type": "Question",
-            "name": "What payment methods do you accept?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "CodeBrix accepts bank transfers, Paystack, and Flutterwave payments in Nigerian Naira (₦). We require 50% deposit to start projects."
-            }
-          },{
-            "@type": "Question",
-            "name": "Will my website work on mobile phones?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely! All CodeBrix websites are fully responsive and optimized for mobile devices, tablets, and desktops."
-            }
-          }]
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How much does a website cost in Lagos?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "CodeBrix offers website development starting from ₦150,000 for basic websites, ₦350,000 for business websites, and ₦600,000+ for custom e-commerce solutions."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How long does it take to build a website?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "CodeBrix typically delivers websites within 30 days, depending on project complexity and client feedback speed."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you provide website maintenance?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, CodeBrix provides 6 months of free maintenance with Enterprise packages. Extended support is available for all packages."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you work with businesses outside Lagos?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, while CodeBrix is based in Lagos, we serve clients across Nigeria including Abuja, Port Harcourt, and other major cities."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What payment methods do you accept?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "CodeBrix accepts bank transfers, Paystack, and Flutterwave payments in Nigerian Naira (₦). We require 50% deposit to start projects."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Will my website work on mobile phones?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Absolutely! All CodeBrix websites are fully responsive and optimized for mobile devices, tablets, and desktops."
+                    }
+                }
+            ]
         }
         </script>
     </section>
 
-    <!-- Add this before the Contact section -->
-<section id="newsletter" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%); padding: 5rem 0;">
-    <div class="container" style="text-align: center;">
-        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">Get Free Website Growth Tips</h2>
-        <p style="color: rgba(255,255,255,0.9); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-            Join Lagos business owners getting weekly tips to increase their online leads
-        </p>
-        
-        <form id="newsletter-form" style="max-width: 500px; margin: 0 auto; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <input type="email" placeholder="Your email address" required 
-                   style="flex: 1; min-width: 250px; padding: 1rem 1.5rem; border-radius: 50px; border: none; font-size: 1rem;">
-            <button type="submit" class="btn" style="background: white; color: var(--primary-color); font-weight: 600;">
-                <i class="fas fa-paper-plane"></i> Subscribe
-            </button>
-        </form>
-        <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-top: 1rem;">
-            Plus get our free "Website Conversion Checklist" PDF
-        </p>
-    </div>
-</section>
-
-<script>
-// Newsletter form submission
-document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = this.querySelector('input[type="email"]').value;
-    
-    // Send to your email service (Mailchimp, etc.)
-    // For now, show success message
-    alert('Thank you! Check your email for the free checklist.');
-    this.reset();
-});
-</script>
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter">
+        <div class="container">
+            <h2>Get Free Website Growth Tips</h2>
+            <p style="color: rgba(255,255,255,0.9); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Join Lagos business owners getting weekly tips to increase their online leads
+            </p>
+            
+            <form id="newsletter-form" class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn" style="background: white; color: var(--primary-color); font-weight: 600;">
+                    <i class="fas fa-paper-plane"></i> Subscribe
+                </button>
+            </form>
+           
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -2028,6 +2173,7 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -2089,39 +2235,34 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
                 </div>
             </div>
             
-<!-- Location 1: After the Hero section trust-elements -->
-<div class="trust-badges" style="display: flex; gap: 2rem; justify-content: center; margin: 3rem 0; flex-wrap: wrap;">
-    <div style="background: white; padding: 0.8rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 0.5rem;">
-        <i class="fas fa-lock" style="color: #4CAF50;"></i>
-        <span style="color: #333; font-weight: 600;">SSL Secured</span>
-    </div>
-    <div style="background: white; padding: 0.8rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 0.5rem;">
-        <i class="fas fa-shield-alt" style="color: #FF6B35;"></i>
-        <span style="color: #333; font-weight: 600;">Money-Back Guarantee</span>
-    </div>
-    <div style="background: white; padding: 0.8rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 0.5rem;">
-        <i class="fas fa-certificate" style="color: #2196F3;"></i>
-        <span style="color: #333; font-weight: 600;">Registered Business</span>
-    </div>
-</div>
-
-<!-- Location 2: In Footer before footer-bottom -->
-<div class="payment-methods" style="text-align: center; margin: 2rem 0; padding: 2rem; background: var(--dark-secondary); border-radius: 15px;">
-    <h4 style="color: var(--text-light); margin-bottom: 1rem;">Secure Payment Methods</h4>
-    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-        <div style="background: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; color: #333;">
-            Paystack
-        </div>
-        <div style="background: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; color: #333;">
-            Flutterwave
-        </div>
-        <div style="background: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; color: #333;">
-            Bank Transfer
-        </div>
-    </div>
-</div>
-
-
+            <!-- Payment Methods -->
+            <div class="payment-methods">
+                <h4>Secure Payment Methods</h4>
+                <div class="payment-options">
+                    <div class="payment-option">Paystack</div>
+                    <div class="payment-option">Flutterwave</div>
+                    <div class="payment-option">Bank Transfer</div>
+                </div>
+            </div>
+            
+            <!-- Social Proof Popup -->
+            <div id="social-proof" class="social-proof">
+                <div class="social-proof-content">
+                    <div class="social-proof-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <p style="margin: 0; color: var(--text-light); font-size: 0.9rem;">
+                            <strong id="social-proof-name">Someone from Ikeja</strong> just requested a quote
+                        </p>
+                        <span style="color: var(--text-gray); font-size: 0.8rem;">Just now</span>
+                    </div>
+                </div>
+                <button onclick="closeSocialProof()" class="social-proof-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 <strong>CodeBrix</strong> - Web Development Agency Lagos Nigeria. All rights reserved. | codebrixweb.com | Designed with <i class="fas fa-heart" style="color: var(--primary-color);"></i> for amazing clients.</p>
             </div>
@@ -2129,7 +2270,12 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery and TwentyTwenty JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.event.move/2.0.0/jquery.event.move.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/js/jquery.twentytwenty.min.js"></script>
 
     <!-- WhatsApp Float -->
     <a href="https://wa.me/2349113180149" class="whatsapp-float" target="_blank" rel="noopener" title="Chat with CodeBrix on WhatsApp" aria-label="Chat with CodeBrix on WhatsApp">
@@ -2137,9 +2283,22 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
     </a>
 
     <script>
+        // Initialize TwentyTwenty
+        $(document).ready(function(){
+            $(".twentytwenty-container").twentytwenty({
+                default_offset_pct: 0.5,
+                orientation: 'horizontal',
+                before_label: 'Before',
+                after_label: 'After',
+                no_overlay: false,
+                move_with_handle_only: true,
+                click_to_move: false
+            });
+        });
+
         // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
-            // Google Analytics Event Tracking with null checks
+            // Google Analytics Event Tracking
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
                 contactForm.addEventListener('submit', function() {
@@ -2167,52 +2326,46 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
 
             // Track phone clicks
             document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-                if (link) {
-                    link.addEventListener('click', function() {
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'click', {
-                                'event_category': 'Contact',
-                                'event_label': 'Phone Call'
-                            });
-                        }
-                    });
-                }
+                link.addEventListener('click', function() {
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'click', {
+                            'event_category': 'Contact',
+                            'event_label': 'Phone Call'
+                        });
+                    }
+                });
             });
 
             // Track CTA button clicks
             document.querySelectorAll('.btn-primary').forEach(btn => {
-                if (btn) {
-                    btn.addEventListener('click', function() {
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'click', {
-                                'event_category': 'CTA',
-                                'event_label': this.textContent.trim()
-                            });
-                        }
-                    });
-                }
+                btn.addEventListener('click', function() {
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'click', {
+                            'event_category': 'CTA',
+                            'event_label': this.textContent.trim()
+                        });
+                    }
+                });
             });
 
             // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                if (anchor) {
-                    anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        const targetId = this.getAttribute('href');
-                        if (targetId === '#') return;
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
                         
-                        const target = document.querySelector(targetId);
-                        if (target) {
-                            target.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-                            
-                            // Update URL without scrolling
-                            history.pushState(null, null, targetId);
-                        }
-                    });
-                }
+                        // Update URL without scrolling
+                        history.pushState(null, null, targetId);
+                    }
+                });
             });
 
             // Navbar scroll effect
@@ -2231,21 +2384,17 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
                     
                     let current = '';
                     sections.forEach(section => {
-                        if (section) {
-                            const sectionTop = section.offsetTop - 100;
-                            const sectionHeight = section.clientHeight;
-                            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                                current = section.getAttribute('id');
-                            }
+                        const sectionTop = section.offsetTop - 100;
+                        const sectionHeight = section.clientHeight;
+                        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                            current = section.getAttribute('id');
                         }
                     });
                     
                     navLinks.forEach(link => {
-                        if (link) {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === `#${current}`) {
-                                link.classList.add('active');
-                            }
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${current}`) {
+                            link.classList.add('active');
                         }
                     });
                 }
@@ -2254,7 +2403,7 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
             // Scroll animations
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.target) {
+                    if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
                     }
                 });
@@ -2264,13 +2413,13 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
             });
 
             document.querySelectorAll('.fade-in').forEach(el => {
-                if (el) observer.observe(el);
+                observer.observe(el);
             });
 
             // Animate stats counter
             const statsObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.target && !entry.target.classList.contains('animated')) {
+                    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
                         entry.target.classList.add('animated');
                         const statNumber = entry.target.querySelector('.stat-number');
                         
@@ -2296,7 +2445,7 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
             }, { threshold: 0.5 });
 
             document.querySelectorAll('.stat-item').forEach(item => {
-                if (item) statsObserver.observe(item);
+                statsObserver.observe(item);
             });
 
             // Form submission with validation
@@ -2334,6 +2483,18 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
                 });
             }
 
+            // Newsletter form submission
+            const newsletterForm = document.getElementById('newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    
+                    alert('Thank you! Check your email for the free checklist.');
+                    this.reset();
+                });
+            }
+
             // Page load animation
             window.addEventListener('load', () => {
                 document.body.style.opacity = '0';
@@ -2342,12 +2503,76 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
                     document.body.style.opacity = '1';
                 }, 100);
             });
-        });
-    </script>
 
-    <!-- Enhanced Tawk.to Implementation for CodeBrix -->
-    <script type="text/javascript">
-        // Configuration object for CodeBrix
+            // Lazy load images
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                            }
+                            img.classList.add('loaded');
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                
+                images.forEach(img => imageObserver.observe(img));
+            }
+        });
+
+        // Social proof notifications
+        const socialProofData = [
+            {name: "Chioma", location: "Lekki", action: "requested a quote"},
+            {name: "Tunde", location: "Victoria Island", action: "downloaded our pricing guide"},
+            {name: "Sarah", location: "Ikeja", action: "booked a consultation"},
+            {name: "David", location: "Surulere", action: "started a project"},
+            {name: "Amina", location: "Yaba", action: "got a free audit"}
+        ];
+
+        function showSocialProof() {
+            const proof = document.getElementById('social-proof');
+            const random = socialProofData[Math.floor(Math.random() * socialProofData.length)];
+            
+            document.getElementById('social-proof-name').textContent = `${random.name} from ${random.location}`;
+            
+            proof.style.display = 'block';
+            
+            // Auto hide after 8 seconds
+            setTimeout(() => {
+                proof.style.display = 'none';
+            }, 8000);
+        }
+
+        function closeSocialProof() {
+            document.getElementById('social-proof').style.display = 'none';
+        }
+
+        // Show first notification after 15 seconds
+        setTimeout(showSocialProof, 15000);
+
+        // Show random notifications every 30-60 seconds
+        setInterval(() => {
+            if (Math.random() > 0.3) { // 70% chance to show
+                showSocialProof();
+            }
+        }, 30000 + Math.random() * 30000);
+
+        // Hide when user starts to scroll up (leaving)
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            const st = window.pageYOffset || document.documentElement.scrollTop;
+            if (st < lastScrollTop) { // scrolling up
+                showSocialProof();
+            }
+            lastScrollTop = st <= 0 ? 0 : st;
+        });
+
+        // Tawk.to Configuration
         window.CodeBrixChatConfig = {
             brand: 'CodeBrix',
             theme: {
@@ -2364,13 +2589,10 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
             }
         };
 
-        // Tawk.to API configuration
         var Tawk_API = Tawk_API || {};
         var Tawk_LoadStart = new Date();
         
-        // Enhanced onLoad function
         Tawk_API.onLoad = function() {
-            // Set CodeBrix-specific attributes
             if (Tawk_API.setAttributes) {
                 Tawk_API.setAttributes({
                     'company': 'CodeBrix',
@@ -2381,7 +2603,6 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
                 }, function(error){});
             }
             
-            // Customize widget appearance
             if (Tawk_API.customize) {
                 Tawk_API.customize = {
                     themeColor : '#2563eb',
@@ -2392,7 +2613,6 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
                 };
             }
             
-            // Initialize proactive triggers after 30 seconds
             setTimeout(function() {
                 if (shouldShowProactiveChat()) {
                     if (Tawk_API.maximize) Tawk_API.maximize();
@@ -2401,17 +2621,14 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
             }, 30000);
         };
 
-        // Proactive chat logic
         function shouldShowProactiveChat() {
             const excludedPages = ['/checkout', '/thank-you', '/account'];
             const currentPage = window.location.pathname;
             
-            // Don't show on excluded pages
             if (excludedPages.some(page => currentPage.includes(page))) {
                 return false;
             }
             
-            // Show based on time on page or scroll depth
             const timeOnPage = (new Date() - Tawk_LoadStart) / 1000;
             const scrollDepth = getScrollDepth();
             
@@ -2437,128 +2654,6 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
             s1.setAttribute('crossorigin', '*');
             s0.parentNode.insertBefore(s1, s0);
         })();
-
-
-        // Lazy load images
-document.addEventListener("DOMContentLoaded", function() {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.add('loaded');
-                    observer.unobserve(img);
-                }
-            });
-        });
-        
-        images.forEach(img => imageObserver.observe(img));
-    }
-});
     </script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.event.move/2.0.0/jquery.event.move.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/js/jquery.twentytwenty.min.js"></script>
-
-<!-- Add this section after the Case Studies section -->
-<section id="before-after" style="background: var(--dark-bg); padding: var(--section-spacing) 0;">
-    <div class="container">
-        <h2 class="section-title">Before & <span>After</span></h2>
-        <p class="section-subtitle">Drag the slider to see how we transformed these websites</p>
-        
-        <div class="twentytwenty-container" style="margin: 3rem auto; max-width: 1000px; border-radius: 15px; overflow: hidden;">
-            <img src="images/before-website.jpg" alt="Website Before CodeBrix" loading="lazy">
-            <img src="images/after-website.jpg" alt="Website After CodeBrix Transformation" loading="lazy">
-        </div>
-    </div>
-</section>
-
-<script>
-$(document).ready(function(){
-    $(".twentytwenty-container").twentytwenty({
-        default_offset_pct: 0.5,
-        orientation: 'horizontal',
-        before_label: 'Before',
-        after_label: 'After',
-        no_overlay: false,
-        move_with_handle_only: true,
-        click_to_move: false
-    });
-});
-</script>
-
-
-<!-- Social Proof Popup -->
-<div id="social-proof" style="position: fixed; bottom: 100px; left: 30px; background: var(--dark-secondary); padding: 1rem 1.5rem; border-radius: 10px; border: 1px solid var(--primary-color); box-shadow: 0 4px 20px rgba(255,107,53,0.2); display: none; z-index: 999; max-width: 300px;">
-    <div style="display: flex; gap: 0.8rem; align-items: start;">
-        <div style="background: var(--primary-color); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
-            <i class="fas fa-user"></i>
-        </div>
-        <div>
-            <p style="margin: 0; color: var(--text-light); font-size: 0.9rem;">
-                <strong>Someone from Ikeja</strong> just requested a quote
-            </p>
-            <span style="color: var(--text-gray); font-size: 0.8rem;">Just now</span>
-        </div>
-    </div>
-    <button onclick="closeSocialProof()" style="position: absolute; top: 5px; right: 5px; background: none; border: none; color: var(--text-gray); cursor: pointer;">
-        <i class="fas fa-times"></i>
-    </button>
-</div>
-
-<script>
-// Social proof notifications
-const socialProofData = [
-    {name: "Chioma", location: "Lekki", action: "requested a quote"},
-    {name: "Tunde", location: "Victoria Island", action: "downloaded our pricing guide"},
-    {name: "Sarah", location: "Ikeja", action: "booked a consultation"},
-    {name: "David", location: "Surulere", action: "started a project"},
-    {name: "Amina", location: "Yaba", action: "got a free audit"}
-];
-
-function showSocialProof() {
-    const proof = document.getElementById('social-proof');
-    const random = socialProofData[Math.floor(Math.random() * socialProofData.length)];
-    
-    proof.querySelector('strong').textContent = `${random.name} from ${random.location}`;
-    proof.querySelector('p').innerHTML = `<strong>${random.name} from ${random.location}</strong> just ${random.action}`;
-    
-    proof.style.display = 'block';
-    
-    // Auto hide after 8 seconds
-    setTimeout(() => {
-        proof.style.display = 'none';
-    }, 8000);
-}
-
-function closeSocialProof() {
-    document.getElementById('social-proof').style.display = 'none';
-}
-
-// Show first notification after 15 seconds
-setTimeout(showSocialProof, 15000);
-
-// Show random notifications every 30-60 seconds
-setInterval(() => {
-    if (Math.random() > 0.3) { // 70% chance to show
-        showSocialProof();
-    }
-}, 30000 + Math.random() * 30000);
-
-// Hide when user starts to scroll up (leaving)
-let lastScrollTop = 0;
-window.addEventListener('scroll', function() {
-    const st = window.pageYOffset || document.documentElement.scrollTop;
-    if (st < lastScrollTop) { // scrolling up
-        showSocialProof();
-    }
-    lastScrollTop = st <= 0 ? 0 : st;
-});
-</script>
-
 </body>
 </html>
