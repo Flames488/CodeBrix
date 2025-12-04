@@ -1,5 +1,3 @@
-[file name]: index.html
-[file content begin]
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -190,7 +188,7 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--dark-bg);
             color: var(--text-light);
             line-height: 1.7;
@@ -858,8 +856,6 @@
 }
 
 
-
-
 /* Professional Tawk.to Customizations for CodeBrix */
 
 /* Chat bubble */
@@ -1268,24 +1264,24 @@
         }
         
         /* ===== WHATSAPP FLOAT ===== */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: #25D366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
+       .whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    left: 30px; /* Changed from 'right' to 'left' */
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
         
         .whatsapp-float:hover {
             transform: scale(1.1);
@@ -1381,7 +1377,7 @@
             <!-- Testimonial 1 -->
             <div style="background: var(--dark-secondary); padding: 2.5rem; border-radius: 20px; border: 1px solid var(--border-color);">
                 <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
-                    <img src="images/client1.jpg" alt="Client" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                    <img src="images/client1.jpg" alt="Client Adebayo Ogunlesi" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
                     <div>
                         <strong style="color: var(--text-light); display: block;">Adebayo Ogunlesi</strong>
                         <span style="color: var(--text-gray); font-size: 0.9rem;">CEO, TechStart Nigeria</span>
@@ -1944,7 +1940,7 @@
                     <h3><i class="fas fa-cube"></i> CodeBrix</h3>
                     <p>Creating exceptional digital experiences that drive results and transform businesses. Visit us at codebrixweb.com</p>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/codebrix_" class="social-link" target="_blank" rel="noopener">
+                        <a href="https://www.instagram.com/codebrix_" class="social-link" target="_blank" rel="noopener" aria-label="Follow CodeBrix on Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="https://wa.me/2349113180149" class="social-link" target="_blank" rel="noopener">
@@ -2131,7 +2127,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
                     entry.target.classList.add('animated');
-                    const statNumber = entry.target.querySelector('.stat-number');
+                    const statNumber = entry.target ? entry.target.querySelector('.stat-number') : null;
                     const text = statNumber.textContent;
                     const number = parseInt(text.replace(/\D/g, ''));
                     
