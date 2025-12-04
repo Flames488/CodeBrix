@@ -54,6 +54,9 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Add these BEFORE your custom CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/css/twentytwenty.min.css">
     
     <!-- Structured Data / Schema Markup -->
     <script type="application/ld+json">
@@ -1403,6 +1406,56 @@
         </div>
     </section>
 
+    <!-- Add this after the CTA buttons in Hero section -->
+<div class="hero-video" style="margin-top: 3rem; max-width: 800px; margin: 3rem auto;">
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; border: 1px solid var(--border-color);">
+        <iframe 
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+            title="CodeBrix Web Development Agency Lagos - Client Success Stories"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            loading="lazy">
+        </iframe>
+    </div>
+    <p style="text-align: center; color: var(--text-gray); margin-top: 1rem; font-size: 0.9rem;">
+        See how we helped Lagos businesses grow online
+    </p>
+</div>
+
+    <!-- Location 1: After the Hero section trust-elements -->
+<div class="trust-badges" style="display: flex; gap: 2rem; justify-content: center; margin: 3rem 0; flex-wrap: wrap;">
+    <div style="background: white; padding: 0.8rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fas fa-lock" style="color: #4CAF50;"></i>
+        <span style="color: #333; font-weight: 600;">SSL Secured</span>
+    </div>
+    <div style="background: white; padding: 0.8rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fas fa-shield-alt" style="color: #FF6B35;"></i>
+        <span style="color: #333; font-weight: 600;">Money-Back Guarantee</span>
+    </div>
+    <div style="background: white; padding: 0.8rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fas fa-certificate" style="color: #2196F3;"></i>
+        <span style="color: #333; font-weight: 600;">Registered Business</span>
+    </div>
+</div>
+
+<!-- Location 2: In Footer before footer-bottom -->
+<div class="payment-methods" style="text-align: center; margin: 2rem 0; padding: 2rem; background: var(--dark-secondary); border-radius: 15px;">
+    <h4 style="color: var(--text-light); margin-bottom: 1rem;">Secure Payment Methods</h4>
+    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+        <div style="background: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; color: #333;">
+            Paystack
+        </div>
+        <div style="background: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; color: #333;">
+            Flutterwave
+        </div>
+        <div style="background: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; color: #333;">
+            Bank Transfer
+        </div>
+    </div>
+</div>
+
+
     <!-- Why Choose CodeBrix? Section -->
     <section id="why-us" class="about">
         <div class="container">
@@ -1517,6 +1570,54 @@
             </div>
         </div>
     </section>
+
+    <!-- Add this after the Services section closing </section> tag -->
+
+<section id="case-studies" style="background: var(--dark-bg); padding: var(--section-spacing) 0;">
+    <div class="container">
+        <h2 class="section-title">Success <span>Stories</span></h2>
+        <p class="section-subtitle">Real results from businesses we've helped transform in Lagos</p>
+        
+        <div class="case-study" style="background: var(--dark-secondary); padding: 3rem; border-radius: 20px; border: 1px solid var(--border-color); margin-bottom: 3rem;">
+            <h3 style="color: var(--text-light); font-size: 1.8rem; margin-bottom: 1.5rem;">How We Increased Leads by 300% for a Lagos Restaurant</h3>
+            
+            <div class="case-study-metrics" style="display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                <div style="background: var(--dark-bg); padding: 1rem 1.5rem; border-radius: 10px; border: 1px solid var(--border-color);">
+                    <strong style="color: var(--primary-color); display: block; font-size: 1.2rem;">Before:</strong>
+                    <span style="color: var(--text-light);">10 leads/month</span>
+                </div>
+                <div style="background: var(--dark-bg); padding: 1rem 1.5rem; border-radius: 10px; border: 1px solid var(--primary-color);">
+                    <strong style="color: var(--primary-color); display: block; font-size: 1.2rem;">After:</strong>
+                    <span style="color: var(--text-light);">40 leads/month</span>
+                </div>
+                <div style="background: var(--dark-bg); padding: 1rem 1.5rem; border-radius: 10px; border: 1px solid var(--border-color);">
+                    <strong style="color: var(--primary-color); display: block; font-size: 1.2rem;">Timeline:</strong>
+                    <span style="color: var(--text-light);">60 days</span>
+                </div>
+            </div>
+            
+            <h4 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.3rem;">The Challenge:</h4>
+            <p style="color: var(--text-gray); margin-bottom: 2rem;">Restaurant had no online presence, relied only on walk-ins. Website was outdated and not mobile-friendly, leading to zero online reservations.</p>
+            
+            <h4 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.3rem;">Our Solution:</h4>
+            <ul style="color: var(--text-gray); margin-bottom: 2rem; padding-left: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;">Built mobile-first website with online reservation system</li>
+                <li style="margin-bottom: 0.5rem;">Integrated Instagram feed showing daily specials</li>
+                <li style="margin-bottom: 0.5rem;">Set up Google Business Profile with customer reviews</li>
+                <li>Added menu with high-quality food photography</li>
+            </ul>
+            
+            <h4 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.3rem;">The Results:</h4>
+            <p style="color: var(--text-gray);">40 qualified leads per month, 25% increase in reservations, and ranking on first page of Google for "best restaurant in [area]".</p>
+            
+            <div style="margin-top: 2rem; text-align: center;">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-chart-line"></i> Get Similar Results
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
@@ -1954,6 +2055,39 @@
                 </div>
             </div>
             
+<!-- Location 1: After the Hero section trust-elements -->
+<div class="trust-badges" style="display: flex; gap: 2rem; justify-content: center; margin: 3rem 0; flex-wrap: wrap;">
+    <div style="background: white; padding: 0.8rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fas fa-lock" style="color: #4CAF50;"></i>
+        <span style="color: #333; font-weight: 600;">SSL Secured</span>
+    </div>
+    <div style="background: white; padding: 0.8rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fas fa-shield-alt" style="color: #FF6B35;"></i>
+        <span style="color: #333; font-weight: 600;">Money-Back Guarantee</span>
+    </div>
+    <div style="background: white; padding: 0.8rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fas fa-certificate" style="color: #2196F3;"></i>
+        <span style="color: #333; font-weight: 600;">Registered Business</span>
+    </div>
+</div>
+
+<!-- Location 2: In Footer before footer-bottom -->
+<div class="payment-methods" style="text-align: center; margin: 2rem 0; padding: 2rem; background: var(--dark-secondary); border-radius: 15px;">
+    <h4 style="color: var(--text-light); margin-bottom: 1rem;">Secure Payment Methods</h4>
+    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+        <div style="background: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; color: #333;">
+            Paystack
+        </div>
+        <div style="background: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; color: #333;">
+            Flutterwave
+        </div>
+        <div style="background: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; color: #333;">
+            Bank Transfer
+        </div>
+    </div>
+</div>
+
+
             <div class="footer-bottom">
                 <p>&copy; 2025 <strong>CodeBrix</strong> - Web Development Agency Lagos Nigeria. All rights reserved. | codebrixweb.com | Designed with <i class="fas fa-heart" style="color: var(--primary-color);"></i> for amazing clients.</p>
             </div>
@@ -2269,6 +2403,30 @@
             s1.setAttribute('crossorigin', '*');
             s0.parentNode.insertBefore(s1, s0);
         })();
+
+
+        // Lazy load images
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        });
+        
+        images.forEach(img => imageObserver.observe(img));
+    }
+});
     </script>
+
+
+
 </body>
 </html>
