@@ -9,8 +9,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-KXQR3RDD');</script>
 <!-- End Google Tag Manager -->
 
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -124,27 +122,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             line-height: 1.8;
         }
         
-        /* ===== NAVBAR ===== */
+        /* ===== IMPROVED NAVBAR ===== */
         .navbar {
             background: rgba(10, 10, 10, 0.98) !important;
             backdrop-filter: blur(20px);
-            padding: 1.2rem 0;
+            padding: 0.8rem 0;
             border-bottom: 1px solid var(--border-color);
             transition: all 0.3s ease;
         }
         
         .navbar-brand {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary-color) !important;
-            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+        
+        .navbar-brand img {
+            height: 100px;  
+            width: auto;
+            transition: all 0.3s ease;
+        }
+        
+        /* Mobile size */
+        @media (max-width: 1000px) {
+            .navbar-brand img {
+                height: 50px;  
+            }
+        }
+        
+        .navbar-brand:hover img {
+            transform: scale(1.05);
         }
         
         /* ===== NAVIGATION HOVER EFFECT ===== */
         .navbar-nav .nav-link {
             color: var(--text-light) !important;
             font-weight: 500;
-            margin: 0 0.5rem;
+            margin: 0 0.3rem;
             padding: 0.5rem 1rem !important;
             border-radius: 6px;
             transition: all 0.3s ease;
@@ -177,9 +191,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             width: 80%;
         }
 
+        /* Enhanced Active State for Nav Links */
         .navbar-nav .nav-link.active {
             color: var(--primary-color) !important;
             background: rgba(255, 107, 53, 0.15);
+            position: relative;
+        }
+
+        .navbar-nav .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background-color: var(--primary-color);
+            border-radius: 1px;
+        }
+
+        /* Mobile active state */
+        @media (max-width: 992px) {
+            .navbar-nav .nav-link.active {
+                background: rgba(255, 107, 53, 0.2);
+                margin: 2px 0;
+            }
+            
+            .navbar-nav .nav-link.active::after {
+                display: none;
+            }
         }
         
         /* ===== HERO SECTION ===== */
@@ -384,9 +424,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .hero-video {
             margin-top: 3rem;
             max-width: 800px;
-            margin: 3rem auto;
+            margin: 3rem auto 0 auto;
         }
-        
+
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
@@ -394,15 +434,138 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             overflow: hidden;
             border-radius: 20px;
             border: 1px solid var(--border-color);
+            background: #000;
+            cursor: pointer;
         }
-        
-        .video-container iframe {
+
+        /* Video element */
+        .video-container video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             border: none;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        /* Custom Play/Pause Overlay */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+            opacity: 1;
+            transition: opacity 0.3s ease, background 0.3s ease;
+            border-radius: 20px;
+            z-index: 10;
+        }
+
+        .video-container.playing .video-overlay {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .video-container:hover .video-overlay {
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 1;
+        }
+
+        /* Play/Pause Button */
+        .play-pause-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .play-pause-btn:hover {
+            background: white;
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Button Icons */
+        .play-pause-btn svg {
+            width: 30px;
+            height: 30px;
+            fill: #333;
+            position: absolute;
+            transition: opacity 0.3s ease;
+        }
+
+        .pause-icon {
+            opacity: 0;
+        }
+
+        .video-container.playing .play-icon {
+            opacity: 0;
+        }
+
+        .video-container.playing .pause-icon {
+            opacity: 1;
+        }
+
+        /* Progress Bar (Optional) */
+        .video-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 11;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: var(--primary-color, #007bff);
+            transition: width 0.1s linear;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-video {
+                max-width: 95%;
+                margin: 2rem auto 0 auto;
+            }
+            
+            .video-container {
+                border-radius: 12px;
+            }
+            
+            .video-container video {
+                border-radius: 12px;
+            }
+            
+            .play-pause-btn {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .play-pause-btn svg {
+                width: 24px;
+                height: 24px;
+            }
+            
+            .navbar-brand img {
+                height: 50px;
+            }
         }
         
         /* ===== ABOUT SECTION ===== */
@@ -736,14 +899,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             gap: 0.8rem;
         }
         
-        /* ===== BEFORE & AFTER ===== */
-        .twentytwenty-container {
-            margin: 3rem auto;
-            max-width: 1000px;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-        
         /* ===== PRICING SECTION ===== */
         .pricing {
             background: var(--dark-bg);
@@ -1018,7 +1173,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
         }
 
-                /* ===== ABOUT/TEAM SECTION STYLES ===== */
+        /* ===== ABOUT/TEAM SECTION STYLES ===== */
         .team-member {
             background: var(--dark-secondary);
             padding: 2.5rem;
@@ -1071,25 +1226,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             to {
                 opacity: 1;
                 transform: translateY(0);
-            }
-        }
-        
-        /* ===== RESPONSIVE UPDATES ===== */
-        @media (max-width: 768px) {
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-methods-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .team-member {
-                padding: 2rem;
-            }
-            
-            .contact-method {
-                padding: 2rem;
             }
         }
         
@@ -1575,15 +1711,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="https://codebrixweb.com/">
-                <i class="fas fa-cube"></i> CodeBrix
+            <a class="navbar-brand" href="#home">
+                <img src="images/logo (2).png" alt="CodeBrix Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#home">Get More Leads</a></li>
+                    
                     <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#why-us">Why Choose Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
@@ -1597,30 +1733,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </nav>
-
-<style>
-.breadcrumb-nav {
-    background: var(--dark-secondary);
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border-color);
-    margin-top: 80px;
-}
-.breadcrumb {
-    background: transparent;
-    margin: 0;
-    padding: 0;
-}
-.breadcrumb-item a {
-    color: var(--text-gray);
-    text-decoration: none;
-}
-.breadcrumb-item.active {
-    color: var(--primary-color);
-}
-.breadcrumb-item + .breadcrumb-item::before {
-    color: var(--text-gray);
-}
-</style>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -1676,6 +1788,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
+
     <!-- Trust Badges -->
     <div class="trust-badges">
         <div class="trust-badge" style="color: #4CAF50;">
@@ -1691,22 +1804,105 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span>Registered Business</span>
         </div>
     </div>
-
-    <!-- Hero Video -->
-    <div class="hero-video">
-        <div class="video-container">
-            <iframe 
-                src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-                title="CodeBrix Web Development Agency Lagos - Client Success Stories"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen
-                loading="lazy">
-            </iframe>
+<!-- Hero Video -->
+<div class="hero-video">
+    <div class="video-container">
+        <video 
+            id="heroVideo"
+            width="100%" 
+            height="100%" 
+            preload="metadata"
+            poster="images/real-estate-1.jpg" 
+            title="CodeBrix Web Development Agency Lagos - Client Success Stories">
+            <source src="video/Real_Estate.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Custom Play/Pause Button -->
+        <div class="video-overlay">
+            <button class="play-pause-btn" id="playPauseBtn">
+                <svg class="play-icon" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="pause-icon" viewBox="0 0 24 24">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                </svg>
+            </button>
         </div>
-        <p style="text-align: center; color: var(--text-gray); margin-top: 1rem; font-size: 0.9rem;">
-            See how we helped Lagos businesses grow online
-        </p>
     </div>
+    <p style="text-align: center; color: var(--text-gray); margin-top: 1rem; font-size: 0.9rem;">
+       Experience our professional real estate website solution: Property listings, virtual tours, and client management systems
+    </p>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('heroVideo');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const videoContainer = document.querySelector('.video-container');
+    const overlay = document.querySelector('.video-overlay');
+    
+    if (!video || !playPauseBtn) return;
+    
+    // Play/Pause on button click
+    playPauseBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        togglePlayPause();
+    });
+    
+    // Play/Pause on video click
+    videoContainer.addEventListener('click', function() {
+        togglePlayPause();
+    });
+    
+    // Spacebar to play/pause
+    document.addEventListener('keydown', function(e) {
+        if (e.code === 'Space' && document.activeElement !== video) {
+            e.preventDefault();
+            togglePlayPause();
+        }
+    });
+    
+    // Video state changes
+    video.addEventListener('play', function() {
+        videoContainer.classList.add('playing');
+        overlay.style.opacity = '0';
+    });
+    
+    video.addEventListener('pause', function() {
+        videoContainer.classList.remove('playing');
+        overlay.style.opacity = '1';
+    });
+    
+    // Optional: Auto-hide overlay after playing starts
+    video.addEventListener('playing', function() {
+        setTimeout(() => {
+            if (!video.paused) {
+                overlay.style.opacity = '0';
+            }
+        }, 500);
+    });
+    
+    // Function to toggle play/pause
+    function togglePlayPause() {
+        if (video.paused || video.ended) {
+            video.play();
+            videoContainer.classList.add('playing');
+        } else {
+            video.pause();
+            videoContainer.classList.remove('playing');
+        }
+    }
+    
+    // Optional: Progress bar functionality
+    video.addEventListener('timeupdate', function() {
+        const progress = (video.currentTime / video.duration) * 100;
+        const progressBar = document.querySelector('.progress-bar');
+        if (progressBar) {
+            progressBar.style.width = progress + '%';
+        }
+    });
+});
+</script>
 
 
         <!-- About Us & Team Section -->
@@ -1780,19 +1976,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             AJ
                         </div>
                         <div style="text-align: center;">
-                            <h4 style="color: var(--text-light); margin-bottom: 0.5rem;">Adebayo Johnson</h4>
+                            <h4 style="color: var(--text-light); margin-bottom: 0.5rem;">Emmanuel Nwobodo</h4>
                             <span style="color: var(--primary-color); font-weight: 600; display: block; margin-bottom: 1rem;">Lead Developer & Founder</span>
                             <p style="color: var(--text-gray); font-size: 0.95rem; line-height: 1.6;">
-                                8+ years in web development. Specializes in React, Node.js, and conversion optimization. Leads all technical projects.
+                                8+ years in web development. Specializes in Python, Node.js, and conversion optimization. Leads all technical projects.
                             </p>
-                            <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 0.8rem;">
-                                <a href="https://linkedin.com/in/adebayojohnson" target="_blank" rel="noopener" style="color: var(--text-gray); font-size: 1.1rem; transition: color 0.3s ease;">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="https://github.com/adebayoj" target="_blank" rel="noopener" style="color: var(--text-gray); font-size: 1.1rem; transition: color 0.3s ease;">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
+                            
                         </div>
                     </div>
                     
@@ -1802,19 +1991,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             CB
                         </div>
                         <div style="text-align: center;">
-                            <h4 style="color: var(--text-light); margin-bottom: 0.5rem;">Chioma Bello</h4>
+                            <h4 style="color: var(--text-light); margin-bottom: 0.5rem;">Chioma Okafor</h4>
                             <span style="color: var(--primary-color); font-weight: 600; display: block; margin-bottom: 1rem;">UI/UX Designer</span>
                             <p style="color: var(--text-gray); font-size: 0.95rem; line-height: 1.6;">
                                 Expert in creating user-friendly interfaces. 5+ years designing for Nigerian businesses. Focuses on mobile-first design.
                             </p>
-                            <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 0.8rem;">
-                                <a href="https://linkedin.com/in/chiomabello" target="_blank" rel="noopener" style="color: var(--text-gray); font-size: 1.1rem; transition: color 0.3s ease;">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="https://dribbble.com/chiomab" target="_blank" rel="noopener" style="color: var(--text-gray); font-size: 1.1rem; transition: color 0.3s ease;">
-                                    <i class="fab fa-dribbble"></i>
-                                </a>
-                            </div>
+                            
                         </div>
                     </div>
                     
@@ -1824,19 +2006,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             TO
                         </div>
                         <div style="text-align: center;">
-                            <h4 style="color: var(--text-light); margin-bottom: 0.5rem;">Tunde Okafor</h4>
+                            <h4 style="color: var(--text-light); margin-bottom: 0.5rem;">Tunde Bello</h4>
                             <span style="color: var(--primary-color); font-weight: 600; display: block; margin-bottom: 1rem;">SEO & Digital Marketing Lead</span>
                             <p style="color: var(--text-gray); font-size: 0.95rem; line-height: 1.6;">
                                 Specializes in Nigerian market SEO. Helped clients achieve 300%+ traffic growth. Expert in local SEO strategies.
                             </p>
-                            <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 0.8rem;">
-                                <a href="https://linkedin.com/in/tundeokafor" target="_blank" rel="noopener" style="color: var(--text-gray); font-size: 1.1rem; transition: color 0.3s ease;">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="https://twitter.com/tundeok" target="_blank" rel="noopener" style="color: var(--text-gray); font-size: 1.1rem; transition: color 0.3s ease;">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -1872,19 +2047,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         "founders": [
             {
                 "@type": "Person",
-                "name": "Adebayo Johnson"
+                "name": "Emmanuel Nwobodo"
             }
         ],
         "employee": [
             {
                 "@type": "Person",
-                "name": "Adebayo Johnson",
+                "name": "Emmanuel Nwobodo",
                 "jobTitle": "Lead Developer & Founder",
-                "knowsAbout": ["Web Development", "React", "Node.js", "Conversion Optimization"]
+                "knowsAbout": ["Web Development", "Python", "Node.js", "Php"]
             },
             {
                 "@type": "Person",
-                "name": "Chioma Bello",
+                "name": "Chioma Okafor",
                 "jobTitle": "UI/UX Designer",
                 "knowsAbout": ["UI Design", "UX Research", "Mobile-First Design", "Figma"]
             },
@@ -2077,18 +2252,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="portfolio-grid">
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-image">
-                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">
-                            E-commerce Project
-                        </div>
+                        <div style="width: 100%; height: 100%;
+                         background-image: url('images/e-commerce.jpg'); background-position: center; background-size: cover; background-repeat: no-repeat;  display: flex; align-items: center; justify-content: center; 
+    color: white;    font-size: 2rem;    font-weight: bold;  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"> </div>
                     </div>
                     <div class="portfolio-content">
                         <h3>E-commerce Platform</h3>
                         <p>A modern online shopping experience with advanced filtering, secure checkout, and inventory management.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">React</span>
+                        <div class="portfolio-tags"> 
+                            <span class="tag">Python</span>
                             <span class="tag">Node.js</span>
                             <span class="tag">MongoDB</span>
-                            <span class="tag">Stripe</span>
+                            
                         </div>
                         <a href="https://flames488.github.io/E-commerce1" target="_blank" class="portfolio-link">
                             View Project <i class="fas fa-arrow-right"></i>
@@ -2098,9 +2273,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-image">
-                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">
-                            Real Estate Project
-                        </div>
+                         <div style="width: 100%; height: 100%;
+                         background-image: url('images/real estate 1.jpg'); background-position: center; background-size: cover; 
+                         background-repeat: no-repeat;  display: flex; align-items: center; justify-content: center; color: white; 
+                         font-size: 2rem;    font-weight: bold;  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></div>
+                    
                     </div>
                     <div class="portfolio-content">
                         <h3>Real Estate Platform</h3>
@@ -2119,9 +2296,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-image">
-                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">
-                            Cybersecurity Project
-                        </div>
+                        <div style="width: 100%; height: 100%;
+                         background-image: url('images/cyber security.jpg'); background-position: center; background-size: cover; 
+                         background-repeat: no-repeat;  display: flex; align-items: center; justify-content: center; color: white; 
+                         font-size: 2rem;    font-weight: bold;  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"> </div>
                     </div>
                     <div class="portfolio-content">
                         <h3>Cybersecurity Dashboard</h3>
@@ -2130,7 +2308,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <span class="tag">React</span>
                             <span class="tag">Python</span>
                             <span class="tag">GraphQL</span>
-                            <span class="tag">D3.js</span>
+                            
                         </div>
                         <a href="https://flames488.github.io/Cybersecurity/" target="_blank" class="portfolio-link">
                             View Project <i class="fas fa-arrow-right"></i>
@@ -2141,18 +2319,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <!-- Before & After Section -->
-    <section id="before-after" style="background: var(--dark-bg);">
-        <div class="container">
-            <h2 class="section-title">Before & <span>After</span></h2>
-            <p class="section-subtitle">Drag the slider to see how we transformed these websites</p>
-            
-            <div class="twentytwenty-container">
-                <img src="images/before-website.jpg" alt="Website Before CodeBrix" loading="lazy">
-                <img src="images/after-website.jpg" alt="Website After CodeBrix Transformation" loading="lazy">
-            </div>
-        </div>
-    </section>
+   
 
     <!-- Pricing Section -->
     <section id="pricing" class="pricing">
@@ -2316,6 +2483,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                Do you set up Google Search Console for websites?
+                            </button>
+                        </h3>
+                        <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes! CodeBrix includes free Google Search Console setup with all website development packages. We verify your site ownership, submit sitemaps, and help you monitor search performance. This ensures your website gets properly indexed by Google and helps identify any technical issues affecting your search visibility.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2373,24 +2553,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         "@type": "Answer",
                         "text": "Absolutely! All CodeBrix websites are fully responsive and optimized for mobile devices, tablets, and desktops."
                     }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you set up Google Search Console for websites?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes! CodeBrix includes free Google Search Console setup with all website development packages. We verify your site ownership, submit sitemaps, and help you monitor search performance."
+                    }
                 }
             ]
         }
         </script>
     </section>
-
-    <div class="accordion-item">
-    <h3 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
-            Do you set up Google Search Console for websites?
-        </button>
-    </h3>
-    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-            Yes! CodeBrix includes free Google Search Console setup with all website development packages. We verify your site ownership, submit sitemaps, and help you monitor search performance. This ensures your website gets properly indexed by Google and helps identify any technical issues affecting your search visibility.
-        </div>
-    </div>
-</div>
 
     <!-- Google Search Console Section -->
     <section id="search-console" style="background: var(--dark-bg);">
@@ -2744,24 +2919,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </form>
                 </div>
             </div>
-            
-            <!-- Emergency Contact Banner -->
-            <div class="trust-elements" style="margin-top: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <div class="testimonial-preview" style="background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);">
-                    <div class="testimonial-content">
-                        <i class="fas fa-exclamation-circle"></i>
-                        <p><strong>Emergency Website Issues?</strong> If your current website is down or hacked, contact us immediately for emergency support. We offer same-day fixes for urgent issues.</p>
-                        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem;">
-                            <a href="tel:+2349113180149" class="btn" style="background: white; color: #2563eb;">
-                                <i class="fas fa-phone"></i> Emergency Call
-                            </a>
-                            <a href="https://wa.me/2349113180149" target="_blank" rel="noopener" class="btn" style="background: #25D366; color: white;">
-                                <i class="fab fa-whatsapp"></i> Emergency WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -2963,26 +3120,142 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
             });
 
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const target = document.querySelector(targetId);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
+            // Enhanced Smooth Scrolling with Cross-Page Navigation
+            document.addEventListener('DOMContentLoaded', function() {
+                // Handle navigation clicks
+                document.querySelectorAll('a[href^="#"], a[href^="../#"], a[href^="./#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        const href = this.getAttribute('href');
                         
-                        // Update URL without scrolling
-                        history.pushState(null, null, targetId);
-                    }
+                        // Check if it's a hash link on the same page
+                        if (href.startsWith('#') && document.querySelector(href)) {
+                            e.preventDefault();
+                            const target = document.querySelector(href);
+                            if (target) {
+                                smoothScrollTo(target);
+                                updateActiveNav(this);
+                            }
+                        }
+                        // Check if it's a relative hash link (from blog to index)
+                        else if ((href.startsWith('../#') || href.startsWith('./#')) && window.location.pathname.includes('blog')) {
+                            e.preventDefault();
+                            // Redirect to index.html with hash
+                            const hash = href.split('#')[1];
+                            window.location.href = `../index.html#${hash}`;
+                        }
+                        // Check if it's a hash link from index to index sections
+                        else if ((href.startsWith('../#') || href.startsWith('./#')) && !window.location.pathname.includes('blog')) {
+                            e.preventDefault();
+                            const hash = href.split('#')[1];
+                            const target = document.querySelector(`#${hash}`);
+                            if (target) {
+                                smoothScrollTo(target);
+                                updateActiveNav(this);
+                            }
+                        }
+                    });
                 });
+                
+                // Update active nav on scroll
+                window.addEventListener('scroll', updateNavOnScroll);
+                
+                // Update URL hash on scroll
+                window.addEventListener('scroll', updateHashOnScroll);
+                
+                // Highlight active section based on URL hash on page load
+                highlightActiveSection();
             });
 
+            // Smooth scroll function
+            function smoothScrollTo(target) {
+                const headerHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = target.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Update URL hash without scrolling
+                history.pushState(null, null, `#${target.id}`);
+            }
+
+            // Update active nav link
+            function updateActiveNav(clickedLink) {
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                clickedLink.classList.add('active');
+            }
+
+            // Update nav on scroll
+            function updateNavOnScroll() {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('.nav-link');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    const scrollPosition = window.scrollY + 100; // Offset for navbar
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const href = link.getAttribute('href');
+                    if (href === `#${current}` || href === `./#${current}` || href === `../#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            // Update hash on scroll (for deep linking)
+            function updateHashOnScroll() {
+                const sections = document.querySelectorAll('section[id]');
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    const scrollPosition = window.scrollY + 100;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                if (current && window.location.hash !== `#${current}`) {
+                    history.replaceState(null, null, `#${current}`);
+                }
+            }
+
+            // Highlight active section on page load
+            function highlightActiveSection() {
+                const hash = window.location.hash;
+                if (hash) {
+                    const target = document.querySelector(hash);
+                    if (target) {
+                        setTimeout(() => {
+                            smoothScrollTo(target);
+                        }, 100);
+                        
+                        // Highlight the corresponding nav link
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === hash || 
+                                link.getAttribute('href') === `./${hash}` || 
+                                link.getAttribute('href') === `../${hash}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                }
+            }
+                
             // Navbar scroll effect
             window.addEventListener('scroll', () => {
                 const navbar = document.querySelector('.navbar');
@@ -3270,5 +3543,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             s0.parentNode.insertBefore(s1, s0);
         })();
     </script>
+
+
+<!-- Add this before closing body tag in blog.html -->
+<script>
+    // Tawk.to Configuration
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+    
+    (function() {
+        var s1 = document.createElement('script'),
+            s0 = document.getElementsByTagName('script')[0];
+        
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6931502bf1aec6197f66e7ba/1jbka2b07';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
 </body>
 </html>
