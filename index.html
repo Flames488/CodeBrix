@@ -1017,6 +1017,81 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             border-color: var(--primary-color);
             box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
         }
+
+                /* ===== ABOUT/TEAM SECTION STYLES ===== */
+        .team-member {
+            background: var(--dark-secondary);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.1);
+        }
+        
+        .team-avatar {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-avatar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.1);
+            border-radius: 50%;
+        }
+        
+        /* ===== ENHANCED CONTACT STYLES ===== */
+        .contact-method {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+        
+        .contact-methods-grid {
+            animation: fadeInUp 0.6s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ===== RESPONSIVE UPDATES ===== */
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-methods-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-member {
+                padding: 2rem;
+            }
+            
+            .contact-method {
+                padding: 2rem;
+            }
+        }
         
         /* ===== PAYMENT METHODS ===== */
         .payment-methods {
@@ -1497,7 +1572,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Navigation -->
+       <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="https://codebrixweb.com/">
@@ -1509,27 +1584,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#home">Get More Leads</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#why-us">Why Choose Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">See Results</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Our Work</a></li>
                     <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Free Audit</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#search-console">SEO Monitoring</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!-- Breadcrumb Navigation -->
-<nav aria-label="breadcrumb" class="breadcrumb-nav">
-    <div class="container">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Web Development Agency Lagos</li>
-        </ol>
-    </div>
-</nav>
 
 <style>
 .breadcrumb-nav {
@@ -1640,6 +1707,204 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             See how we helped Lagos businesses grow online
         </p>
     </div>
+
+
+        <!-- About Us & Team Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About <span>CodeBrix</span></h2>
+            <p class="section-subtitle">We're a passionate team of web developers, designers, and digital strategists based in Lagos, Nigeria, helping businesses succeed online since 2020.</p>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Our <span>Story</span></h3>
+                    <p>CodeBrix was founded with a simple mission: to help Nigerian businesses thrive in the digital world. We noticed that many businesses had websites that looked great but didn't deliver results.</p>
+                    
+                    <p>Our approach is different. We combine beautiful design with conversion-focused development and practical digital marketing strategies. We don't just build websites—we build business growth engines.</p>
+                    
+                    <div style="margin-top: 2rem;">
+                        <h4>Our Core Values:</h4>
+                        <div class="skills-grid" style="margin-top: 1rem;">
+                            <div class="skill-item">
+                                <i class="fas fa-bullseye"></i>
+                                <h4>Results-Driven</h4>
+                                <p>We measure success by your business growth, not just aesthetics</p>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-handshake"></i>
+                                <h4>Client Partnership</h4>
+                                <p>We work with you, not just for you. Your success is our success</p>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-rocket"></i>
+                                <h4>Fast Execution</h4>
+                                <p>30-day average project timeline. No endless delays</p>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <h4>Transparency</h4>
+                                <p>Clear pricing, no hidden fees, honest communication</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">40%</span>
+                        <span class="stat-label">Avg. Lead Increase</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Section -->
+            <div style="margin-top: 6rem;">
+                <h3 class="section-title" style="font-size: 2.5rem; text-align: center; margin-bottom: 3rem;">Meet Our <span>Team</span></h3>
+                
+                <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <!-- Team Member 1 -->
+                    <div class="team-member fade-in">
+                        <div class="team-avatar" style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; font-weight: bold;">
+                            AJ
+                        </div>
+                        <div style="text-align: center;">
+                            <h4 style="color: var(--text-light); margin-bottom: 0.5rem;">Adebayo Johnson</h4>
+                            <span style="color: var(--primary-color); font-weight: 600; display: block; margin-bottom: 1rem;">Lead Developer & Founder</span>
+                            <p style="color: var(--text-gray); font-size: 0.95rem; line-height: 1.6;">
+                                8+ years in web development. Specializes in React, Node.js, and conversion optimization. Leads all technical projects.
+                            </p>
+                            <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 0.8rem;">
+                                <a href="https://linkedin.com/in/adebayojohnson" target="_blank" rel="noopener" style="color: var(--text-gray); font-size: 1.1rem; transition: color 0.3s ease;">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://github.com/adebayoj" target="_blank" rel="noopener" style="color: var(--text-gray); font-size: 1.1rem; transition: color 0.3s ease;">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 2 -->
+                    <div class="team-member fade-in">
+                        <div class="team-avatar" style="width: 120px; height: 120px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; font-weight: bold;">
+                            CB
+                        </div>
+                        <div style="text-align: center;">
+                            <h4 style="color: var(--text-light); margin-bottom: 0.5rem;">Chioma Bello</h4>
+                            <span style="color: var(--primary-color); font-weight: 600; display: block; margin-bottom: 1rem;">UI/UX Designer</span>
+                            <p style="color: var(--text-gray); font-size: 0.95rem; line-height: 1.6;">
+                                Expert in creating user-friendly interfaces. 5+ years designing for Nigerian businesses. Focuses on mobile-first design.
+                            </p>
+                            <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 0.8rem;">
+                                <a href="https://linkedin.com/in/chiomabello" target="_blank" rel="noopener" style="color: var(--text-gray); font-size: 1.1rem; transition: color 0.3s ease;">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://dribbble.com/chiomab" target="_blank" rel="noopener" style="color: var(--text-gray); font-size: 1.1rem; transition: color 0.3s ease;">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 3 -->
+                    <div class="team-member fade-in">
+                        <div class="team-avatar" style="width: 120px; height: 120px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; font-weight: bold;">
+                            TO
+                        </div>
+                        <div style="text-align: center;">
+                            <h4 style="color: var(--text-light); margin-bottom: 0.5rem;">Tunde Okafor</h4>
+                            <span style="color: var(--primary-color); font-weight: 600; display: block; margin-bottom: 1rem;">SEO & Digital Marketing Lead</span>
+                            <p style="color: var(--text-gray); font-size: 0.95rem; line-height: 1.6;">
+                                Specializes in Nigerian market SEO. Helped clients achieve 300%+ traffic growth. Expert in local SEO strategies.
+                            </p>
+                            <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 0.8rem;">
+                                <a href="https://linkedin.com/in/tundeokafor" target="_blank" rel="noopener" style="color: var(--text-gray); font-size: 1.1rem; transition: color 0.3s ease;">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://twitter.com/tundeok" target="_blank" rel="noopener" style="color: var(--text-gray); font-size: 1.1rem; transition: color 0.3s ease;">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 4rem;">
+                    <div class="trust-elements" style="max-width: 800px; margin: 0 auto;">
+                        <div class="testimonial-preview">
+                            <div class="testimonial-content">
+                                <i class="fas fa-quote-left"></i>
+                                <p>"Working with CodeBrix felt like having an in-house team. They understood our business goals and delivered a website that actually brings customers. The team is responsive, professional, and gets results."</p>
+                                <div class="testimonial-author">
+                                    <strong>Ngozi Okoro</strong>
+                                    <span>CEO, Lagos Fashion Boutique</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schema Markup for Team -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CodeBrix",
+        "description": "Web development agency in Lagos, Nigeria helping businesses grow online with conversion-focused websites and digital strategies.",
+        "url": "https://codebrixweb.com/",
+        "logo": "https://codebrixweb.com/images/logo.png",
+        "foundingDate": "2020",
+        "founders": [
+            {
+                "@type": "Person",
+                "name": "Adebayo Johnson"
+            }
+        ],
+        "employee": [
+            {
+                "@type": "Person",
+                "name": "Adebayo Johnson",
+                "jobTitle": "Lead Developer & Founder",
+                "knowsAbout": ["Web Development", "React", "Node.js", "Conversion Optimization"]
+            },
+            {
+                "@type": "Person",
+                "name": "Chioma Bello",
+                "jobTitle": "UI/UX Designer",
+                "knowsAbout": ["UI Design", "UX Research", "Mobile-First Design", "Figma"]
+            },
+            {
+                "@type": "Person",
+                "name": "Tunde Okafor",
+                "jobTitle": "SEO & Digital Marketing Lead",
+                "knowsAbout": ["SEO", "Digital Marketing", "Local SEO", "Google Analytics"]
+            }
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+234-911-318-0149",
+            "contactType": "Customer Service",
+            "email": "contact@codebrixweb.com",
+            "areaServed": "NG",
+            "availableLanguage": ["English", "Yoruba", "Pidgin"]
+        }
+    }
+    </script>
 
     <!-- Why Choose CodeBrix? Section -->
     <section id="why-us" class="about">
@@ -2114,6 +2379,145 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </script>
     </section>
 
+    <div class="accordion-item">
+    <h3 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+            Do you set up Google Search Console for websites?
+        </button>
+    </h3>
+    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+            Yes! CodeBrix includes free Google Search Console setup with all website development packages. We verify your site ownership, submit sitemaps, and help you monitor search performance. This ensures your website gets properly indexed by Google and helps identify any technical issues affecting your search visibility.
+        </div>
+    </div>
+</div>
+
+    <!-- Google Search Console Section -->
+    <section id="search-console" style="background: var(--dark-bg);">
+        <div class="container">
+            <h2 class="section-title">SEO & <span>Search Visibility</span></h2>
+            <p class="section-subtitle">Monitor and improve your website's performance in Google search results</p>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Register & Monitor with <span>Google Search Console</span></h3>
+                    <p>After we build your website, it's crucial to monitor its performance in search results. Google Search Console is a free tool that helps you:</p>
+                    
+                    <div class="skills-grid" style="margin-top: 2rem;">
+                        <div class="skill-item">
+                            <i class="fas fa-search"></i>
+                            <h4>Track Indexing Status</h4>
+                            <p>See which pages Google has indexed and fix any crawling errors</p>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Monitor Search Performance</h4>
+                            <p>Track your search rankings, clicks, and impressions over time</p>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h4>Identify & Fix Issues</h4>
+                            <p>Get alerts for technical issues affecting your search visibility</p>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Mobile Usability</h4>
+                            <p>Check if your site is mobile-friendly and fix any issues</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-steps" style="margin-top: 3rem;">
+                        <h4>Our Setup Process:</h4>
+                        <div class="steps-container">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <h5>Initial Setup</h5>
+                                <p>We verify your site ownership and set up Search Console</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <h5>Sitemap Submission</h5>
+                                <p>We submit your XML sitemap for better crawling</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <h5>Monitoring & Reports</h5>
+                                <p>We monitor performance and provide monthly reports</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">24-48h</span>
+                        <span class="stat-label">Average Indexing Time</span>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">90%+</span>
+                        <span class="stat-label">Crawl Error Resolution</span>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">Free</span>
+                        <span class="stat-label">Search Console Setup</span>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">Monthly</span>
+                        <span class="stat-label">SEO Reports</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="trust-elements" style="margin-top: 4rem; max-width: 800px;">
+                <div class="testimonial-preview">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Thanks to CodeBrix setting up Google Search Console, we found and fixed crawl errors that were blocking 30% of our pages from appearing in search results. Our organic traffic increased by 45% in 2 months."</p>
+                        <div class="testimonial-author">
+                            <strong>Funke Adebayo</strong>
+                            <span>Marketing Director, Lagos Fashion House</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-search"></i> Get Free Search Console Setup
+                </a>
+                <a href="https://search.google.com/search-console" target="_blank" rel="noopener" class="btn btn-secondary" style="margin-left: 1rem;">
+                    <i class="fas fa-external-link-alt"></i> Visit Google Search Console
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schema Markup for Search Console Service -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "SEO & Search Console Setup",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "CodeBrix"
+        },
+        "description": "Professional setup and monitoring of Google Search Console for Lagos businesses. Track indexing status, fix crawl errors, and improve search visibility.",
+        "areaServed": {
+            "@type": "City",
+            "name": "Lagos"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "NGN",
+            "description": "Free Google Search Console setup with website development packages"
+        }
+    }
+    </script>
+
+
+
     <!-- Newsletter Section -->
     <section id="newsletter" class="newsletter">
         <div class="container">
@@ -2132,25 +2536,71 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <!-- Contact Section -->
+       <!-- Enhanced Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2 class="section-title">Get In <span>Touch</span></h2>
-            <p class="section-subtitle">Ready to start your project? Contact us today for a free consultation.</p>
+            <h2 class="section-title">Contact <span>CodeBrix</span></h2>
+            <p class="section-subtitle">Ready to grow your business online? Choose your preferred way to reach us.</p>
             
+            <!-- Contact Methods Grid -->
+            <div class="contact-methods-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+                <!-- Quick Call -->
+                <div class="contact-method fade-in" style="background: var(--dark-secondary); padding: 2.5rem; border-radius: 15px; border: 1px solid var(--border-color); text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 70px; height: 70px; background: rgba(255, 107, 53, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--primary-color); font-size: 1.8rem;">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4 style="color: var(--text-light); margin-bottom: 1rem;">Quick Call</h4>
+                    <p style="color: var(--text-gray); margin-bottom: 1.5rem;">Speak directly with our team</p>
+                    <a href="tel:+2349113180149" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-phone"></i> Call Now: +234 911 318 0149
+                    </a>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 1rem;">Mon-Fri: 9AM-6PM WAT</p>
+                </div>
+                
+                <!-- WhatsApp Chat -->
+                <div class="contact-method fade-in" style="background: var(--dark-secondary); padding: 2.5rem; border-radius: 15px; border: 1px solid var(--border-color); text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 70px; height: 70px; background: rgba(37, 211, 102, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #25D366; font-size: 1.8rem;">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h4 style="color: var(--text-light); margin-bottom: 1rem;">WhatsApp Chat</h4>
+                    <p style="color: var(--text-gray); margin-bottom: 1.5rem;">Instant messaging for quick questions</p>
+                    <a href="https://wa.me/2349113180149" target="_blank" rel="noopener" class="btn" style="width: 100%; background: #25D366; color: white; border: none;">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 1rem;">Typically replies in 5 minutes</p>
+                </div>
+                
+                <!-- Email Us -->
+                <div class="contact-method fade-in" style="background: var(--dark-secondary); padding: 2.5rem; border-radius: 15px; border: 1px solid var(--border-color); text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 70px; height: 70px; background: rgba(66, 133, 244, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #4285F4; font-size: 1.8rem;">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4 style="color: var(--text-light); margin-bottom: 1rem;">Email Us</h4>
+                    <p style="color: var(--text-gray); margin-bottom: 1.5rem;">Send detailed project requirements</p>
+                    <a href="mailto:contact@codebrixweb.com" class="btn btn-secondary" style="width: 100%;">
+                        <i class="fas fa-envelope"></i> contact@codebrixweb.com
+                    </a>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 1rem;">Response within 2 business hours</p>
+                </div>
+            </div>
+            
+            <!-- Detailed Contact Information -->
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Let's Build Something Amazing</h3>
-                    <p>Have a project in mind? We'd love to hear about it. Get in touch with us and let's discuss how we can help bring your vision to life.</p>
+                    <h3>Our Lagos Office</h3>
+                    <p>Visit us at our office in Ibeju Lekki, Lagos. We welcome walk-in consultations by appointment.</p>
                     
                     <div class="contact-details">
                         <div class="contact-detail">
                             <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
+                                <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="contact-text">
-                                <h4>Email CodeBrix</h4>
-                                <p>contact@codebrixweb.com</p>
+                                <h4>Office Address</h4>
+                                <p>Ibeju Lekki, Lagos, Nigeria</p>
+                                <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 0.3rem;">
+                                    <i class="fas fa-clock"></i> Open: Mon-Fri, 9:00 AM - 6:00 PM WAT
+                                </p>
                             </div>
                         </div>
                         
@@ -2159,43 +2609,126 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div class="contact-text">
-                                <h4>Phone</h4>
-                                <p>+234 911 318 0149</p>
+                                <h4>Phone Numbers</h4>
+                                <p>Primary: +234 911 318 0149</p>
+                                <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 0.3rem;">
+                                    <i class="fas fa-mobile-alt"></i> Also available on WhatsApp
+                                </p>
                             </div>
                         </div>
                         
                         <div class="contact-detail">
                             <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-envelope"></i>
                             </div>
                             <div class="contact-text">
-                                <h4>Location</h4>
-                                <p>Ibeju Lekki, Lagos</p>
+                                <h4>Email Addresses</h4>
+                                <p>General: contact@codebrixweb.com</p>
+                                <p>Support: support@codebrixweb.com</p>
                             </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-globe-africa"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Serving Areas</h4>
+                                <p>Lagos • Abuja • Port Harcourt • Ibadan • All Nigeria</p>
+                                <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 0.3rem;">
+                                    <i class="fas fa-plane"></i> International projects welcome
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div style="margin-top: 2rem;">
+                        <h4 style="color: var(--text-light); margin-bottom: 1rem;">Follow Us</h4>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/codebrix_" class="social-link" target="_blank" rel="noopener" aria-label="Follow CodeBrix on Instagram" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/company/codebrix" class="social-link" target="_blank" rel="noopener" aria-label="Follow CodeBrix on LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://twitter.com/codebrix" class="social-link" target="_blank" rel="noopener" aria-label="Follow CodeBrix on Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://github.com/codebrix" class="social-link" target="_blank" rel="noopener" aria-label="Check our GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@codebrix" class="social-link" target="_blank" rel="noopener" aria-label="Watch our YouTube channel" title="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Contact Form -->
                 <div class="contact-form fade-in">
+                    <h3 style="color: var(--text-light); margin-bottom: 1.5rem;">Send Us a Message</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 2rem;">Fill out the form below and we'll get back to you within 2 hours</p>
+                    
                     <form id="contactForm" action="https://formspree.io/f/mqabwwjg" method="POST">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required placeholder="you@example.com">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="you@company.com">
                         </div>
                         
                         <div class="form-group">
-                            <label for="subject">Project Type</label>
-                            <input type="text" id="subject" name="subject" required placeholder="Website, App, Design, etc.">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+234 xxx xxx xxxx">
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Project Details</label>
-                            <textarea id="message" name="message" required rows="5" placeholder="Tell us about your project..."></textarea>
+                            <label for="business">Business Name</label>
+                            <input type="text" id="business" name="business" placeholder="Your company name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Needed</label>
+                            <select id="service" name="service" style="width: 100%; padding: 1rem 1.5rem; background: var(--dark-bg); border: 1px solid var(--border-color); border-radius: 10px; color: var(--text-light); font-size: 1rem;">
+                                <option value="">Select a service</option>
+                                <option value="website">Website Development</option>
+                                <option value="ecommerce">E-commerce Store</option>
+                                <option value="seo">SEO & Digital Marketing</option>
+                                <option value="redesign">Website Redesign</option>
+                                <option value="maintenance">Website Maintenance</option>
+                                <option value="consultation">Free Consultation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">Project Budget (₦)</label>
+                            <select id="budget" name="budget" style="width: 100%; padding: 1rem 1.5rem; background: var(--dark-bg); border: 1px solid var(--border-color); border-radius: 10px; color: var(--text-light); font-size: 1rem;">
+                                <option value="">Select budget range</option>
+                                <option value="150k-250k">₦150,000 - ₦250,000</option>
+                                <option value="250k-500k">₦250,000 - ₦500,000</option>
+                                <option value="500k-1m">₦500,000 - ₦1,000,000</option>
+                                <option value="1m+">₦1,000,000+</option>
+                                <option value="undecided">Not sure yet</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details *</label>
+                            <textarea id="message" name="message" required rows="4" placeholder="Tell us about your project, goals, and timeline..."></textarea>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <div style="display: flex; align-items: start; gap: 0.8rem;">
+                                <input type="checkbox" id="newsletter" name="newsletter" style="margin-top: 0.3rem;">
+                                <label for="newsletter" style="color: var(--text-gray); font-size: 0.9rem; cursor: pointer;">
+                                    Subscribe to our newsletter for website growth tips and special offers
+                                </label>
+                            </div>
                         </div>
                         
                         <input type="hidden" name="_subject" value="New Contact from CodeBrix Website (codebrixweb.com)">
@@ -2204,11 +2737,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">
                             <i class="fas fa-paper-plane"></i> Send Message
                         </button>
+                        
+                        <p style="color: var(--text-gray); font-size: 0.85rem; text-align: center; margin-top: 1rem;">
+                            By submitting, you agree to our <a href="/privacy-policy.html" style="color: var(--primary-color);">Privacy Policy</a>. We respect your privacy.
+                        </p>
                     </form>
+                </div>
+            </div>
+            
+            <!-- Emergency Contact Banner -->
+            <div class="trust-elements" style="margin-top: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <div class="testimonial-preview" style="background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);">
+                    <div class="testimonial-content">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p><strong>Emergency Website Issues?</strong> If your current website is down or hacked, contact us immediately for emergency support. We offer same-day fixes for urgent issues.</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem;">
+                            <a href="tel:+2349113180149" class="btn" style="background: white; color: #2563eb;">
+                                <i class="fas fa-phone"></i> Emergency Call
+                            </a>
+                            <a href="https://wa.me/2349113180149" target="_blank" rel="noopener" class="btn" style="background: #25D366; color: white;">
+                                <i class="fab fa-whatsapp"></i> Emergency WhatsApp
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Schema Markup for Contact Page -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact CodeBrix - Web Development Agency Lagos",
+        "description": "Contact CodeBrix for website development, e-commerce solutions, and digital marketing services in Lagos, Nigeria.",
+        "mainEntity": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+234-911-318-0149",
+            "email": "contact@codebrixweb.com",
+            "availableLanguage": ["English", "Yoruba"],
+            "hoursAvailable": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
+            }
+        }
+    }
+    </script>
 
     <!-- Footer -->
     <footer class="footer">
