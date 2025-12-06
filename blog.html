@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager - REPLACE GTM-XXXXXXX WITH YOUR ACTUAL ID -->
+    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    })(window,document,'script','dataLayer','GTM-KXQR3RDD');</script>
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
     
     <!-- Primary Meta Tags -->
     <title>Web Development Blog Lagos | CodeBrix - Expert Tips & Guides</title>
-    <meta name="description" content="Expert web development tips, guides, and insights for Lagos businesses. Learn about website costs, e-commerce, SEO, and digital marketing in Nigeria.">
+    <meta name="description" content="Need a website that actually gets leads? CodeBrix builds fast, conversion-focused websites for Lagos businesses. 40% more leads in 90 days. Free audit available.">
     <meta name="keywords" content="web development blog Lagos, website cost Nigeria, e-commerce guide, digital marketing Lagos, SEO tips Nigeria">
     
     <!-- Open Graph / Facebook -->
@@ -43,7 +43,14 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Schema Markup for Blog -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V81VT4QDQS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-V81VT4QDQS');
+    </script>
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -62,7 +69,7 @@
     }
     </script>
     
-    <!-- Custom CSS (From index.html) -->
+    <!-- Custom CSS -->
     <style>
         :root {
             --primary-color: #FF6B35; /* Strong orange */
@@ -142,18 +149,24 @@
             letter-spacing: -0.5px;
         }
         
-        /* ===== FIXED NAVIGATION HOVER EFFECT ===== */
+        /* Fix navbar brand image */
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+        
         .navbar-nav .nav-link {
             color: var(--text-light) !important;
             font-weight: 500;
-            margin: 0 0.5rem;
+            margin: 0 0.3rem;
             padding: 0.5rem 1rem !important;
             border-radius: 6px;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-
+        
         .navbar-nav .nav-link::after {
             content: '';
             position: absolute;
@@ -165,23 +178,33 @@
             background-color: var(--primary-color);
             transition: width 0.3s ease;
         }
-
+        
         .navbar-nav .nav-link:hover::after {
             width: 80%;
         }
-
+        
         .navbar-nav .nav-link:hover {
             color: var(--primary-color) !important;
             background: rgba(255, 107, 53, 0.1);
         }
-
-        .navbar-nav .nav-link.active::after {
-            width: 80%;
-        }
-
+        
+        /* Enhanced Active State for Nav Links */
         .navbar-nav .nav-link.active {
             color: var(--primary-color) !important;
             background: rgba(255, 107, 53, 0.15);
+            position: relative;
+        }
+        
+        .navbar-nav .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background-color: var(--primary-color);
+            border-radius: 1px;
         }
         
         /* Blog Header */
@@ -229,6 +252,7 @@
             text-decoration: none;
             transition: all 0.3s ease;
             font-weight: 500;
+            cursor: pointer;
         }
         
         .category-pill:hover,
@@ -237,6 +261,18 @@
             border-color: var(--primary-color);
             color: white;
             transform: translateY(-3px);
+        }
+        
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         /* Featured Post */
@@ -489,8 +525,10 @@
             margin: 0 auto;
         }
         
+        /* Fix newsletter input styles */
         .newsletter-form input {
             flex: 1;
+            min-width: 250px;
             padding: 1rem 1.5rem;
             background: var(--dark-bg);
             border: 1px solid var(--border-color);
@@ -502,6 +540,7 @@
         .newsletter-form input:focus {
             outline: none;
             border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
         }
         
         /* ===== FOOTER ===== */
@@ -592,25 +631,27 @@
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
-            right: 30px;
+            left: 30px;
+            background-color: #25d366;
+            color: white;
             width: 60px;
             height: 60px;
-            background: #25D366;
-            color: white;
             border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-            z-index: 1000;
-            transition: all 0.3s ease;
             text-decoration: none;
+            transition: all 0.3s ease;
         }
         
         .whatsapp-float:hover {
+            background-color: #128c7e;
             transform: scale(1.1);
-            background: #1EBE57;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
         }
         
         /* ===== SCROLLBAR ===== */
@@ -631,6 +672,18 @@
             background: var(--primary-dark);
         }
         
+        /* Mobile active state */
+        @media (max-width: 992px) {
+            .navbar-nav .nav-link.active {
+                background: rgba(255, 107, 53, 0.2);
+                margin: 2px 0;
+            }
+            
+            .navbar-nav .nav-link.active::after {
+                display: none;
+            }
+        }
+        
         /* Responsive */
         @media (max-width: 992px) {
             .section-title {
@@ -647,6 +700,10 @@
             
             .featured-image {
                 height: 300px;
+            }
+            
+            .navbar-brand img {
+                height: 50px;
             }
         }
         
@@ -675,6 +732,18 @@
             .category-pills {
                 justify-content: flex-start;
             }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                left: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
+            
+            .navbar-brand img {
+                height: 45px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -689,34 +758,44 @@
             .section-title {
                 font-size: 2rem;
             }
+            
+            .featured-text h2 {
+                font-size: 2rem;
+            }
+            
+            .newsletter h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXQR3RDD"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Navigation (Matched from index.html) -->
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/">
-                <i class="fas fa-cube"></i> CodeBrix
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/logo (2).png" alt="CodeBrix Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='CodeBrix';">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/#why-us">Why Choose Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/#portfolio">See Results</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/#pricing">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/#contact">Free Audit</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="/blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#why-us">Why Choose Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#portfolio">Our Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#search-console">SEO Monitoring</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -779,7 +858,7 @@
             
             <div class="blog-grid">
                 <!-- Blog Post 1 -->
-                <article class="blog-card">
+                <article class="blog-card fade-in">
                     <div class="blog-card-image">
                         <span class="blog-card-category">Business Tips</span>
                         <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-size: 3rem;">
@@ -802,7 +881,7 @@
                 </article>
 
                 <!-- Blog Post 2 -->
-                <article class="blog-card">
+                <article class="blog-card fade-in">
                     <div class="blog-card-image">
                         <span class="blog-card-category">E-commerce</span>
                         <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; font-size: 3rem;">
@@ -825,7 +904,7 @@
                 </article>
 
                 <!-- Blog Post 3 -->
-                <article class="blog-card">
+                <article class="blog-card fade-in">
                     <div class="blog-card-image">
                         <span class="blog-card-category">Digital Marketing</span>
                         <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; font-size: 3rem;">
@@ -848,7 +927,7 @@
                 </article>
 
                 <!-- Blog Post 4 -->
-                <article class="blog-card">
+                <article class="blog-card fade-in">
                     <div class="blog-card-image">
                         <span class="blog-card-category">SEO</span>
                         <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; font-size: 3rem;">
@@ -871,7 +950,7 @@
                 </article>
 
                 <!-- Blog Post 5 -->
-                <article class="blog-card">
+                <article class="blog-card fade-in">
                     <div class="blog-card-image">
                         <span class="blog-card-category">Web Development</span>
                         <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333; font-size: 3rem;">
@@ -894,7 +973,7 @@
                 </article>
 
                 <!-- Blog Post 6 -->
-                <article class="blog-card">
+                <article class="blog-card fade-in">
                     <div class="blog-card-image">
                         <span class="blog-card-category">Web Development</span>
                         <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: #333; font-size: 3rem;">
@@ -934,7 +1013,7 @@
         </div>
     </section>
 
-    <!-- Footer (Matched from index.html) -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -957,21 +1036,21 @@
                 <div class="footer-links">
                     <h4>CodeBrix Services</h4>
                     <ul>
-                        <li><a href="/#services">Web Development Lagos</a></li>
-                        <li><a href="/#services">UI/UX Design Nigeria</a></li>
-                        <li><a href="/#services">E-commerce Lagos</a></li>
-                        <li><a href="/#services">Mobile Apps Nigeria</a></li>
-                        <li><a href="/#services">SEO Optimization Lagos</a></li>
+                        <li><a href="../index.html#services">Web Development Lagos</a></li>
+                        <li><a href="../index.html#services">UI/UX Design Nigeria</a></li>
+                        <li><a href="../index.html#services">E-commerce Lagos</a></li>
+                        <li><a href="../index.html#services">Mobile Apps Nigeria</a></li>
+                        <li><a href="../index.html#services">SEO Optimization Lagos</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
                     <h4>CodeBrix Company</h4>
                     <ul>
-                        <li><a href="/#why-us">About CodeBrix</a></li>
-                        <li><a href="/#portfolio">CodeBrix Portfolio</a></li>
-                        <li><a href="/#contact">Contact CodeBrix</a></li>
-                        <li><a href="/#pricing">CodeBrix Pricing</a></li>
+                        <li><a href="../index.html#why-us">About CodeBrix</a></li>
+                        <li><a href="../index.html#portfolio">CodeBrix Portfolio</a></li>
+                        <li><a href="../index.html#contact">Contact CodeBrix</a></li>
+                        <li><a href="../index.html#pricing">CodeBrix Pricing</a></li>
                     </ul>
                 </div>
                 
@@ -1011,8 +1090,8 @@
     </a>
 
     <script>
-        // Category Filtering
         document.addEventListener('DOMContentLoaded', function() {
+            // Category Filtering
             const categoryPills = document.querySelectorAll('.category-pill');
             const blogCards = document.querySelectorAll('.blog-card');
             
@@ -1032,6 +1111,7 @@
                     if (selectedCategory === 'All Posts') {
                         blogCards.forEach(card => {
                             card.style.display = 'flex';
+                            card.classList.add('fade-in');
                         });
                     } else {
                         // Filter cards by category
@@ -1039,8 +1119,10 @@
                             const cardCategory = card.querySelector('.blog-card-category').textContent.trim();
                             if (cardCategory === selectedCategory) {
                                 card.style.display = 'flex';
+                                card.classList.add('fade-in');
                             } else {
                                 card.style.display = 'none';
+                                card.classList.remove('fade-in');
                             }
                         });
                     }
@@ -1058,25 +1140,30 @@
                 this.reset();
             });
             
-            // Smooth scroll for anchor links (From index.html)
+            // Simple smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
                     
-                    const targetId = this.getAttribute('href');
-                    if(targetId === '#') return;
+                    if (href === '#') return;
                     
-                    const targetElement = document.querySelector(targetId);
-                    if(targetElement) {
+                    // Check if it's an anchor link on the same page
+                    if (href.startsWith('#') && document.querySelector(href)) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        const headerOffset = 100;
+                        const elementPosition = target.offsetTop;
+                        const offsetPosition = elementPosition - headerOffset;
+                        
                         window.scrollTo({
-                            top: targetElement.offsetTop - 80,
+                            top: offsetPosition,
                             behavior: 'smooth'
                         });
                     }
                 });
             });
             
-            // Navbar scroll effect (From index.html)
+            // Navbar scroll effect
             window.addEventListener('scroll', () => {
                 const navbar = document.querySelector('.navbar');
                 if (window.scrollY > 100) {
@@ -1098,7 +1185,44 @@
             }
             
             updateReadingTimes();
+            
+            // Scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
         });
+    </script>
+    
+    <!-- Tawk.to Configuration -->
+    <script>
+        var Tawk_API = Tawk_API || {};
+        var Tawk_LoadStart = new Date();
+        
+        (function() {
+            try {
+                var s1 = document.createElement('script'),
+                    s0 = document.getElementsByTagName('script')[0];
+                
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/6931502bf1aec6197f66e7ba/1jbka2b07';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            } catch (e) {
+                console.error('Tawk.to loading error:', e);
+            }
+        })();
     </script>
 </body>
 </html>
