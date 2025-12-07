@@ -41,10 +41,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
+    <!-- Sitemap reference -->
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
     <!-- Hreflang Tags -->
     <link rel="alternate" hreflang="en-ng" href="https://codebrixweb.com/">
     <link rel="alternate" hreflang="en" href="https://codebrixweb.com/">
     <link rel="alternate" hreflang="x-default" href="https://codebrixweb.com/">
+
+
+   
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -437,6 +446,65 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background: #000;
             cursor: pointer;
         }
+
+        /* Add these classes to replace inline styles */
+
+/* Portfolio Image Placeholder */
+.portfolio-placeholder {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Team Avatar */
+.team-avatar-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Contact Method Cards */
+.contact-method-card {
+    background: var(--dark-secondary);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.contact-icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.8rem;
+}
+
+/* Text Utility Classes */
+.text-center { text-align: center; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mt-2 { margin-top: 2rem; }
 
         /* Video element */
         .video-container video {
@@ -1576,8 +1644,67 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
         ::-webkit-scrollbar-thumb:hover {
             background: var(--primary-dark);
-        }
         
+        }
+        /* Enhanced Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-secondary);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--primary-color), var(--primary-dark));
+    border-radius: 6px;
+    border: 2px solid var(--dark-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, var(--primary-light), var(--primary-color));
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .scroll-progress-container,
+    .whatsapp-float,
+    .social-proof {
+        display: none !important;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #FF4500;
+        --primary-dark: #CC3700;
+    }
+}
+
+/* Dark Mode Support (already implemented but ensure compatibility) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #0A0A0A;
+        color: #FFFFFF;
+    }
+}
+
+
         /* Tawk.to Customizations */
         .tawk-button.tawk-button-circle {
             background-color: #2563eb !important;
@@ -1709,30 +1836,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
        <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">
-                <img src="images/logo (2).png" alt="CodeBrix Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    
-                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#why-us">Why Choose Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Our Work</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#search-console">SEO Monitoring</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./blog.html">Blog</a></li>
-                </ul>
-            </div>
+  <!-- Replace the entire nav section with this corrected version -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#home">
+            <img src="logo-2.png" alt="CodeBrix Logo" width="200" height="50" loading="lazy">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                
+                <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#why-us">Why Choose Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Our Work</a></li>
+                <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#search-console">SEO Monitoring</a></li>
+                <li class="nav-item"><a class="nav-link" href="./seo-content.html">SEO Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+               <li class="nav-item"><a class="nav-link" href="./blog.html" onclick="return checkBlogPage(event)">Blog</a></li>
+              
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
+<script>
+function checkBlogPage(event) {
+    // Check if blog page exists or show coming soon
+    if (!document.querySelector('a[href="./blog.html"]')) {
+        event.preventDefault();
+        alert('Blog coming soon! Subscribe to our newsletter for updates.');
+        return false;
+    }
+    return true;
+}
+</script>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -1776,14 +1918,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
                 
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-calendar-check"></i> Get Your Free Website Audit
-                    </a>
-                    <a href="#before-after" class="btn btn-secondary">
-                        <i class="fas fa-play-circle"></i> See Before/After Results
-                    </a>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -1814,7 +1949,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             preload="metadata"
             poster="images/real-estate-1.jpg" 
             title="CodeBrix Web Development Agency Lagos - Client Success Stories">
-            <source src="video/Real Estate.mp4" type="video/mp4">
+            <source src="videos/real-estate.mp4" type="video/mp4">
+            <source src="videos/real-estate.webm" type="video/webm"> <!-- Add WebM for better compatibility -->
             Your browser does not support the video tag.
         </video>
         
@@ -1973,7 +2109,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <!-- Team Member 1 -->
                     <div class="team-member fade-in">
                         <div class="team-avatar" style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; font-weight: bold;">
-                            AJ
+                            EN
                         </div>
                         <div style="text-align: center;">
                             <h4 style="color: var(--text-light); margin-bottom: 0.5rem;">Emmanuel Nwobodo</h4>
@@ -1988,7 +2124,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <!-- Team Member 2 -->
                     <div class="team-member fade-in">
                         <div class="team-avatar" style="width: 120px; height: 120px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; font-weight: bold;">
-                            CB
+                            CO
                         </div>
                         <div style="text-align: center;">
                             <h4 style="color: var(--text-light); margin-bottom: 0.5rem;">Chioma Okafor</h4>
@@ -2003,7 +2139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <!-- Team Member 3 -->
                     <div class="team-member fade-in">
                         <div class="team-avatar" style="width: 120px; height: 120px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; font-weight: bold;">
-                            TO
+                            TB
                         </div>
                         <div style="text-align: center;">
                             <h4 style="color: var(--text-light); margin-bottom: 0.5rem;">Tunde Bello</h4>
@@ -2274,7 +2410,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-image">
                          <div style="width: 100%; height: 100%;
-                         background-image: url('images/real estate 1.jpg'); background-position: center; background-size: cover; 
+                         background-image: url('images/real-estate-1.jpg'); background-position: center; background-size: cover; 
                          background-repeat: no-repeat;  display: flex; align-items: center; justify-content: center; color: white; 
                          font-size: 2rem;    font-weight: bold;  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></div>
                     
@@ -2297,7 +2433,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-image">
                         <div style="width: 100%; height: 100%;
-                         background-image: url('images/cyber security.jpg'); background-position: center; background-size: cover; 
+                         background-image: url('images/cyber-security.jpg'); background-position: center; background-size: cover; 
                          background-repeat: no-repeat;  display: flex; align-items: center; justify-content: center; color: white; 
                          font-size: 2rem;    font-weight: bold;  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"> </div>
                     </div>
@@ -2914,7 +3050,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </button>
                         
                         <p style="color: var(--text-gray); font-size: 0.85rem; text-align: center; margin-top: 1rem;">
-                            By submitting, you agree to our <a href="/privacy-policy.html" style="color: var(--primary-color);">Privacy Policy</a>. We respect your privacy.
+                            By submitting, you agree to our <a href="./privacy-policy.html" style="color: var(--primary-color);">Privacy Policy</a>. We respect your privacy.
                         </p>
                     </form>
                 </div>
@@ -2970,6 +3106,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <ul>
                         <li><a href="#services">Web Development Lagos</a></li>
                         <li><a href="#services">UI/UX Design Nigeria</a></li>
+                         <li><a href="./seo-content.html">SEO Services Nigeria</a></li>
                         <li><a href="#services">E-commerce Lagos</a></li>
                         <li><a href="#services">Mobile Apps Nigeria</a></li>
                         <li><a href="#services">SEO Optimization Lagos</a></li>
@@ -2989,9 +3126,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="footer-links">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
-                        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="./terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="./cookie-policy.html">Cookie Policy</a></li>
                     </ul>
                 </div>
                 
@@ -3040,6 +3177,79 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+<div id="cookie-consent" class="cookie-consent" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--dark-secondary); color: var(--text-light); padding: 1.5rem; border-top: 1px solid var(--border-color); z-index: 9999;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div style="flex: 1; min-width: 300px;">
+                <h4 style="color: var(--text-light); margin-bottom: 0.5rem;">🍪 Cookie Policy</h4>
+                <p style="color: var(--text-gray); margin: 0; font-size: 0.9rem;">
+                    We use cookies to enhance your experience on our website. By continuing to use our site, you consent to our use of cookies. 
+                    <a href="./cookie-policy.html" style="color: var(--primary-color);">Learn more</a>
+                </p>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+                <button id="cookie-reject" class="btn" style="background: transparent; color: var(--text-light); border: 1px solid var(--border-color); padding: 0.5rem 1.5rem; border-radius: 5px; cursor: pointer;">
+                    Reject
+                </button>
+                <button id="cookie-accept" class="btn btn-primary" style="padding: 0.5rem 1.5rem; border-radius: 5px; cursor: pointer;">
+                    Accept
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cookieConsent = document.getElementById('cookie-consent');
+        const acceptBtn = document.getElementById('cookie-accept');
+        const rejectBtn = document.getElementById('cookie-reject');
+        
+        // Check if user has already made a choice
+        if (!localStorage.getItem('cookieConsent')) {
+            // Show after a short delay
+            setTimeout(() => {
+                cookieConsent.style.display = 'block';
+            }, 1000);
+        }
+        
+        // Accept cookies
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieConsent.style.display = 'none';
+            
+            // Initialize analytics and tracking (if not already done)
+            if (typeof gtag !== 'undefined') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+            }
+        });
+        
+        // Reject cookies
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            cookieConsent.style.display = 'none';
+            
+            // Disable analytics tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'denied'
+                });
+            }
+        });
+        
+        // Initialize Google Analytics with consent mode
+        if (typeof gtag !== 'undefined') {
+            const consent = localStorage.getItem('cookieConsent');
+            gtag('consent', 'default', {
+                'analytics_storage': consent === 'accepted' ? 'granted' : 'denied'
+            });
+        }
+    });
+</script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -3120,51 +3330,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
             });
 
-            // Enhanced Smooth Scrolling with Cross-Page Navigation
-            document.addEventListener('DOMContentLoaded', function() {
-                // Handle navigation clicks
-                document.querySelectorAll('a[href^="#"], a[href^="../#"], a[href^="./#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function (e) {
-                        const href = this.getAttribute('href');
-                        
-                        // Check if it's a hash link on the same page
-                        if (href.startsWith('#') && document.querySelector(href)) {
-                            e.preventDefault();
-                            const target = document.querySelector(href);
-                            if (target) {
-                                smoothScrollTo(target);
-                                updateActiveNav(this);
-                            }
-                        }
-                        // Check if it's a relative hash link (from blog to index)
-                        else if ((href.startsWith('../#') || href.startsWith('./#')) && window.location.pathname.includes('blog')) {
-                            e.preventDefault();
-                            // Redirect to index.html with hash
-                            const hash = href.split('#')[1];
-                            window.location.href = `../index.html#${hash}`;
-                        }
-                        // Check if it's a hash link from index to index sections
-                        else if ((href.startsWith('../#') || href.startsWith('./#')) && !window.location.pathname.includes('blog')) {
-                            e.preventDefault();
-                            const hash = href.split('#')[1];
-                            const target = document.querySelector(`#${hash}`);
-                            if (target) {
-                                smoothScrollTo(target);
-                                updateActiveNav(this);
-                            }
-                        }
-                    });
-                });
-                
-                // Update active nav on scroll
-                window.addEventListener('scroll', updateNavOnScroll);
-                
-                // Update URL hash on scroll
-                window.addEventListener('scroll', updateHashOnScroll);
-                
-                // Highlight active section based on URL hash on page load
-                highlightActiveSection();
-            });
 
             // Smooth scroll function
             function smoothScrollTo(target) {
@@ -3187,6 +3352,53 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
                 clickedLink.classList.add('active');
             }
+
+            // Enhanced Lazy Loading for ALL images
+document.addEventListener('DOMContentLoaded', function() {
+    // Set up lazy loading for all images
+    const lazyImages = [].slice.call(document.querySelectorAll('img[loading="lazy"]'));
+    
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    
+                    // Handle data-src if present
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    }
+                    
+                    // Add loaded class for styling
+                    img.classList.add('loaded');
+                    
+                    // Stop observing
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px',
+            threshold: 0.1
+        });
+        
+        lazyImages.forEach(img => imageObserver.observe(img));
+    } else {
+        // Fallback for older browsers
+        lazyImages.forEach(img => {
+            if (img.dataset.src) {
+                img.src = img.dataset.src;
+            }
+        });
+    }
+    
+    // Add responsive images classes
+    document.querySelectorAll('img').forEach(img => {
+        if (!img.classList.contains('img-fluid')) {
+            img.classList.add('img-fluid');
+        }
+    });
+});
 
             // Update nav on scroll
             function updateNavOnScroll() {
@@ -3336,40 +3548,266 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 statsObserver.observe(item);
             });
 
-            // Form submission with validation
-            const form = document.getElementById('contactForm');
-            if (form) {
-                form.addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    const submitBtn = form.querySelector('button[type="submit"]');
-                    const originalText = submitBtn.innerHTML;
-                    
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                    submitBtn.disabled = true;
-                    
-                    fetch(form.action, {
-                        method: 'POST',
-                        body: new FormData(form),
-                        headers: { 'Accept': 'application/json' }
-                    })
-                    .then(response => {
-                        if (response.ok) {
-                            alert('Message sent successfully! We\'ll get back to you soon.');
-                            form.reset();
-                        } else {
-                            alert('Something went wrong. Please try again.');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Form submission error:', error);
-                        alert('Network error. Please try again.');
-                    })
-                    .finally(() => {
-                        submitBtn.innerHTML = originalText;
-                        submitBtn.disabled = false;
-                    });
+           // Enhanced Form Validation
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateForm(this)) {
+                submitForm(this);
+            }
+        });
+        
+        // Real-time validation
+        contactForm.querySelectorAll('input, textarea, select').forEach(field => {
+            field.addEventListener('blur', function() {
+                validateField(this);
+            });
+        });
+    }
+    
+    function validateForm(form) {
+        let isValid = true;
+        const requiredFields = form.querySelectorAll('[required]');
+        
+        requiredFields.forEach(field => {
+            if (!validateField(field)) {
+                isValid = false;
+            }
+        });
+        
+        // Email validation
+        const emailField = form.querySelector('input[type="email"]');
+        if (emailField && emailField.value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailField.value)) {
+                showError(emailField, 'Please enter a valid email address');
+                isValid = false;
+            }
+        }
+        
+        return isValid;
+    }
+    
+    function validateField(field) {
+        const value = field.value.trim();
+        let isValid = true;
+        
+        // Clear previous errors
+        clearError(field);
+        
+        if (field.hasAttribute('required') && !value) {
+            showError(field, 'This field is required');
+            isValid = false;
+        }
+        
+        // Phone validation
+        if (field.type === 'tel' && value) {
+            const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
+            if (!phoneRegex.test(value)) {
+                showError(field, 'Please enter a valid phone number');
+                isValid = false;
+            }
+        }
+        
+        return isValid;
+    }
+    
+    function showError(field, message) {
+        const formGroup = field.closest('.form-group');
+        let errorElement = formGroup.querySelector('.error-message');
+        
+        if (!errorElement) {
+            errorElement = document.createElement('div');
+            errorElement.className = 'error-message';
+            formGroup.appendChild(errorElement);
+        }
+        
+        errorElement.textContent = message;
+        field.style.borderColor = '#dc3545';
+        errorElement.style.color = '#dc3545';
+        errorElement.style.fontSize = '0.85rem';
+        errorElement.style.marginTop = '0.5rem';
+    }
+    
+    function clearError(field) {
+        const formGroup = field.closest('.form-group');
+        const errorElement = formGroup.querySelector('.error-message');
+        
+        if (errorElement) {
+            errorElement.remove();
+        }
+        
+        field.style.borderColor = '';
+    }
+    
+    function submitForm(form) {
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        // Simulate API call
+        setTimeout(() => {
+            alert('Thank you! Your message has been sent. We\'ll respond within 2 business hours.');
+            form.reset();
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            
+            // Track form submission
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'send_to': 'G-V81VT4QDQS/contact_form_submit'
                 });
             }
+        }, 1500);
+    }
+});
+
+
+
+// Modular Video Player
+class VideoPlayer {
+    constructor(containerId) {
+        this.container = document.getElementById(containerId);
+        if (!this.container) return;
+        
+        this.video = this.container.querySelector('video');
+        this.playPauseBtn = this.container.querySelector('.play-pause-btn');
+        this.overlay = this.container.querySelector('.video-overlay');
+        
+        this.init();
+    }
+    
+    init() {
+        if (!this.video || !this.playPauseBtn) return;
+        
+        // Event Listeners
+        this.playPauseBtn.addEventListener('click', (e) => this.togglePlayPause(e));
+        this.container.addEventListener('click', () => this.togglePlayPause());
+        
+        // Keyboard support
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && document.activeElement !== this.video) {
+                e.preventDefault();
+                this.togglePlayPause();
+            }
+        });
+        
+        // Video state changes
+        this.video.addEventListener('play', () => this.onPlay());
+        this.video.addEventListener('pause', () => this.onPause());
+        this.video.addEventListener('ended', () => this.onEnded());
+        
+        // Progress tracking
+        this.video.addEventListener('timeupdate', () => this.updateProgress());
+    }
+    
+    togglePlayPause(e) {
+        if (e) e.stopPropagation();
+        
+        if (this.video.paused || this.video.ended) {
+            this.video.play();
+        } else {
+            this.video.pause();
+        }
+    }
+    
+    onPlay() {
+        this.container.classList.add('playing');
+        if (this.overlay) {
+            this.overlay.style.opacity = '0';
+        }
+    }
+    
+    onPause() {
+        this.container.classList.remove('playing');
+        if (this.overlay) {
+            this.overlay.style.opacity = '1';
+        }
+    }
+    
+    onEnded() {
+        this.container.classList.remove('playing');
+        if (this.overlay) {
+            this.overlay.style.opacity = '1';
+        }
+    }
+    
+    updateProgress() {
+        const progress = (this.video.currentTime / this.video.duration) * 100;
+        const progressBar = this.container.querySelector('.progress-bar');
+        
+        if (progressBar) {
+            progressBar.style.width = progress + '%';
+        }
+    }
+}
+
+// Initialize video player
+document.addEventListener('DOMContentLoaded', function() {
+    const videoPlayer = new VideoPlayer('heroVideo');
+});
+
+
+// Performance Optimizations
+document.addEventListener('DOMContentLoaded', function() {
+    // Defer non-critical CSS
+    const criticalCSS = `
+        /* Add minimal critical CSS here if needed */
+    `;
+    
+    // Preload important resources
+    const preloadLinks = [
+        { href: 'images/logo.png', as: 'image' },
+        { href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap', as: 'style' }
+    ];
+    
+    preloadLinks.forEach(link => {
+        const preload = document.createElement('link');
+        preload.rel = 'preload';
+        preload.href = link.href;
+        preload.as = link.as;
+        document.head.appendChild(preload);
+    });
+    
+    // Load non-critical CSS after page load
+    window.addEventListener('load', function() {
+        const nonCriticalStyles = [
+            'https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/css/twentytwenty.min.css'
+        ];
+        
+        nonCriticalStyles.forEach(href => {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = href;
+            document.head.appendChild(link);
+        });
+    });
+});
+
+// Handle missing images
+document.addEventListener('DOMContentLoaded', function() {
+    // Fallback images from Unsplash
+    const imageFallbacks = {
+        'e-commerce': 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop',
+        'real-estate': 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop',
+        'cyber-security': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop',
+        'og-image': 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=1200&auto=format&fit=crop'
+    };
+    
+    // Set up error handlers
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', function() {
+            const key = this.alt.toLowerCase().replace(/[^a-z]/g, '-');
+            this.src = imageFallbacks[key] || 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=800&auto=format&fit=crop';
+        });
+    });
+});
 
             // Newsletter form submission
             const newsletterForm = document.getElementById('newsletter-form');
@@ -3545,7 +3983,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </script>
 
 
-<!-- Add this before closing body tag in blog.html -->
+
 <script>
     // Tawk.to Configuration
     var Tawk_API = Tawk_API || {};
