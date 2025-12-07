@@ -1,437 +1,3 @@
-# CodeBrix Website Improvements Guide
-
-## 1. Hidden SEO Content - Integration Strategy
-
-### ❌ Current Problem
-You have hidden SEO content at the bottom of your page:
-```html
-<div style="display: none;" aria-hidden="true">
-  <!-- Hidden content here -->
-</div>
-```
-
-**Why this is bad:**
-- Google may penalize this as "hidden text" manipulation
-- Violates accessibility guidelines
-- Wastes valuable content that could engage users
-
-### ✅ Solution: Natural Integration
-
-#### A. Integrate into existing sections:
-
-**Hero Section Enhancement:**
-```html
-<section id="home" class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <h1>Stop Losing Customers Online - CodeBrix Web Development Lagos</h1>
-      <p class="hero-subtitle">
-        CodeBrix is a leading web development agency in Lagos, Nigeria. 
-        We build fast, beautiful websites that turn visitors into customers. 
-        Specializing in responsive website design, e-commerce development, 
-        and mobile apps for Nigerian businesses.
-      </p>
-    </div>
-  </div>
-</section>
-```
-
-#### B. Create a dedicated "Services" landing page structure:
-
-Add to your services section:
-```html
-<section id="services-detail">
-  <div class="container">
-    <h2>Complete Web Development Services in Lagos</h2>
-    
-    <div class="services-detailed">
-      <article class="service-detail">
-        <h3>Custom Website Development Lagos</h3>
-        <p>CodeBrix specializes in custom website development for Lagos businesses. 
-        Our experienced developers create responsive, fast-loading websites optimized 
-        for the Nigerian market.</p>
-      </article>
-      
-      <article class="service-detail">
-        <h3>E-commerce Website Development Nigeria</h3>
-        <p>Launch your online store with CodeBrix's e-commerce solutions. 
-        We integrate local payment gateways like Paystack and Flutterwave for 
-        seamless Nigerian transactions.</p>
-      </article>
-      
-      <!-- Add more service details -->
-    </div>
-  </div>
-</section>
-```
-
-#### C. Add an "About" content section:
-
-```html
-<section class="about-detailed">
-  <div class="container">
-    <h2>About CodeBrix - Your Lagos Web Development Partner</h2>
-    <p>As a local Lagos web development company, CodeBrix understands the Nigerian 
-    market and business environment. We provide affordable web design solutions for 
-    Lagos businesses with transparent pricing and excellent customer support.</p>
-    
-    <h3>Why Choose CodeBrix?</h3>
-    <ul>
-      <li>Local Lagos-based team with market expertise</li>
-      <li>Affordable pricing for Nigerian businesses</li>
-      <li>Fast turnaround times</li>
-      <li>Ongoing support and maintenance</li>
-    </ul>
-  </div>
-</section>
-```
-
----
-
-## 2. Privacy Policy & Terms Pages
-
-### Create `/privacy-policy.html`:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - CodeBrix Web Development Lagos</title>
-    <meta name="description" content="CodeBrix privacy policy. Learn how we protect your data.">
-    <link rel="canonical" href="https://codebrixweb.com/privacy-policy">
-    <!-- Include your CSS files -->
-</head>
-<body>
-    <!-- Include your navbar -->
-    
-    <section class="legal-page">
-        <div class="container">
-            <h1>Privacy Policy</h1>
-            <p class="last-updated">Last Updated: December 4, 2025</p>
-            
-            <h2>1. Information We Collect</h2>
-            <p>At CodeBrix, we collect information you provide directly:</p>
-            <ul>
-                <li>Contact information (name, email, phone)</li>
-                <li>Project details and requirements</li>
-                <li>Communication preferences</li>
-            </ul>
-            
-            <h2>2. How We Use Your Information</h2>
-            <p>We use collected information to:</p>
-            <ul>
-                <li>Respond to your inquiries</li>
-                <li>Provide web development services</li>
-                <li>Send project updates</li>
-                <li>Improve our services</li>
-            </ul>
-            
-            <h2>3. Data Protection</h2>
-            <p>CodeBrix implements security measures to protect your personal information 
-            in accordance with Nigerian Data Protection Regulation (NDPR).</p>
-            
-            <h2>4. Third-Party Services</h2>
-            <p>We use the following third-party services:</p>
-            <ul>
-                <li>Formspree for contact form handling</li>
-                <li>Google Analytics for website analytics</li>
-                <li>WhatsApp for customer communication</li>
-            </ul>
-            
-            <h2>5. Your Rights</h2>
-            <p>Under NDPR, you have the right to:</p>
-            <ul>
-                <li>Access your personal data</li>
-                <li>Request data correction</li>
-                <li>Request data deletion</li>
-                <li>Object to data processing</li>
-            </ul>
-            
-            <h2>6. Contact Us</h2>
-            <p>For privacy concerns, contact us at:</p>
-            <p>Email: contact@codebrixweb.com<br>
-            Phone: +234 911 318 0149<br>
-            Address: Ibeju Lekki, Lagos, Nigeria</p>
-        </div>
-    </section>
-    
-    <!-- Include your footer -->
-</body>
-</html>
-```
-
-### Create `/terms-of-service.html`:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - CodeBrix Web Development Lagos</title>
-    <meta name="description" content="CodeBrix terms of service and conditions.">
-    <link rel="canonical" href="https://codebrixweb.com/terms-of-service">
-</head>
-<body>
-    <section class="legal-page">
-        <div class="container">
-            <h1>Terms of Service</h1>
-            <p class="last-updated">Last Updated: December 4, 2025</p>
-            
-            <h2>1. Services</h2>
-            <p>CodeBrix provides web development, design, and digital services as outlined 
-            in our service agreements.</p>
-            
-            <h2>2. Payment Terms</h2>
-            <ul>
-                <li>50% deposit required to start projects</li>
-                <li>Final 50% due upon project completion</li>
-                <li>Payments accepted in Nigerian Naira (₦)</li>
-                <li>30-day money-back guarantee applies to specific packages</li>
-            </ul>
-            
-            <h2>3. Project Timeline</h2>
-            <p>Timelines are estimates and may vary based on:</p>
-            <ul>
-                <li>Client feedback and approval speed</li>
-                <li>Scope changes</li>
-                <li>Content delivery from client</li>
-            </ul>
-            
-            <h2>4. Intellectual Property</h2>
-            <p>Upon full payment:</p>
-            <ul>
-                <li>Client owns final website design and content</li>
-                <li>CodeBrix retains rights to custom code frameworks</li>
-                <li>Client receives source code and assets</li>
-            </ul>
-            
-            <h2>5. Support & Maintenance</h2>
-            <ul>
-                <li>6 months support included with Enterprise packages</li>
-                <li>Response time: Within 24-48 hours</li>
-                <li>Extended support available separately</li>
-            </ul>
-            
-            <h2>6. Refund Policy</h2>
-            <p>30-day money-back guarantee applies if:</p>
-            <ul>
-                <li>Website doesn't meet agreed specifications</li>
-                <li>Request made within 30 days of launch</li>
-                <li>Terms outlined in service agreement met</li>
-            </ul>
-            
-            <h2>7. Limitation of Liability</h2>
-            <p>CodeBrix is not liable for:</p>
-            <ul>
-                <li>Third-party service outages</li>
-                <li>Client-provided content issues</li>
-                <li>Losses exceeding project value</li>
-            </ul>
-            
-            <h2>8. Governing Law</h2>
-            <p>These terms are governed by the laws of the Federal Republic of Nigeria.</p>
-            
-            <h2>9. Contact</h2>
-            <p>Questions? Contact CodeBrix at:<br>
-            Email: contact@codebrixweb.com<br>
-            Phone: +234 911 318 0149</p>
-        </div>
-    </section>
-</body>
-</html>
-```
-
-### Add CSS for legal pages:
-
-```css
-.legal-page {
-    background: var(--dark-bg);
-    padding: 120px 0 80px;
-    min-height: 100vh;
-}
-
-.legal-page h1 {
-    font-size: 3rem;
-    color: var(--text-light);
-    margin-bottom: 1rem;
-}
-
-.legal-page .last-updated {
-    color: var(--text-gray);
-    margin-bottom: 3rem;
-    font-style: italic;
-}
-
-.legal-page h2 {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-}
-
-.legal-page p,
-.legal-page li {
-    color: var(--text-light-gray);
-    line-height: 1.8;
-    margin-bottom: 1rem;
-}
-
-.legal-page ul {
-    margin-left: 2rem;
-    margin-bottom: 2rem;
-}
-```
-
-### Update footer with links:
-
-```html
-<div class="footer-links">
-    <h4>Legal</h4>
-    <ul>
-        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="/terms-of-service.html">Terms of Service</a></li>
-        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
-    </ul>
-</div>
-```
-
----
-
-## 3. Image Optimization
-
-### A. Use Modern Image Formats:
-
-```html
-<picture>
-    <source srcset="images/portfolio1.webp" type="image/webp">
-    <source srcset="images/portfolio1.jpg" type="image/jpeg">
-    <img src="images/portfolio1.jpg" alt="E-commerce Platform by CodeBrix" loading="lazy">
-</picture>
-```
-
-### B. Add proper sizing attributes:
-
-```html
-<img src="image.jpg" 
-     alt="Description" 
-     width="800" 
-     height="600" 
-     loading="lazy">
-```
-
-### C. Implement responsive images:
-
-```html
-<img srcset="image-400.jpg 400w,
-             image-800.jpg 800w,
-             image-1200.jpg 1200w"
-     sizes="(max-width: 600px) 400px,
-            (max-width: 1000px) 800px,
-            1200px"
-     src="image-800.jpg"
-     alt="Description">
-```
-
-### D. Replace Unsplash URLs with optimized local images:
-
-**Current:**
-```html
-<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80">
-```
-
-**Optimized:**
-```html
-<img src="/images/portfolio/ecommerce-optimized.webp" 
-     alt="Modern e-commerce website built by CodeBrix Lagos"
-     width="800" 
-     height="600"
-     loading="lazy">
-```
-
----
-
-## 4. Google Analytics & GTM Setup
-
-### A. Add Google Analytics 4:
-
-```html
-<!-- Google tag (gtag.js) - Add to <head> -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
-```
-
-### B. Track Important Events:
-
-```javascript
-// Track form submissions
-document.getElementById('contactForm').addEventListener('submit', function() {
-    gtag('event', 'form_submit', {
-        'event_category': 'Contact',
-        'event_label': 'Contact Form'
-    });
-});
-
-// Track WhatsApp clicks
-document.querySelector('.whatsapp-float').addEventListener('click', function() {
-    gtag('event', 'click', {
-        'event_category': 'Contact',
-        'event_label': 'WhatsApp Button'
-    });
-});
-
-// Track phone clicks
-document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-    link.addEventListener('click', function() {
-        gtag('event', 'click', {
-            'event_category': 'Contact',
-            'event_label': 'Phone Call'
-        });
-    });
-});
-
-// Track CTA button clicks
-document.querySelectorAll('.btn-primary').forEach(btn => {
-    btn.addEventListener('click', function() {
-        gtag('event', 'click', {
-            'event_category': 'CTA',
-            'event_label': this.textContent.trim()
-        });
-    });
-});
-```
-
-### C. Google Tag Manager (Alternative/Additional):
-
-```html
-<!-- Google Tag Manager - Add after opening <head> -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-<!-- End Google Tag Manager -->
-
-<!-- Google Tag Manager (noscript) - Add after opening <body> -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-```
-
----
-
-## 5. Create 404 Error Page
-
-### Create `/404.html`:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -439,84 +5,331 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found | CodeBrix</title>
     <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://codebrixweb.com/">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --primary-color: #FF6B35;
+            --primary-dark: #E55A2B;
+            --primary-light: #FF8C5A;
             --dark-bg: #0A0A0A;
+            --dark-secondary: #1A1A1A;
             --text-light: #FFFFFF;
             --text-gray: #888888;
+            --text-light-gray: #CCCCCC;
+            --border-color: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: var(--dark-bg);
             color: var(--text-light);
+            overflow-x: hidden;
+            overflow-y: auto;
             min-height: 100vh;
+        }
+        
+        /* Animated background particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            background: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 15s infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0) scale(1);
+            }
+            25% {
+                transform: translateY(-100px) translateX(50px) scale(1.2);
+            }
+            50% {
+                transform: translateY(-200px) translateX(-50px) scale(0.8);
+            }
+            75% {
+                transform: translateY(-100px) translateX(-100px) scale(1.1);
+            }
+        }
+        
+        /* Container for scrollable content */
+        .page-wrapper {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            padding: 2rem 1rem;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            margin: 0;
         }
         
         .error-container {
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+            margin: 2rem auto;
+            animation: fadeIn 0.8s ease-out;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Header Section */
+        .error-header {
             text-align: center;
-            padding: 2rem;
-            max-width: 600px;
-        }
-        
-        .error-code {
-            font-size: 120px;
-            font-weight: 800;
-            color: var(--primary-color);
-            line-height: 1;
-            margin-bottom: 1rem;
-            animation: pulse 2s ease-in-out infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
         }
         
         .error-icon {
             font-size: 80px;
             color: var(--primary-color);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .error-code {
+            font-size: clamp(80px, 15vw, 120px);
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 1rem;
+            text-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+            animation: glitch 3s infinite;
+        }
+        
+        @keyframes glitch {
+            0%, 90%, 100% {
+                transform: translate(0);
+            }
+            92% {
+                transform: translate(-2px, 2px);
+            }
+            94% {
+                transform: translate(2px, -2px);
+            }
+            96% {
+                transform: translate(-2px, -2px);
+            }
+            98% {
+                transform: translate(2px, 2px);
+            }
         }
         
         h1 {
-            font-size: 2rem;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             margin-bottom: 1rem;
+            font-weight: 700;
         }
         
-        p {
+        .subtitle {
             color: var(--text-gray);
             margin-bottom: 2rem;
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Game Section */
+        .game-section {
+            background: var(--dark-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 3rem;
+        }
+        
+        .game-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .success-message {
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid var(--primary-color);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            animation: slideDown 0.5s ease;
+            text-align: center;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .success-message h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .game-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+            background: var(--dark-secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            min-width: 100px;
+        }
+        
+        .stat-value {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-top: 0.3rem;
+        }
+        
+        .memory-game {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+        
+        .card {
+            aspect-ratio: 1;
+            background: var(--dark-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .card:hover:not(.matched) {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
+        }
+        
+        .card.flipped {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            transform: rotateY(180deg);
+        }
+        
+        .card.matched {
+            background: rgba(255, 107, 53, 0.3);
+            border-color: var(--primary-color);
+            cursor: default;
+            animation: matchPulse 0.5s ease;
+        }
+        
+        @keyframes matchPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
         }
         
         .btn {
-            padding: 1rem 2.5rem;
+            padding: 1rem 2rem;
             border-radius: 50px;
             font-weight: 600;
+            font-size: 1rem;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            margin: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         .btn-primary {
             background: var(--primary-color);
             color: white;
-            border: none;
         }
         
         .btn-primary:hover {
+            background: var(--primary-dark);
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
         }
@@ -530,188 +343,483 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         .btn-secondary:hover {
             background: var(--primary-color);
             color: white;
+            transform: translateY(-3px);
         }
         
+        /* Helpful Links Section */
         .helpful-links {
             margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #333;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-color);
         }
         
         .helpful-links h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
             color: var(--text-light);
+            text-align: center;
         }
         
-        .helpful-links ul {
-            list-style: none;
-            padding: 0;
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
         
-        .helpful-links li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .helpful-links a {
-            color: var(--text-gray);
+        .link-card {
+            background: var(--dark-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
             text-decoration: none;
+            color: var(--text-light);
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
         
-        .helpful-links a:hover {
+        .link-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.2);
+        }
+        
+        .link-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: var(--primary-color);
-            padding-left: 5px;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .link-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .link-desc {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+        
+        /* Footer */
+        .error-footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .error-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .error-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .page-wrapper {
+                padding: 1rem;
+            }
+            
+            .error-container {
+                padding: 2rem 1.5rem;
+                border-radius: 20px;
+                margin: 1rem auto;
+            }
+            
+            .error-header {
+                margin-bottom: 2rem;
+                padding-bottom: 1.5rem;
+            }
+            
+            .error-icon {
+                font-size: 60px;
+            }
+            
+            .game-section {
+                padding: 1.5rem;
+            }
+            
+            .memory-game {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.7rem;
+                max-width: 350px;
+            }
+            
+            .card {
+                font-size: 1.5rem;
+            }
+            
+            .game-stats {
+                gap: 1rem;
+            }
+            
+            .stat {
+                padding: 0.8rem 1rem;
+                min-width: 80px;
+            }
+            
+            .stat-value {
+                font-size: 1.5rem;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .error-code {
+                font-size: 70px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .subtitle {
+                font-size: 0.95rem;
+            }
+            
+            .game-title {
+                font-size: 1.2rem;
+            }
+            
+            .memory-game {
+                max-width: 280px;
+                gap: 0.5rem;
+            }
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--dark-secondary);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
         }
     </style>
 </head>
 <body>
-    <div class="error-container">
-        <div class="error-icon">
-            <i class="fas fa-exclamation-triangle"></i>
-        </div>
-        <div class="error-code">404</div>
-        <h1>Oops! Page Not Found</h1>
-        <p>The page you're looking for doesn't exist or has been moved. Let's get you back on track!</p>
-        
-        <div>
-            <a href="/" class="btn btn-primary">
-                <i class="fas fa-home"></i> Back to Homepage
-            </a>
-            <a href="/#contact" class="btn btn-secondary">
-                <i class="fas fa-envelope"></i> Contact Us
-            </a>
-        </div>
-        
-        <div class="helpful-links">
-            <h3>Popular Pages</h3>
-            <ul>
-                <li><a href="/#services"><i class="fas fa-arrow-right"></i> Our Services</a></li>
-                <li><a href="/#portfolio"><i class="fas fa-arrow-right"></i> Portfolio</a></li>
-                <li><a href="/#pricing"><i class="fas fa-arrow-right"></i> Pricing</a></li>
-                <li><a href="/#contact"><i class="fas fa-arrow-right"></i> Contact Us</a></li>
-            </ul>
+    <div class="particles" id="particles"></div>
+    
+    <div class="page-wrapper">
+        <div class="error-container">
+            <div class="error-header">
+                <div class="error-icon">
+                    <i class="fas fa-satellite-dish"></i>
+                </div>
+                
+                <div class="error-code">404</div>
+                
+                <h1>Houston, We Have a Problem!</h1>
+                <p class="subtitle">The page you're looking for has drifted into the digital void. But don't worry - we'll help you find your way back to CodeBrix!</p>
+            </div>
+            
+            <div class="game-section">
+                <div class="game-title">
+                    <i class="fas fa-gamepad"></i> While You're Here... Play a Quick Memory Game!
+                </div>
+                
+                <div id="successMessage" style="display: none;" class="success-message">
+                    <h4><i class="fas fa-trophy"></i> Congratulations!</h4>
+                    <p>You matched all pairs! Your reward: <strong>10% off</strong> your first project with CodeBrix!</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Use code: <strong style="color: var(--primary-color);">404WINNER</strong></p>
+                </div>
+                
+                <div class="game-stats">
+                    <div class="stat">
+                        <span class="stat-value" id="moves">0</span>
+                        <span class="stat-label">Moves</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="matches">0</span>
+                        <span class="stat-label">Matches</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="timer">0:00</span>
+                        <span class="stat-label">Time</span>
+                    </div>
+                </div>
+                
+                <div class="memory-game" id="memoryGame"></div>
+                
+                <div style="text-align: center;">
+                    <button class="btn btn-secondary" onclick="resetGame()">
+                        <i class="fas fa-redo"></i> New Game
+                    </button>
+                </div>
+            </div>
+            
+            <div class="btn-group">
+                <a href="./index.html" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Back to Homepage
+                </a>
+                <a href="./index.html#contact" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Contact Us
+                </a>
+            </div>
+            
+            <div class="helpful-links">
+                <h3>Quick Navigation</h3>
+                <div class="links-grid">
+                    <a href="./index.html#services" class="link-card">
+                        <div class="link-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="link-title">Our Services</div>
+                        <div class="link-desc">Web & mobile development solutions</div>
+                    </a>
+                    
+                    <a href="./index.html#portfolio" class="link-card">
+                        <div class="link-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="link-title">Portfolio</div>
+                        <div class="link-desc">View our latest projects</div>
+                    </a>
+                    
+                    <a href="./index.html#pricing" class="link-card">
+                        <div class="link-icon">
+                            <i class="fas fa-tag"></i>
+                        </div>
+                        <div class="link-title">Pricing</div>
+                        <div class="link-desc">Transparent pricing plans</div>
+                    </a>
+                    
+                    <a href="./index.html#contact" class="link-card">
+                        <div class="link-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="link-title">Get in Touch</div>
+                        <div class="link-desc">Start your project today</div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="error-footer">
+                <p>&copy; 2025 <strong>CodeBrix</strong> - Web Development Agency Lagos, Nigeria</p>
+                <p style="margin-top: 0.5rem;">
+                    <a href="./index.html">Home</a> • 
+                    <a href="./index.html#about">About</a> • 
+                    <a href="./index.html#contact">Contact</a> • 
+                    <a href="tel:+2349113180149">+234 911 318 0149</a>
+                </p>
+            </div>
         </div>
     </div>
+    
+    <script>
+        // Animated particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 15;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() * 100 + 50;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Memory game
+        const icons = ['fa-code', 'fa-laptop', 'fa-mobile-alt', 'fa-rocket', 'fa-lightbulb', 'fa-chart-line', 'fa-palette', 'fa-cog'];
+        let cards = [...icons, ...icons];
+        let flippedCards = [];
+        let matchedPairs = 0;
+        let moves = 0;
+        let startTime = null;
+        let timerInterval = null;
+        
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+        
+        function initGame() {
+            const gameBoard = document.getElementById('memoryGame');
+            gameBoard.innerHTML = '';
+            cards = shuffleArray([...icons, ...icons]);
+            
+            cards.forEach((icon, index) => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.dataset.icon = icon;
+                card.dataset.index = index;
+                card.innerHTML = `<i class="fas ${icon}" style="opacity: 0; transition: opacity 0.3s;"></i>`;
+                card.addEventListener('click', flipCard);
+                gameBoard.appendChild(card);
+            });
+        }
+        
+        function flipCard() {
+            if (flippedCards.length === 2 || this.classList.contains('flipped') || this.classList.contains('matched')) {
+                return;
+            }
+            
+            if (!startTime) {
+                startTime = Date.now();
+                timerInterval = setInterval(updateTimer, 1000);
+            }
+            
+            this.classList.add('flipped');
+            this.querySelector('i').style.opacity = '1';
+            flippedCards.push(this);
+            
+            if (flippedCards.length === 2) {
+                moves++;
+                document.getElementById('moves').textContent = moves;
+                checkMatch();
+            }
+        }
+        
+        function checkMatch() {
+            const [card1, card2] = flippedCards;
+            
+            if (card1.dataset.icon === card2.dataset.icon) {
+                card1.classList.add('matched');
+                card2.classList.add('matched');
+                matchedPairs++;
+                document.getElementById('matches').textContent = matchedPairs;
+                flippedCards = [];
+                
+                if (matchedPairs === icons.length) {
+                    setTimeout(gameWon, 500);
+                }
+            } else {
+                setTimeout(() => {
+                    card1.classList.remove('flipped');
+                    card2.classList.remove('flipped');
+                    card1.querySelector('i').style.opacity = '0';
+                    card2.querySelector('i').style.opacity = '0';
+                    flippedCards = [];
+                }, 1000);
+            }
+        }
+        
+        function updateTimer() {
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            const minutes = Math.floor(elapsed / 60);
+            const seconds = elapsed % 60;
+            document.getElementById('timer').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        function gameWon() {
+            clearInterval(timerInterval);
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            // Confetti effect
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => createConfetti(), i * 30);
+            }
+        }
+        
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.style.position = 'fixed';
+            confetti.style.width = '10px';
+            confetti.style.height = '10px';
+            confetti.style.backgroundColor = ['#FF6B35', '#FF8C5A', '#FFB380'][Math.floor(Math.random() * 3)];
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.top = '-10px';
+            confetti.style.borderRadius = '50%';
+            confetti.style.zIndex = '9999';
+            confetti.style.pointerEvents = 'none';
+            document.body.appendChild(confetti);
+            
+            let pos = 0;
+            let rotation = 0;
+            const fallSpeed = Math.random() * 3 + 2;
+            const rotationSpeed = Math.random() * 10 + 5;
+            
+            const interval = setInterval(() => {
+                pos += fallSpeed;
+                rotation += rotationSpeed;
+                confetti.style.top = pos + 'px';
+                confetti.style.transform = `rotate(${rotation}deg)`;
+                
+                if (pos > window.innerHeight) {
+                    clearInterval(interval);
+                    confetti.remove();
+                }
+            }, 20);
+        }
+        
+        function resetGame() {
+            flippedCards = [];
+            matchedPairs = 0;
+            moves = 0;
+            startTime = null;
+            clearInterval(timerInterval);
+            
+            document.getElementById('moves').textContent = '0';
+            document.getElementById('matches').textContent = '0';
+            document.getElementById('timer').textContent = '0:00';
+            document.getElementById('successMessage').style.display = 'none';
+            
+            initGame();
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            initGame();
+        });
+    </script>
 </body>
 </html>
-```
-
----
-
-## 6. Additional SEO Improvements
-
-### A. Add Breadcrumb Schema:
-
-```html
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "name": "Home",
-    "item": "https://codebrixweb.com/"
-  },{
-    "@type": "ListItem",
-    "position": 2,
-    "name": "Services",
-    "item": "https://codebrixweb.com/#services"
-  }]
-}
-</script>
-```
-
-### B. Add FAQ Schema:
-
-```html
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "How much does a website cost in Lagos?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "CodeBrix offers website development starting from ₦150,000 for basic websites, ₦350,000 for business websites, and ₦600,000+ for custom e-commerce solutions."
-    }
-  },{
-    "@type": "Question",
-    "name": "How long does it take to build a website?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "CodeBrix typically delivers websites within 30 days, depending on project complexity and client feedback speed."
-    }
-  }]
-}
-</script>
-```
-
----
-
-## Implementation Checklist
-
-- [ ] Remove hidden SEO content section
-- [ ] Integrate SEO keywords naturally into visible content
-- [ ] Create privacy-policy.html
-- [ ] Create terms-of-service.html
-- [ ] Update footer with legal page links
-- [ ] Optimize all images (convert to WebP, add dimensions)
-- [ ] Replace Unsplash URLs with local optimized images
-- [ ] Set up Google Analytics 4
-- [ ] Add event tracking for key actions
-- [ ] Create 404.html page
-- [ ] Configure server to serve 404 page
-- [ ] Add breadcrumb schema
-- [ ] Add FAQ schema
-- [ ] Test all pages on mobile devices
-- [ ] Validate structured data with Google Rich Results Test
-- [ ] Submit updated sitemap to Google Search Console
-
----
-
-## Server Configuration
-
-### For Apache (.htaccess):
-
-```apache
-# Custom 404 page
-ErrorDocument 404 /404.html
-
-# Force HTTPS
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Browser caching
-<IfModule mod_expires.c>
-    ExpiresActive On
-    ExpiresByType image/jpg "access plus 1 year"
-    ExpiresByType image/jpeg "access plus 1 year"
-    ExpiresByType image/gif "access plus 1 year"
-    ExpiresByType image/png "access plus 1 year"
-    ExpiresByType image/webp "access plus 1 year"
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
-</IfModule>
-```
-
-### For Nginx:
-
-```nginx
-# Custom 404 page
-error_page 404 /404.html;
-location = /404.html {
-    internal;
-}
-
-# Browser caching
-location ~* \.(jpg|jpeg|png|gif|webp|ico|css|js)$ {
-    expires 1y;
-    add_header Cache-Control "public, immutable";
-}
-```
-
-This comprehensive guide will help you implement all the improvements systematically!
