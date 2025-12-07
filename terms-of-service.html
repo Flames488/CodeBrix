@@ -3,75 +3,336 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - CodeBrix Web Development Lagos</title>
-    <meta name="description" content="CodeBrix terms of service and conditions.">
-    <link rel="canonical" href="https://codebrixweb.com/terms-of-service">
+    <title>Terms of Service - CodeBrix Web Development Agency Lagos</title>
+    <meta name="description" content="Terms and conditions for CodeBrix web development services in Lagos, Nigeria. Read our terms of service before engaging our web development services.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://codebrixweb.com/terms-of-service.html">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Terms of Service",
+        "description": "Terms and conditions for CodeBrix web development services",
+        "url": "https://codebrixweb.com/terms-of-service.html",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "CodeBrix",
+            "url": "https://codebrixweb.com/"
+        }
+    }
+    </script>
+    
+    <!-- Import main site styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FF6B35;
+            --primary-dark: #E55A2B;
+            --dark-bg: #0A0A0A;
+            --dark-secondary: #1A1A1A;
+            --text-light: #FFFFFF;
+            --text-gray: #888888;
+            --text-light-gray: #CCCCCC;
+            --border-color: #333333;
+        }
+        
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.7;
+            padding-top: 80px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .legal-page {
+            background: var(--dark-bg);
+            padding: 80px 0;
+            min-height: 100vh;
+        }
+        
+        .legal-header {
+            text-align: center;
+            padding-bottom: 2rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .legal-header h1 {
+            font-size: 3rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        .legal-header .last-updated {
+            color: var(--text-gray);
+            font-style: italic;
+        }
+        
+        .legal-content h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .legal-content h3 {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .legal-content p {
+            color: var(--text-light-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .legal-content ul, .legal-content ol {
+            margin: 1rem 0 2rem 2rem;
+            color: var(--text-light-gray);
+        }
+        
+        .legal-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+        
+        .important-note {
+            background: var(--dark-secondary);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .contact-info-box {
+            background: var(--dark-secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-home:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .legal-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .legal-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation (simplified version) -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(10, 10, 10, 0.98); backdrop-filter: blur(20px); padding: 0.8rem 0;">
+        <div class="container">
+            <a class="navbar-brand" href="https://codebrixweb.com">
+                CodeBrix
+            </a>
+        </div>
+    </nav>
+    
     <section class="legal-page">
         <div class="container">
-            <h1>Terms of Service</h1>
-            <p class="last-updated">Last Updated: December 4, 2025</p>
+            <div class="legal-header">
+                <h1>Terms of Service</h1>
+                <p class="last-updated">Last Updated: December 4, 2025</p>
+                <p>By engaging CodeBrix for web development services, you agree to these terms.</p>
+            </div>
             
-            <h2>1. Services</h2>
-            <p>CodeBrix provides web development, design, and digital services as outlined 
-            in our service agreements.</p>
-            
-            <h2>2. Payment Terms</h2>
-            <ul>
-                <li>50% deposit required to start projects</li>
-                <li>Final 50% due upon project completion</li>
-                <li>Payments accepted in Nigerian Naira (₦)</li>
-                <li>30-day money-back guarantee applies to specific packages</li>
-            </ul>
-            
-            <h2>3. Project Timeline</h2>
-            <p>Timelines are estimates and may vary based on:</p>
-            <ul>
-                <li>Client feedback and approval speed</li>
-                <li>Scope changes</li>
-                <li>Content delivery from client</li>
-            </ul>
-            
-            <h2>4. Intellectual Property</h2>
-            <p>Upon full payment:</p>
-            <ul>
-                <li>Client owns final website design and content</li>
-                <li>CodeBrix retains rights to custom code frameworks</li>
-                <li>Client receives source code and assets</li>
-            </ul>
-            
-            <h2>5. Support & Maintenance</h2>
-            <ul>
-                <li>6 months support included with Enterprise packages</li>
-                <li>Response time: Within 24-48 hours</li>
-                <li>Extended support available separately</li>
-            </ul>
-            
-            <h2>6. Refund Policy</h2>
-            <p>30-day money-back guarantee applies if:</p>
-            <ul>
-                <li>Website doesn't meet agreed specifications</li>
-                <li>Request made within 30 days of launch</li>
-                <li>Terms outlined in service agreement met</li>
-            </ul>
-            
-            <h2>7. Limitation of Liability</h2>
-            <p>CodeBrix is not liable for:</p>
-            <ul>
-                <li>Third-party service outages</li>
-                <li>Client-provided content issues</li>
-                <li>Losses exceeding project value</li>
-            </ul>
-            
-            <h2>8. Governing Law</h2>
-            <p>These terms are governed by the laws of the Federal Republic of Nigeria.</p>
-            
-            <h2>9. Contact</h2>
-            <p>Questions? Contact CodeBrix at:<br>
-            Email: contact@codebrixweb.com<br>
-            Phone: +234 911 318 0149</p>
+            <div class="legal-content">
+                <div class="important-note">
+                    <h3><i class="fas fa-exclamation-circle"></i> Important Note</h3>
+                    <p>These terms govern all services provided by CodeBrix. By paying your deposit or engaging our services, you accept these terms in full.</p>
+                </div>
+                
+                <h2>1. Services Agreement</h2>
+                <p>CodeBrix provides web development, design, and digital marketing services as specified in written proposals or service agreements. All services are provided subject to these terms unless otherwise agreed in writing.</p>
+                
+                <h2>2. Payment Terms & Fees</h2>
+                <h3>2.1 Project Fees</h3>
+                <p>All prices are quoted in Nigerian Naira (₦) and include Value Added Tax (VAT) where applicable.</p>
+                
+                <h3>2.2 Payment Schedule</h3>
+                <ul>
+                    <li><strong>50% deposit:</strong> Required to commence project work</li>
+                    <li><strong>25% progress payment:</strong> Due upon design approval</li>
+                    <li><strong>25% final payment:</strong> Due upon project completion and before website launch</li>
+                </ul>
+                
+                <h3>2.3 Accepted Payment Methods</h3>
+                <ul>
+                    <li>Bank Transfer (Nigerian Naira)</li>
+                    <li>Paystack</li>
+                    <li>Flutterwave</li>
+                    <li>Cash (Lagos office only)</li>
+                </ul>
+                
+                <h3>2.4 Late Payments</h3>
+                <p>Accounts unpaid 30 days after invoice date will incur a 5% monthly late fee.</p>
+                
+                <h2>3. Project Timeline & Delivery</h2>
+                <p>Project timelines are estimates based on:</p>
+                <ul>
+                    <li>Client feedback and approval speed</li>
+                    <li>Scope changes or additions</li>
+                    <li>Content delivery from client</li>
+                    <li>Third-party integrations and dependencies</li>
+                </ul>
+                
+                <p><strong>Standard delivery:</strong> 30-60 days for standard websites, 60-90 days for e-commerce platforms.</p>
+                
+                <h2>4. Intellectual Property Rights</h2>
+                <h3>4.1 Client Ownership</h3>
+                <p>Upon full payment of all fees, the client receives:</p>
+                <ul>
+                    <li>Full ownership of final website design</li>
+                    <li>Source code and project files</li>
+                    <li>All custom graphics and assets created specifically for the project</li>
+                </ul>
+                
+                <h3>4.2 CodeBrix Rights</h3>
+                <p>CodeBrix retains rights to:</p>
+                <ul>
+                    <li>Proprietary code frameworks and libraries</li>
+                    <li>Reusable code components</li>
+                    <li>Showcase completed work in our portfolio (unless otherwise agreed)</li>
+                </ul>
+                
+                <h2>5. Support & Maintenance</h2>
+                <h3>5.1 Included Support</h3>
+                <ul>
+                    <li><strong>Basic & Business Packages:</strong> 30 days post-launch support</li>
+                    <li><strong>Enterprise Packages:</strong> 6 months post-launch support</li>
+                    <li>Support includes bug fixes and minor adjustments</li>
+                </ul>
+                
+                <h3>5.2 Response Times</h3>
+                <ul>
+                    <li><strong>Critical Issues:</strong> 24-48 hours</li>
+                    <li><strong>Non-critical Issues:</strong> 3-5 business days</li>
+                </ul>
+                
+                <h3>5.3 Extended Support</h3>
+                <p>Available at ₦30,000 per month or ₦300,000 per year.</p>
+                
+                <h2>6. Refund & Cancellation Policy</h2>
+                <h3>6.1 Money-Back Guarantee</h3>
+                <p>30-day money-back guarantee applies if:</p>
+                <ul>
+                    <li>Website doesn't meet agreed specifications outlined in the proposal</li>
+                    <li>Written request made within 30 days of project launch</li>
+                    <li>No major design changes have been requested after approval</li>
+                </ul>
+                
+                <h3>6.2 Project Cancellation</h3>
+                <p>Clients may cancel projects at any time:</p>
+                <ul>
+                    <li><strong>Before work begins:</strong> Full deposit refund</li>
+                    <li><strong>After work begins:</strong> Deposit retained, payment for completed work due</li>
+                </ul>
+                
+                <h2>7. Client Responsibilities</h2>
+                <p>Client agrees to:</p>
+                <ul>
+                    <li>Provide accurate and complete information</li>
+                    <li>Respond to requests within 48 hours</li>
+                    <li>Provide all necessary content and materials</li>
+                    <li>Obtain necessary licenses and permissions for provided content</li>
+                </ul>
+                
+                <h2>8. Limitation of Liability</h2>
+                <p>CodeBrix's total liability for any claim shall not exceed the total fees paid for the specific project. We are not liable for:</p>
+                <ul>
+                    <li>Third-party service outages (hosting, email, etc.)</li>
+                    <li>Losses resulting from client-provided content</li>
+                    <li>Consequential or indirect damages</li>
+                    <li>Losses exceeding the total project value</li>
+                </ul>
+                
+                <h2>9. Hosting & Domain Registration</h2>
+                <p>Hosting and domain registration are separate services:</p>
+                <ul>
+                    <li>Clients may use their own hosting providers</li>
+                    <li>CodeBrix can recommend hosting partners</li>
+                    <li>Domain registration fees are separate from development fees</li>
+                    <li>Clients retain ownership of registered domains</li>
+                </ul>
+                
+                <h2>10. Governing Law & Dispute Resolution</h2>
+                <p>These terms are governed by the laws of the Federal Republic of Nigeria. Any disputes shall be resolved through:</p>
+                <ul>
+                    <li>Mediation in Lagos State</li>
+                    <li>If mediation fails, through Nigerian courts</li>
+                </ul>
+                
+                <h2>11. Changes to Terms</h2>
+                <p>CodeBrix reserves the right to modify these terms at any time. Current clients will be notified of significant changes.</p>
+                
+                <div class="contact-info-box">
+                    <h3>Contact Information</h3>
+                    <p><strong>CodeBrix Web Development Agency</strong><br>
+                    For questions about these terms, contact us:</p>
+                    <ul>
+                        <li><strong>Email:</strong> contact@codebrixweb.com</li>
+                        <li><strong>Phone:</strong> +234 911 318 0149</li>
+                        <li><strong>Office:</strong> Ibeju Lekki, Lagos, Nigeria</li>
+                        <li><strong>Website:</strong> <a href="https://codebrixweb.com" style="color: var(--primary-color);">codebrixweb.com</a></li>
+                        <li><strong>Hours:</strong> Monday-Friday, 9:00 AM - 6:00 PM WAT</li>
+                    </ul>
+                </div>
+                
+                <a href="https://codebrixweb.com" class="back-to-home">
+                    <i class="fas fa-arrow-left"></i> Back to Homepage
+                </a>
+            </div>
         </div>
     </section>
+    
+    <!-- Footer (simplified) -->
+    <footer style="background: var(--dark-bg); padding: 2rem 0; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <p style="text-align: center; color: var(--text-gray); font-size: 0.9rem;">
+                &copy; 2025 CodeBrix - Web Development Agency Lagos. All rights reserved.
+            </p>
+        </div>
+    </footer>
 </body>
 </html>

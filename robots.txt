@@ -5,17 +5,15 @@ Disallow: /private/
 
 Sitemap: https://codebrixweb.com/sitemap.xml
 
-# Crawl-delay: 10
-# Uncomment above if you want to limit crawl rate
+# Legal pages
+Allow: /privacy-policy.html
+Allow: /terms-of-service.html
+Allow: /cookie-policy.html
+Allow: /blog.html
 
-User-agent: Googlebot
-Allow: /
-Disallow: /private/
+# Block AI crawlers
+User-agent: GPTBot
+Disallow: /
 
-User-agent: Bingbot
-Allow: /
-Disallow: /private/
-
-User-agent: Slurp
-Allow: /
-Disallow: /private/
+User-agent: ChatGPT-User
+Disallow: /
