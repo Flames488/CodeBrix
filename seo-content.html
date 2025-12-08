@@ -6,43 +6,106 @@
   <meta name="description" content="CodeBrix provides professional web design, SEO optimization, landing pages, business websites, and conversion-focused digital solutions in Nigeria and worldwide.">
   <meta name="keywords" content="web design Nigeria, SEO services Nigeria, landing page design, website development Lagos, CodeBrix">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://codebrixweb.com/seo-content.html">
+  <link rel="canonical" href="https://codebrixweb.com/seo-services.html">
 
-   <script src="js/google-analytics.js"></script>
 
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V81VT4QDQS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V81VT4QDQS');
+  </script>
 
-  <!-- Match your existing theme -->
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <!-- Fix: Correct favicon path -->
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+  
 
   <style>
     :root {
       --primary-color: #FF6B35;
-      --dark-bg: #0f0f0f;
-      --dark-secondary: #181818;
-      --text-light: #ffffff;
-      --text-muted: #bdbdbd;
-      --border-color: rgba(255,255,255,0.08);
+      --primary-dark: #E55A2B;
+      --primary-light: #FF8C5A;
+      --dark-bg: #0A0A0A;
+      --dark-secondary: #1A1A1A;
+      --text-light: #FFFFFF;
+      --text-muted: #888888;
+      --text-light-gray: #CCCCCC;
+      --border-color: #333333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       background: var(--dark-bg);
       color: var(--text-light);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 0;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       line-height: 1.7;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Header/Navigation */
+    .seo-header {
+      background: rgba(10, 10, 10, 0.98);
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-color);
+      backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-home {
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .back-home:hover {
+      color: var(--primary-light);
+      gap: 0.7rem;
     }
 
     .seo-container {
       max-width: 1100px;
-      margin: auto;
-      padding: 4rem 1.5rem;
+      margin: 0 auto;
+      padding: 4rem 2rem;
     }
 
     h1, h2, h3 {
       color: var(--text-light);
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
     }
 
     h1 span, h2 span {
@@ -51,82 +114,216 @@
 
     p {
       color: var(--text-muted);
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
     }
 
     .seo-box {
       background: var(--dark-secondary);
-      border-radius: 16px;
+      border-radius: 20px;
       padding: 2.5rem;
       margin: 2.5rem 0;
       border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .seo-box:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-5px);
     }
 
     ul {
-      padding-left: 1.2rem;
-      color: var(--text-muted);
+      padding-left: 1.5rem;
+      color: var(--text-light-gray);
+      margin-bottom: 1.5rem;
     }
 
     ul li {
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    ul li::before {
+      content: "•";
+      color: var(--primary-color);
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
     }
 
     .seo-cta {
-      background: linear-gradient(135deg, #FF6B35, #FF8F35);
-      color: #000;
-      padding: 1rem 1.8rem;
-      display: inline-block;
-      border-radius: 12px;
-      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+      color: white;
+      padding: 1rem 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      border-radius: 50px;
+      font-weight: 600;
       text-decoration: none;
       margin-top: 1.5rem;
-      transition: transform 0.2s ease;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
     }
 
     .seo-cta:hover {
       transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+      color: white;
+      text-decoration: none;
     }
 
-    footer {
-      background: #0a0a0a;
+    .seo-cta-small {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .internal-links {
+      background: var(--dark-secondary);
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .internal-links a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .internal-links a:hover {
+      color: var(--primary-light);
+      text-decoration: underline;
+    }
+
+    .seo-footer {
+      background: #0A0A0A;
       border-top: 1px solid var(--border-color);
-      padding: 2rem 1.5rem;
+      padding: 3rem 1.5rem;
       text-align: center;
       color: var(--text-muted);
     }
 
-    footer a {
+    .seo-footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    .seo-footer a {
       color: var(--primary-color);
       text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .seo-footer a:hover {
+      color: var(--primary-light);
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .seo-container {
+        padding: 2rem 1.5rem;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .header-container {
+        padding: 0 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .seo-box {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .seo-cta {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease forwards;
     }
   </style>
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     
-<header style="background: var(--dark-bg); padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
-    <div style="max-width: 1100px; margin: auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center;">
-        <a href="/" style="color: var(--primary-color); font-weight: bold; font-size: 1.2rem; text-decoration: none;">
-            ← Back to CodeBrix Home
-        </a>
-        <a href="/contact" class="seo-cta" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">
-            Contact Us
+<header class="seo-header fade-in">
+    <div class="header-container">
+        <a href="./index.html#home" class="back-home">
+    <i class="fas fa-arrow-left"></i> Back to CodeBrix Home</a>
+        <a href="./#contact" class="seo-cta seo-cta-small">
+            <i class="fas fa-paper-plane"></i> Contact Us
         </a>
     </div>
 </header>
+<!-- Breadcrumb Navigation -->
+<div class="breadcrumb" style="margin-bottom: 2rem; color: var(--text-gray); font-size: 0.9rem;">
+    <a href="./index.html#home" style="color: var(--primary-color);">Home</a> 
+    <i class="fas fa-chevron-right" style="margin: 0 0.5rem; font-size: 0.8rem;"></i>
+    <span>SEO Services</span>
+</div>
 
   <main class="seo-container">
-
     <!-- HERO -->
-    <section>
+    <section class="fade-in">
       <h1>Professional Web Design & SEO Services by <span>CodeBrix</span></h1>
       <p>
         CodeBrix is a premium web design and digital optimization agency focused on building fast, conversion-driven websites and landing pages for businesses in Nigeria and worldwide. We combine modern UI design, SEO best practices, and high-performance development to help brands grow online.
       </p>
-      <a href="/contact" class="seo-cta">Get a Free Website Audit</a>
+      <a href="./#contact" class="seo-cta">
+        <i class="fas fa-chart-line"></i> Get a Free Website Audit
+      </a>
     </section>
 
     <!-- ABOUT -->
-    <section class="seo-box">
+    <section class="seo-box fade-in">
       <h2>About <span>CodeBrix</span></h2>
       <p>
         CodeBrix specializes in high-performance websites, SEO optimization, conversion-focused landing pages, and business automation solutions. Our mission is to help startups, service providers, and growing brands establish strong digital credibility and generate consistent leads through smart design and technical precision.
@@ -137,7 +334,7 @@
     </section>
 
     <!-- SERVICES -->
-    <section class="seo-box">
+    <section class="seo-box fade-in">
       <h2>Our Core <span>Services</span></h2>
       <ul>
         <li>Business Website Design</li>
@@ -150,10 +347,13 @@
         <li>Web App & Dashboard Development</li>
         <li>Backend Integrations & Automation</li>
       </ul>
+      <a href="./#services" class="seo-cta seo-cta-small">
+        <i class="fas fa-list"></i> View All Services
+      </a>
     </section>
 
     <!-- SEO -->
-    <section class="seo-box">
+    <section class="seo-box fade-in">
       <h2>Search Engine Optimization <span>(SEO)</span></h2>
       <p>
         We implement modern SEO strategies that help your website rank on Google, drive organic traffic, and increase long-term visibility. Our SEO approach focuses on performance, accessibility, content structure, and technical optimization.
@@ -166,10 +366,13 @@
         <li>SEO-friendly URL structure</li>
         <li>Schema & metadata setup</li>
       </ul>
+      <a href="./#search-console" class="seo-cta seo-cta-small">
+        <i class="fas fa-search"></i> Learn About SEO Monitoring
+      </a>
     </section>
 
     <!-- WHY CHOOSE -->
-    <section class="seo-box">
+    <section class="seo-box fade-in">
       <h2>Why Choose <span>CodeBrix</span></h2>
       <ul>
         <li>Conversion-first design strategy</li>
@@ -180,10 +383,13 @@
         <li>Clear communication & fast delivery</li>
         <li>Ongoing maintenance & support</li>
       </ul>
+      <a href="./#why-us" class="seo-cta seo-cta-small">
+        <i class="fas fa-check-circle"></i> Why Business Owners Choose Us
+      </a>
     </section>
 
     <!-- LOCATIONS -->
-    <section class="seo-box">
+    <section class="seo-box fade-in">
       <h2>Serving Clients in <span>Nigeria & Worldwide</span></h2>
       <p>
         While CodeBrix is proudly based in Nigeria, we serve clients globally. We work remotely with business owners across Africa, Europe, North America, and beyond.
@@ -191,10 +397,13 @@
       <p>
         Key service areas include Lagos, Abuja, Port Harcourt, Ibadan, Benin City, Onitsha, Asaba, and international markets.
       </p>
+      <a href="./#contact" class="seo-cta seo-cta-small">
+        <i class="fas fa-globe-africa"></i> Contact Us for Your Location
+      </a>
     </section>
 
     <!-- INDUSTRIES -->
-    <section class="seo-box">
+    <section class="seo-box fade-in">
       <h2>Industries We <span>Serve</span></h2>
       <ul>
         <li>Tech Startups</li>
@@ -206,48 +415,170 @@
         <li>Agency Owners</li>
         <li>E-commerce Brands</li>
       </ul>
+      <a href="./#portfolio" class="seo-cta seo-cta-small">
+        <i class="fas fa-briefcase"></i> View Our Portfolio
+      </a>
     </section>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://codebrixweb.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "SEO Services",
-      "item": "https://codebrixweb.com/seo-content.html"
-    }
-  ]
-}
-</script>
 
+    <!-- Internal Links Section -->
+    <div class="internal-links fade-in">
+      <p>
+        Looking for <a href="./#pricing">web development pricing in Lagos</a> or <a href="./#contact">to discuss your project</a>?
+      </p>
+    </div>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://codebrixweb.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "SEO Services",
+          "item": "https://codebrixweb.com/seo-content.html"
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "SEO & Web Development",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "CodeBrix",
+        "url": "https://codebrixweb.com/",
+        "telephone": "+2349113180149",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lagos",
+          "addressCountry": "NG"
+        }
+      },
+      "description": "Professional web design and SEO services in Nigeria. We build conversion-focused websites and optimize them for search engines.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Nigeria"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "SEO & Web Development Services"
+      }
+    }
+    </script>
 
     <!-- CTA -->
-    <section class="seo-box">
+    <section class="seo-box fade-in">
       <h2>Ready to Build a High-Performing Website?</h2>
       <p>
         If your goal is to increase leads, build trust, and dominate your industry online, CodeBrix is your ideal digital partner.
       </p>
-      <a href="/contact" class="seo-cta">Start Your Project</a>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+        <a href="./#contact" class="seo-cta">
+          <i class="fas fa-rocket"></i> Start Your Project
+        </a>
+        <a href="tel:+2349113180149" class="seo-cta" style="background: transparent; border: 2px solid var(--primary-color);">
+          <i class="fas fa-phone"></i> Call Now
+        </a>
+      </div>
     </section>
 
   </main>
 
-  <footer>
-    <p>© 2025 CodeBrix. All Rights Reserved.</p>
-    <p>
-      <a href="/privacy-policy.html">Privacy Policy</a> •
-      <a href="/terms-of-service.html">Terms of Service</a> •
-      <a href="/contact">Contact</a>
-    </p>
-  </footer>
+ <footer class="seo-footer">
+    <div class="seo-container" style="padding-top: 0; padding-bottom: 0;">
+        <p>© 2025 CodeBrix. All Rights Reserved.</p>
+        <p>
+            <a href="./index.html#home">Home</a> •
+            <a href="./index.html#services">Our Services</a> •
+            <a href="./index.html#portfolio">Portfolio</a> •
+            <a href="./index.html#pricing">Pricing</a> •
+            <a href="./index.html#contact">Contact</a> •
+            <a href="./index.html#search-console">SEO Monitoring</a>
+        </p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
+            <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>
+            Ibeju Lekki, Lagos, Nigeria
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+            <a href="./index.html#seo-preview" style="color: var(--primary-color);">
+                <i class="fas fa-arrow-up"></i> Back to Top
+            </a>
+        </p>
+    </div>
+</footer>
 
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/2349113180149" class="whatsapp-float" target="_blank" rel="noopener" 
+     style="position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px; background: #25D366; 
+            color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+            font-size: 28px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); z-index: 1000; 
+            transition: all 0.3s ease; text-decoration: none;">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.addEventListener('DOMContentLoaded', function() {
+      // Handle anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          
+          // Only handle internal page anchors (not cross-page)
+          if (href.startsWith('#') && href.length > 1) {
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+              e.preventDefault();
+              targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          }
+        });
+      });
+
+      // Add animation to elements as they scroll into view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Track clicks on CTA buttons
+      document.querySelectorAll('.seo-cta').forEach(button => {
+        button.addEventListener('click', function() {
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'click', {
+              'event_category': 'SEO Page',
+              'event_label': this.textContent.trim()
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

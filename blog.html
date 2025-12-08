@@ -34,11 +34,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Canonical URL -->
     <link rel="canonical" href="https://codebrixweb.com/blog.html">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- Hreflang Tags -->
@@ -55,7 +50,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS - Using same styles from index.html -->
+    <!-- Custom CSS -->
     <style>
         :root {
             --primary-color: #FF6B35;
@@ -473,6 +468,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background: var(--primary-dark);
         }
         
+        /* Search Widget */
+        .search-widget {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .search-widget input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            background: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-light);
+        }
+        
+        .search-widget button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0 1.5rem;
+            cursor: pointer;
+        }
+        
         /* Pagination */
         .blog-pagination {
             display: flex;
@@ -502,6 +521,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .pagination-btn.active {
             background: var(--primary-color);
             border-color: var(--primary-color);
+        }
+        
+        .pagination-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .pagination-btn.disabled:hover {
+            background: var(--dark-secondary);
+            border-color: var(--border-color);
         }
         
         /* ===== CTA SECTION ===== */
@@ -740,6 +769,68 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(to bottom, var(--primary-light), var(--primary-color));
         }
+        
+        /* ===== NOTIFICATION STYLES ===== */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            z-index: 10000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            animation: slideIn 0.3s ease;
+        }
+        
+        .notification-success {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .notification-error {
+            background: #f44336;
+            color: white;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+        
+        /* ===== LOADING SPINNER ===== */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* ===== SEARCH RESULTS ===== */
+        .search-results {
+            margin-bottom: 2rem;
+        }
+        
+        .search-results-title {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .search-results-count {
+            color: var(--primary-color);
+        }
     </style>
     
     <!-- Structured Data for Blog -->
@@ -764,15 +855,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
     }
     </script>
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V81VT4QDQS"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-V81VT4QDQS');
-    </script>
 </head>
 <body>
    
@@ -785,7 +867,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="images/logo (2).png" alt="CodeBrix Logo" width="200" height="50" loading="lazy">
+                <img src="images/logo-2.png" alt="CodeBrix Logo" width="200" height="50" loading="lazy">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -803,6 +885,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </nav>
+        
 
     <!-- Blog Hero Section -->
     <section class="blog-hero">
@@ -831,144 +914,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h2 class="section-title">Latest <span>Articles</span></h2>
             <p class="section-subtitle">Stay updated with the latest trends and strategies in web development and digital marketing.</p>
             
+            <!-- Search Results -->
+            <div id="search-results" class="search-results" style="display: none;">
+                <h3 class="search-results-title">Search Results for "<span id="search-query"></span>"</h3>
+                <p>Found <span id="search-count" class="search-results-count">0</span> articles</p>
+            </div>
+            
             <div class="blog-grid">
                 <!-- Main Articles -->
-                <div class="main-articles">
-                    <!-- Article 1 -->
-                    <article class="blog-article fade-in">
-                        <div class="article-image">
-                            <div style="width: 100%; height: 100%; background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop'); background-position: center; background-size: cover;"></div>
-                        </div>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span><i class="far fa-calendar"></i> March 15, 2024</span>
-                                <span><i class="far fa-clock"></i> 5 min read</span>
-                                <span><i class="far fa-user"></i> By Emmanuel Nwobodo</span>
-                            </div>
-                            <h3>How to Choose the Right Web Developer in Lagos: 7 Essential Questions to Ask</h3>
-                            <p>Finding a reliable web developer in Lagos can be challenging. Learn the key questions to ask before hiring to ensure you get quality work that delivers results for your business.</p>
-                            <div class="article-tags">
-                                <span class="article-tag">Web Development</span>
-                                <span class="article-tag">Lagos Business</span>
-                                <span class="article-tag">Hiring Tips</span>
-                            </div>
-                            <a href="#" class="read-more">
-                                Read Full Article <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </article>
-                    
-                    <!-- Article 2 -->
-                    <article class="blog-article fade-in">
-                        <div class="article-image">
-                            <div style="width: 100%; height: 100%; background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format&fit=crop'); background-position: center; background-size: cover;"></div>
-                        </div>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span><i class="far fa-calendar"></i> March 10, 2024</span>
-                                <span><i class="far fa-clock"></i> 8 min read</span>
-                                <span><i class="far fa-user"></i> By Tunde Bello</span>
-                            </div>
-                            <h3>SEO for Nigerian Businesses: How to Rank Higher on Google in 2024</h3>
-                            <p>Updated SEO strategies specifically tailored for the Nigerian market. Learn how to optimize your website for local search and attract more customers from Lagos and beyond.</p>
-                            <div class="article-tags">
-                                <span class="article-tag">SEO</span>
-                                <span class="article-tag">Digital Marketing</span>
-                                <span class="article-tag">Google Ranking</span>
-                            </div>
-                            <a href="#" class="read-more">
-                                Read Full Article <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </article>
-                    
-                    <!-- Article 3 -->
-                    <article class="blog-article fade-in">
-                        <div class="article-image">
-                            <div style="width: 100%; height: 100%; background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop'); background-position: center; background-size: cover;"></div>
-                        </div>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span><i class="far fa-calendar"></i> March 5, 2024</span>
-                                <span><i class="far fa-clock"></i> 6 min read</span>
-                                <span><i class="far fa-user"></i> By Chioma Okafor</span>
-                            </div>
-                            <h3>Mobile-First Design: Why Your Nigerian Business Needs It Now</h3>
-                            <p>With over 70% of internet users in Nigeria accessing the web via mobile, discover why mobile-first design is no longer optional and how to implement it effectively.</p>
-                            <div class="article-tags">
-                                <span class="article-tag">UI/UX Design</span>
-                                <span class="article-tag">Mobile Design</span>
-                                <span class="article-tag">Responsive Web</span>
-                            </div>
-                            <a href="#" class="read-more">
-                                Read Full Article <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </article>
-                    
-                    <!-- Article 4 -->
-                    <article class="blog-article fade-in">
-                        <div class="article-image">
-                            <div style="width: 100%; height: 100%; background-image: url('https://images.unsplash.com/photo-1556742111-a301b5f64d6d?w=800&auto=format&fit=crop'); background-position: center; background-size: cover;"></div>
-                        </div>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span><i class="far fa-calendar"></i> February 28, 2024</span>
-                                <span><i class="far fa-clock"></i> 7 min read</span>
-                                <span><i class="far fa-user"></i> By Emmanuel Nwobodo</span>
-                            </div>
-                            <h3>E-commerce in Nigeria: Building a Successful Online Store That Actually Sells</h3>
-                            <p>Step-by-step guide to creating an e-commerce website that converts visitors into customers in the Nigerian market. Learn about payment integration, logistics, and customer trust.</p>
-                            <div class="article-tags">
-                                <span class="article-tag">E-commerce</span>
-                                <span class="article-tag">Online Business</span>
-                                <span class="article-tag">Payments</span>
-                            </div>
-                            <a href="#" class="read-more">
-                                Read Full Article <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </article>
+                <div class="main-articles" id="articles-container">
+                    <!-- Articles will be loaded dynamically -->
                 </div>
                 
                 <!-- Sidebar -->
                 <aside class="blog-sidebar">
+                    <!-- Search Widget -->
+                    <div class="sidebar-widget">
+                        <h4><i class="fas fa-search"></i> Search Articles</h4>
+                        <div class="search-widget">
+                            <input type="text" id="search-input" placeholder="Search articles...">
+                            <button id="search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                    
                     <!-- Categories Widget -->
                     <div class="sidebar-widget">
                         <h4><i class="fas fa-folder"></i> Categories</h4>
-                        <ul class="category-list">
-                            <li><a href="#">Web Development <span class="category-count">12</span></a></li>
-                            <li><a href="#">SEO & Digital Marketing <span class="category-count">8</span></a></li>
-                            <li><a href="#">UI/UX Design <span class="category-count">6</span></a></li>
-                            <li><a href="#">E-commerce <span class="category-count">5</span></a></li>
-                            <li><a href="#">Business Growth <span class="category-count">7</span></a></li>
-                            <li><a href="#">Technology Trends <span class="category-count">4</span></a></li>
+                        <ul class="category-list" id="categories-list">
+                            <!-- Categories will be loaded dynamically -->
                         </ul>
                     </div>
                     
                     <!-- Recent Posts Widget -->
                     <div class="sidebar-widget">
                         <h4><i class="fas fa-history"></i> Recent Posts</h4>
-                        <div class="recent-post">
-                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=200&auto=format&fit=crop" alt="Recent Post">
-                            <div class="recent-post-content">
-                                <h5>How to Choose the Right Web Developer in Lagos</h5>
-                                <div class="recent-post-date">March 15, 2024</div>
-                            </div>
-                        </div>
-                        <div class="recent-post">
-                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&auto=format&fit=crop" alt="Recent Post">
-                            <div class="recent-post-content">
-                                <h5>SEO for Nigerian Businesses 2024</h5>
-                                <div class="recent-post-date">March 10, 2024</div>
-                            </div>
-                        </div>
-                        <div class="recent-post">
-                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=200&auto=format&fit=crop" alt="Recent Post">
-                            <div class="recent-post-content">
-                                <h5>Mobile-First Design Essentials</h5>
-                                <div class="recent-post-date">March 5, 2024</div>
-                            </div>
+                        <div id="recent-posts-container">
+                            <!-- Recent posts will be loaded dynamically -->
                         </div>
                     </div>
                     
@@ -979,8 +960,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             Get weekly web development tips and business growth strategies delivered to your inbox.
                         </p>
                         <form id="sidebar-newsletter">
-                            <input type="email" placeholder="Your email address" required>
-                            <button type="submit">Subscribe</button>
+                            <input type="email" id="newsletter-email" placeholder="Your email address" required>
+                            <button type="submit" id="subscribe-btn">
+                                <span id="subscribe-text">Subscribe</span>
+                                <span id="subscribe-loading" style="display: none;">
+                                    <div class="spinner"></div> Subscribing...
+                                </span>
+                            </button>
                         </form>
                         <p style="color: var(--text-gray); font-size: 0.8rem; margin-top: 1rem;">
                             No spam. Unsubscribe anytime.
@@ -990,27 +976,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <!-- Popular Tags Widget -->
                     <div class="sidebar-widget">
                         <h4><i class="fas fa-tags"></i> Popular Tags</h4>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                            <span class="article-tag">Lagos</span>
-                            <span class="article-tag">Website Design</span>
-                            <span class="article-tag">SEO Nigeria</span>
-                            <span class="article-tag">E-commerce</span>
-                            <span class="article-tag">Digital Marketing</span>
-                            <span class="article-tag">Web Development</span>
-                            <span class="article-tag">Business Growth</span>
-                            <span class="article-tag">Mobile Apps</span>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;" id="popular-tags">
+                            <!-- Tags will be loaded dynamically -->
                         </div>
                     </div>
                 </aside>
             </div>
             
             <!-- Pagination -->
-            <div class="blog-pagination">
-                <button class="pagination-btn active"><i class="fas fa-chevron-left"></i> Previous</button>
-                <button class="pagination-btn">1</button>
-                <button class="pagination-btn">2</button>
-                <button class="pagination-btn">3</button>
-                <button class="pagination-btn">Next <i class="fas fa-chevron-right"></i></button>
+            <div class="blog-pagination" id="pagination-container">
+                <!-- Pagination will be loaded dynamically -->
             </div>
         </div>
     </section>
@@ -1064,12 +1039,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 <div class="footer-links">
                     <h4>Blog Categories</h4>
-                    <ul>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                        <li><a href="#">UI/UX Design</a></li>
-                        <li><a href="#">E-commerce</a></li>
-                        <li><a href="#">Business Tips</a></li>
+                    <ul id="footer-categories">
+                        <!-- Categories will be loaded dynamically -->
                     </ul>
                 </div>
                 
@@ -1102,9 +1073,548 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <!-- Blog System JavaScript -->
     <script>
+        // Blog Data - Complete with real content
+        const blogData = {
+            articles: [
+                {
+                    id: 1,
+                    slug: "how-to-choose-right-web-developer-lagos",
+                    title: "How to Choose the Right Web Developer in Lagos: 7 Essential Questions to Ask",
+                    excerpt: "Finding a reliable web developer in Lagos can be challenging. Learn the key questions to ask before hiring to ensure you get quality work that delivers results for your business.",
+                    content: `<h2>Why Choosing the Right Web Developer Matters</h2>
+                    <p>In today's digital age, your website is often the first point of contact between your business and potential customers. For Lagos-based businesses, having a professional, functional website is no longer optional—it's essential for growth and credibility.</p>
+                    
+                    <h2>The 7 Essential Questions to Ask</h2>
+                    
+                    <h3>1. Can You Show Me Examples of Your Previous Work?</h3>
+                    <p>Always ask for a portfolio. Look for diversity in their projects and pay attention to:</p>
+                    <ul>
+                        <li>Design quality and user experience</li>
+                        <li>Mobile responsiveness</li>
+                        <li>Loading speed</li>
+                        <li>Functionality across different devices</li>
+                    </ul>
+                    
+                    <h3>2. What's Your Development Process?</h3>
+                    <p>A structured process indicates professionalism. Look for developers who:</p>
+                    <ul>
+                        <li>Conduct discovery sessions to understand your business</li>
+                        <li>Provide wireframes and mockups before development</li>
+                        <li>Use version control systems like Git</li>
+                        <li>Have testing and quality assurance procedures</li>
+                        <li>Provide documentation and training</li>
+                    </ul>
+                    
+                    <h3>3. How Do You Handle Ongoing Maintenance?</h3>
+                    <p>Websites require regular updates. Ask about:</p>
+                    <ul>
+                        <li>Security updates and patches</li>
+                        <li>Backup procedures</li>
+                        <li>Technical support availability</li>
+                        <li>Update policies and costs</li>
+                    </ul>
+                    
+                    <h2>Key Considerations for Lagos Businesses</h2>
+                    <p>When hiring a web developer in Lagos, consider these local factors:</p>
+                    
+                    <h3>Local Market Understanding</h3>
+                    <p>A developer who understands the Lagos market will:</p>
+                    <ul>
+                        <li>Design for local internet speeds and conditions</li>
+                        <li>Incorporate popular local payment gateways (Paystack, Flutterwave)</li>
+                        <li>Optimize for mobile-first users (over 70% in Nigeria)</li>
+                        <li>Understand local SEO requirements</li>
+                    </ul>
+                    
+                    <h3>Pricing Transparency</h3>
+                    <p>Get clear answers about:</p>
+                    <ul>
+                        <li>Total project cost (with breakdown)</li>
+                        <li>Payment schedule</li>
+                        <li>Additional costs (domain, hosting, SSL certificates)</li>
+                        <li>Ongoing maintenance fees</li>
+                    </ul>
+                    
+                    <h2>Red Flags to Watch Out For</h2>
+                    <ul>
+                        <li>🚩 No portfolio or unwilling to share previous work</li>
+                        <li>🚩 Unclear communication or delayed responses</li>
+                        <li>🚩 No written contract or agreement</li>
+                        <li>🚩 Promises that sound too good to be true</li>
+                        <li>🚩 No support or maintenance plan</li>
+                    </ul>
+                    
+                    <h2>Conclusion</h2>
+                    <p>Choosing the right web developer in Lagos requires due diligence. Take your time, ask the right questions, and don't base your decision solely on price. A good developer is an investment that will pay off through a professional online presence that attracts and converts customers.</p>
+                    
+                    <div class="callout-box" style="background: rgba(255,107,53,0.1); padding: 1.5rem; border-radius: 10px; margin: 2rem 0;">
+                        <h3>💡 Pro Tip</h3>
+                        <p>Always start with a small project or consultation before committing to a large website build. This allows you to assess their work quality and communication style.</p>
+                    </div>`,
+                    image: "asset/website-design.jpg",
+                    thumbnail: "asset/website-design.jpg",
+                    author: "Emmanuel Nwobodo",
+                    authorRole: "Lead Developer",
+                    authorBio: "Emmanuel has 8+ years of web development experience and has helped over 50 Nigerian businesses establish their online presence.",
+                    date: "March 15, 2024",
+                    readTime: "5 min read",
+                    category: "Web Development",
+                    tags: ["Web Development", "Lagos Business", "Hiring Tips", "Website Design", "Freelancers"]
+                },
+                {
+                    id: 2,
+                    slug: "seo-for-nigerian-businesses-2024",
+                    title: "SEO for Nigerian Businesses: How to Rank Higher on Google in 2024",
+                    excerpt: "Updated SEO strategies specifically tailored for the Nigerian market. Learn how to optimize your website for local search and attract more customers from Lagos and beyond.",
+                    content: `<h2>The Nigerian SEO Landscape in 2024</h2>
+                    <p>SEO in Nigeria has evolved significantly. With increasing internet penetration and mobile usage, local businesses have unprecedented opportunities to reach customers online.</p>
+                    
+                    <h2>Key SEO Strategies for Nigerian Businesses</h2>
+                    
+                    <h3>1. Local SEO Optimization</h3>
+                    <p>For Nigerian businesses, local search is crucial:</p>
+                    <ul>
+                        <li>Create a Google Business Profile (formerly Google My Business)</li>
+                        <li>Include your complete address with local landmarks</li>
+                        <li>Use local phone numbers with area codes</li>
+                        <li>Add "Lagos", "Nigeria" to your title tags and meta descriptions</li>
+                    </ul>
+                    
+                    <h3>2. Mobile-First Optimization</h3>
+                    <p>With over 70% of Nigerians accessing the internet via mobile:</p>
+                    <ul>
+                        <li>Ensure your website loads quickly on mobile devices</li>
+                        <li>Use responsive design that works on all screen sizes</li>
+                        <li>Optimize images for mobile data constraints</li>
+                        <li>Implement Accelerated Mobile Pages (AMP) where appropriate</li>
+                    </ul>
+                    
+                    <h3>3. Content Strategy for Nigerian Audience</h3>
+                    <p>Create content that resonates with your local audience:</p>
+                    <ul>
+                        <li>Use local language and phrases where appropriate</li>
+                        <li>Address local pain points and needs</li>
+                        <li>Create location-specific content (e.g., "Best [service] in Lagos")</li>
+                        <li>Incorporate local news and events into your content</li>
+                    </ul>
+                    
+                    <h2>Technical SEO Considerations</h2>
+                    
+                    <h3>Speed Optimization for Nigerian Internet</h3>
+                    <p>Given the internet infrastructure in Nigeria:</p>
+                    <ul>
+                        <li>Aim for page load times under 3 seconds</li>
+                        <li>Use a local hosting provider with servers in Nigeria or West Africa</li>
+                        <li>Implement lazy loading for images and videos</li>
+                        <li>Minify CSS, JavaScript, and HTML files</li>
+                    </ul>
+                    
+                    <h3>Structured Data Implementation</h3>
+                    <p>Help Google understand your content better:</p>
+                    <ul>
+                        <li>Implement LocalBusiness schema markup</li>
+                        <li>Add opening hours, price range, and service areas</li>
+                        <li>Use review schema for customer testimonials</li>
+                        <li>Implement FAQ schema for common questions</li>
+                    </ul>
+                    
+                    <h2>Local Link Building Strategies</h2>
+                    <p>Build authority with local relevance:</p>
+                    <ul>
+                        <li>Guest post on Nigerian business blogs</li>
+                        <li>Get listed in Nigerian business directories</li>
+                        <li>Partner with complementary local businesses</li>
+                        <li>Participate in local online communities and forums</li>
+                    </ul>
+                    
+                    <h2>Tools for Nigerian SEO</h2>
+                    <table>
+                        <tr>
+                            <th>Tool</th>
+                            <th>Purpose</th>
+                            <th>Free/Paid</th>
+                        </tr>
+                        <tr>
+                            <td>Google Search Console</td>
+                            <td>Monitor search performance</td>
+                            <td>Free</td>
+                        </tr>
+                        <tr>
+                            <td>Ahrefs</td>
+                            <td>Keyword research & backlink analysis</td>
+                            <td>Paid</td>
+                        </tr>
+                        <tr>
+                            <td>Google Trends Nigeria</td>
+                            <td>See trending topics in Nigeria</td>
+                            <td>Free</td>
+                        </tr>
+                        <tr>
+                            <td>Ubersuggest</td>
+                            <td>Keyword suggestions</td>
+                            <td>Freemium</td>
+                        </tr>
+                    </table>
+                    
+                    <h2>Common SEO Mistakes to Avoid</h2>
+                    <ul>
+                        <li>❌ Ignoring mobile optimization</li>
+                        <li>❌ Slow loading speeds</li>
+                        <li>❌ Thin or duplicate content</li>
+                        <li>❌ Not optimizing for local search</li>
+                        <li>❌ Ignoring technical SEO issues</li>
+                    </ul>
+                    
+                    <h2>Action Plan for 2024</h2>
+                    <ol>
+                        <li>Conduct a comprehensive SEO audit</li>
+                        <li>Optimize for mobile first</li>
+                        <li>Create locally relevant content</li>
+                        <li>Build local citations and backlinks</li>
+                        <li>Monitor and adjust based on performance</li>
+                    </ol>`,
+                    image: "asset/Search-Engine.jpg",
+                    thumbnail: "asset/Search-Engine.jpg",    
+                    author: "Tunde Bello",
+                    authorRole: "SEO Specialist",
+                    authorBio: "Tunde specializes in helping Nigerian businesses improve their search engine rankings and online visibility.",
+                    date: "March 10, 2024",
+                    readTime: "8 min read",
+                    category: "SEO & Digital Marketing",
+                    tags: ["SEO", "Digital Marketing", "Google Ranking", "Local SEO", "Mobile SEO"]
+                },
+                {
+                    id: 3,
+                    slug: "mobile-first-design-nigerian-business",
+                    title: "Mobile-First Design: Why Your Nigerian Business Needs It Now",
+                    excerpt: "With over 70% of internet users in Nigeria accessing the web via mobile, discover why mobile-first design is no longer optional and how to implement it effectively.",
+                    content: `<h2>The Mobile Revolution in Nigeria</h2>
+                    <p>Nigeria has one of the highest mobile internet penetration rates in Africa. With smartphones becoming more affordable and data costs decreasing, mobile has become the primary way Nigerians access the internet.</p>
+                    
+                    <h2>What is Mobile-First Design?</h2>
+                    <p>Mobile-first design is an approach where you design for mobile devices first, then scale up to larger screens. This contrasts with the traditional approach of designing for desktop first and then trying to adapt for mobile.</p>
+                    
+                    <h2>Why Mobile-First is Crucial for Nigerian Businesses</h2>
+                    
+                    <h3>1. User Statistics Don't Lie</h3>
+                    <ul>
+                        <li>Over 70% of website traffic in Nigeria comes from mobile devices</li>
+                        <li>Average Nigerian spends 3+ hours daily on mobile internet</li>
+                        <li>Mobile commerce is growing at 25% annually in Nigeria</li>
+                    </ul>
+                    
+                    <h3>2. Google's Mobile-First Indexing</h3>
+                    <p>Since 2019, Google primarily uses the mobile version of content for indexing and ranking. This means:</p>
+                    <ul>
+                        <li>Mobile-friendly sites rank higher in search results</li>
+                        <li>Mobile user experience directly impacts SEO</li>
+                        <li>Page speed on mobile affects search rankings</li>
+                    </ul>
+                    
+                    <h3>3. Local User Behavior</h3>
+                    <p>Nigerian mobile users have unique behaviors:</p>
+                    <ul>
+                        <li>Preference for simple, fast-loading interfaces</li>
+                        <li>High sensitivity to data usage</li>
+                        <li>Preference for visual content over text-heavy pages</li>
+                        <li>Expectation of instant access to information</li>
+                    </ul>
+                    
+                    <h2>Key Principles of Mobile-First Design</h2>
+                    
+                    <h3>1. Content Prioritization</h3>
+                    <p>On mobile, every pixel counts:</p>
+                    <ul>
+                        <li>Place most important content above the fold</li>
+                        <li>Use clear, concise headings</li>
+                        <li>Break content into smaller, scannable sections</li>
+                        <li>Use bullet points and numbered lists</li>
+                    </ul>
+                    
+                    <h3>2. Touch-Friendly Interface</h3>
+                    <p>Design for touch, not mouse:</p>
+                    <ul>
+                        <li>Minimum touch target size of 44x44 pixels</li>
+                        <li>Ample spacing between interactive elements</li>
+                        <li>Thumb-friendly navigation placement</li>
+                        <li>Swipe gestures for carousels and galleries</li>
+                    </ul>
+                    
+                    <h3>3. Performance Optimization</h3>
+                    <p>Mobile users expect speed:</p>
+                    <ul>
+                        <li>Optimize images for mobile (WebP format recommended)</li>
+                        <li>Minimize HTTP requests</li>
+                        <li>Use efficient CSS and JavaScript</li>
+                        <li>Implement lazy loading</li>
+                    </ul>
+                    
+                    <h2>Technical Implementation</h2>
+                    
+                    <h3>Responsive Design Techniques</h3>
+                    <pre><code>/* Mobile-first CSS approach */
+/* Base styles for mobile */
+.container {
+    width: 100%;
+    padding: 1rem;
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+        padding: 2rem;
+    }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+        padding: 3rem;
+    }
+}</code></pre>
+                    
+                    <h3>Progressive Enhancement</h3>
+                    <p>Start with a solid foundation that works on all devices, then add enhancements for more capable devices:</p>
+                    <ol>
+                        <li>Build core functionality that works everywhere</li>
+                        <li>Add enhanced features for modern browsers</li>
+                        <li>Use feature detection, not browser detection</li>
+                    </ol>
+                    
+                    <h2>Mobile-First Design Checklist</h2>
+                    <ul>
+                        <li>✅ Fast loading (under 3 seconds on 3G)</li>
+                        <li>✅ Responsive images and media</li>
+                        <li>✅ Readable text without zooming</li>
+                        <li>✅ Adequate touch targets</li>
+                        <li>✅ No horizontal scrolling</li>
+                        <li>✅ Accessible forms</li>
+                        <li>✅ Optimized for local network conditions</li>
+                    </ul>
+                    
+                    <h2>Tools for Mobile-First Development</h2>
+                    <ul>
+                        <li><strong>Google Mobile-Friendly Test:</strong> Check your site's mobile compatibility</li>
+                        <li><strong>Chrome DevTools:</strong> Mobile device simulation</li>
+                        <li><strong>Lighthouse:</strong> Performance auditing</li>
+                        <li><strong>PageSpeed Insights:</strong> Optimization suggestions</li>
+                    </ul>
+                    
+                    <h2>Case Study: Nigerian E-commerce Success</h2>
+                    <p>A Lagos-based fashion retailer implemented mobile-first design and saw:</p>
+                    <ul>
+                        <li>40% increase in mobile conversions</li>
+                        <li>25% reduction in bounce rate</li>
+                        <li>60% faster page load times</li>
+                        <li>15% increase in overall sales</li>
+                    </ul>
+                    
+                    <h2>Conclusion</h2>
+                    <p>For Nigerian businesses, mobile-first design is not just a trend—it's a business necessity. By prioritizing mobile users, you're aligning with how the majority of your customers access your website. The investment in mobile-first design pays off through improved user experience, better search rankings, and ultimately, more conversions.</p>`,
+                    image: "asset/nigeria-business.jpg",
+                    thumbnail: "asset/nigeria-business.jpg",
+                    author: "Chioma Okafor",
+                    authorRole: "UI/UX Designer",
+                    authorBio: "Chioma specializes in creating user-friendly mobile experiences for African businesses.",
+                    date: "March 5, 2024",
+                    readTime: "6 min read",
+                    category: "UI/UX Design",
+                    tags: ["UI/UX Design", "Mobile Design", "Responsive Web", "User Experience", "Mobile Optimization"]
+                },
+                {
+                    id: 4,
+                    slug: "ecommerce-nigeria-successful-online-store",
+                    title: "E-commerce in Nigeria: Building a Successful Online Store That Actually Sells",
+                    excerpt: "Step-by-step guide to creating an e-commerce website that converts visitors into customers in the Nigerian market. Learn about payment integration, logistics, and customer trust.",
+                    content: `<h2>The Nigerian E-commerce Opportunity</h2>
+                    <p>Nigeria's e-commerce market is projected to reach $75 billion by 2025. With increasing internet penetration and growing trust in online transactions, now is the perfect time to launch or optimize your online store.</p>
+                    
+                    <h2>Essential Components of a Nigerian E-commerce Website</h2>
+                    
+                    <h3>1. Secure and User-Friendly Platform</h3>
+                    <p>Choose the right platform for your needs:</p>
+                    <ul>
+                        <li><strong>WooCommerce:</strong> Best for WordPress users, highly customizable</li>
+                        <li><strong>Shopify:</strong> Easy setup, good for beginners</li>
+                        <li><strong>Magento:</strong> Enterprise-level, for large stores</li>
+                        <li><strong>Custom Solutions:</strong> For unique business requirements</li>
+                    </ul>
+                    
+                    <h3>2. Nigerian Payment Gateway Integration</h3>
+                    <p>Essential payment options for Nigerian customers:</p>
+                    <ul>
+                        <li><strong>Paystack:</strong> Most popular, supports cards and bank transfers</li>
+                        <li><strong>Flutterwave:</strong> Good for international payments</li>
+                        <li><strong>Remita:</strong> Government and corporate payments</li>
+                        <li><strong>Bank Transfer:</strong> Still widely used in Nigeria</li>
+                        <li><strong>Cash on Delivery:</strong> Essential for building trust</li>
+                    </ul>
+                    
+                    <h2>Building Customer Trust</h2>
+                    
+                    <h3>1. Professional Design and Branding</h3>
+                    <p>Your store must look legitimate:</p>
+                    <ul>
+                        <li>Professional logo and consistent branding</li>
+                        <li>High-quality product images (multiple angles)</li>
+                        <li>Clear, professional product descriptions</li>
+                        <li>About Us page with company story and team photos</li>
+                    </ul>
+                    
+                    <h3>2. Social Proof Elements</h3>
+                    <p>Build credibility with:</p>
+                    <ul>
+                        <li>Customer reviews and ratings</li>
+                        <li>Testimonials with photos</li>
+                        <li>Social media integration</li>
+                        <li>Trust badges (SSL, payment security)</li>
+                    </ul>
+                    
+                    <h3>3. Clear Policies</h3>
+                    <p>Transparency builds trust:</p>
+                    <ul>
+                        <li>Shipping and delivery policy</li>
+                        <li>Returns and refunds policy</li>
+                        <li>Privacy policy</li>
+                    </ul>
+                    
+                    <h2>Logistics and Delivery in Nigeria</h2>
+                    
+                    <h3>Shipping Options</h3>
+                    <p>Offer multiple shipping methods:</p>
+                    <ul>
+                        <li><strong>Courier Services:</strong> DHL, FedEx for fast delivery</li>
+                        <li><strong>Local Logistics:</strong> GIG Logistics, Red Star Express</li>
+                        <li><strong>Pickup Stations:</strong> For urban areas</li>
+                        <li><strong>In-house Delivery:</strong> For local businesses</li>
+                    </ul>
+                    
+                    <h3>Delivery Cost Strategy</h3>
+                    <p>Consider these approaches:</p>
+                    <ul>
+                        <li>Free shipping above a certain order value</li>
+                        <li>Flat rate shipping</li>
+                        <li>Real-time shipping calculators</li>
+                        <li>Local pickup options</li>
+                    </ul>
+                    
+                    <h2>Marketing Your Nigerian E-commerce Store</h2>
+                    
+                    <h3>1. Social Media Marketing</h3>
+                    <p>Leverage popular platforms:</p>
+                    <ul>
+                        <li><strong>Instagram:</strong> Visual products, influencer partnerships</li>
+                        <li><strong>Facebook:</strong> Targeted ads, community building</li>
+                        <li><strong>WhatsApp Business:</strong> Direct customer communication</li>
+                        <li><strong>TikTok:</strong> For younger demographics</li>
+                    </ul>
+                    
+                    <h3>2. Email Marketing</h3>
+                    <p>Build a subscriber list:</p>
+                    <ul>
+                        <li>Welcome series for new subscribers</li>
+                        <li>Abandoned cart recovery emails</li>
+                        <li>Promotional campaigns</li>
+                        <li>Newsletters with valuable content</li>
+                    </ul>
+                    
+                    <h3>3. SEO for E-commerce</h3>
+                    <p>Optimize for search engines:</p>
+                    <ul>
+                        <li>Product-specific keywords</li>
+                        <li>Category page optimization</li>
+                        <li>Product schema markup</li>
+                        <li>Local SEO for physical stores</li>
+                    </ul>
+                    
+                    <h2>Technical Requirements</h2>
+                    
+                    <h3>Performance Optimization</h3>
+                    <p>Fast loading is critical:</p>
+                    <ul>
+                        <li>Optimized product images</li>
+                        <li>Caching implementation</li>
+                        <li>Content Delivery Network (CDN)</li>
+                        <li>Minified CSS and JavaScript</li>
+                    </ul>
+                    
+                    <h3>Mobile Optimization</h3>
+                    <p>Must work perfectly on mobile:</p>
+                    <ul>
+                        <li>Responsive design</li>
+                        <li>Mobile-friendly checkout</li>
+                        <li>Touch-friendly navigation</li>
+                        <li>Fast mobile loading</li>
+                    </ul>
+                    
+                    <h2>Common Mistakes to Avoid</h2>
+                    <ul>
+                        <li>❌ Complicated checkout process</li>
+                        <li>❌ Limited payment options</li>
+                        <li>❌ Poor product images</li>
+                        <li>❌ Hidden costs (show all fees upfront)</li>
+                        <li>❌ Lack of customer support</li>
+                    </ul>
+                    
+                    <h2>Success Metrics to Track</h2>
+                    <ul>
+                        <li>✅ Conversion rate</li>
+                        <li>✅ Average order value</li>
+                        <li>✅ Customer acquisition cost</li>
+                        <li>✅ Customer lifetime value</li>
+                        <li>✅ Return customer rate</li>
+                    </ul>
+                    
+                    <h2>Getting Started Checklist</h2>
+                    <ol>
+                        <li>Choose your e-commerce platform</li>
+                        <li>Register your domain (.com.ng or .ng)</li>
+                        <li>Set up Nigerian payment gateways</li>
+                        <li>Plan your logistics strategy</li>
+                        <li>Create high-quality product content</li>
+                        <li>Implement trust-building elements</li>
+                        <li>Launch with a marketing campaign</li>
+                    </ol>`,
+                    image: "asset/e-commerce.jpg",
+                    thumbnail: "asset/e-commerce.jpg",
+                    author: "Emmanuel Nwobodo",
+                    authorRole: "Lead Developer",
+                    authorBio: "Emmanuel specializes in e-commerce solutions for Nigerian businesses.",
+                    date: "February 28, 2024",
+                    readTime: "7 min read",
+                    category: "E-commerce",
+                    tags: ["E-commerce", "Online Business", "Payments", "Shopify", "WooCommerce", "Logistics"]
+                },
+                // Additional articles would continue here...
+            ],
+            categories: [
+                { name: "Web Development", count: 12, slug: "web-development" },
+                { name: "SEO & Digital Marketing", count: 8, slug: "seo-digital-marketing" },
+                { name: "UI/UX Design", count: 6, slug: "ui-ux-design" },
+                { name: "E-commerce", count: 5, slug: "ecommerce" },
+                { name: "Business Growth", count: 7, slug: "business-growth" },
+                { name: "Technology Trends", count: 4, slug: "technology-trends" }
+            ],
+            popularTags: ["Lagos", "Website Design", "SEO Nigeria", "E-commerce", "Digital Marketing", 
+                         "Web Development", "Business Growth", "Mobile Apps", "WordPress", "Payments",
+                         "Nigerian Business", "Online Marketing", "Web Design", "Mobile First"]
+        };
+
+        // Configuration
+        const ARTICLES_PER_PAGE = 4;
+        let currentPage = 1;
+        let currentCategory = 'all';
+        let currentSearch = '';
+        let totalPages = 1;
+
         // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
+            initializeBlog();
+            
             // Update active nav link
             function updateActiveNav() {
                 const currentPage = window.location.pathname;
@@ -1146,42 +1656,76 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 rootMargin: '0px 0px -50px 0px'
             });
 
-            document.querySelectorAll('.fade-in').forEach(el => {
-                observer.observe(el);
-            });
-            
             // Newsletter form submission
-            const newsletterForms = document.querySelectorAll('#sidebar-newsletter, #blog-newsletter');
-            newsletterForms.forEach(form => {
-                if (form) {
-                    form.addEventListener('submit', function(e) {
-                        e.preventDefault();
-                        const email = this.querySelector('input[type="email"]').value;
+            const newsletterForm = document.getElementById('sidebar-newsletter');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('#newsletter-email').value;
+                    const submitBtn = this.querySelector('#subscribe-btn');
+                    const submitText = document.getElementById('subscribe-text');
+                    const submitLoading = document.getElementById('subscribe-loading');
+                    
+                    // Basic validation
+                    if (!validateEmail(email)) {
+                        showNotification('Please enter a valid email address', 'error');
+                        return;
+                    }
+                    
+                    // Show loading state
+                    submitText.style.display = 'none';
+                    submitLoading.style.display = 'inline';
+                    submitBtn.disabled = true;
+                    
+                    try {
+                        // Simulate API call (replace with actual API)
+                        await simulateNewsletterAPI(email);
                         
-                        alert('Thank you for subscribing to our newsletter! Check your email for confirmation.');
-                        this.reset();
+                        showNotification('Thank you for subscribing! Check your email for confirmation.', 'success');
+                        newsletterForm.reset();
                         
                         // Track newsletter subscription
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'conversion', {
-                                'send_to': 'G-V81VT4QDQS/newsletter_subscription'
+                        if (typeof dataLayer !== 'undefined') {
+                            dataLayer.push({
+                                'event': 'newsletter_subscription',
+                                'email': email
                             });
                         }
-                    });
-                }
-            });
-            
-            // Article click tracking
-            document.querySelectorAll('.read-more, .recent-post-content h5').forEach(link => {
-                link.addEventListener('click', function() {
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'click', {
-                            'event_category': 'Blog',
-                            'event_label': 'Article Click'
-                        });
+                    } catch (error) {
+                        showNotification('Subscription failed. Please try again.', 'error');
+                        console.error('Newsletter subscription error:', error);
+                    } finally {
+                        // Reset button state
+                        submitText.style.display = 'inline';
+                        submitLoading.style.display = 'none';
+                        submitBtn.disabled = false;
                     }
                 });
-            });
+            }
+            
+            // Search functionality
+            const searchInput = document.getElementById('search-input');
+            const searchBtn = document.getElementById('search-btn');
+            
+            if (searchBtn) {
+                searchBtn.addEventListener('click', () => {
+                    const query = searchInput.value.trim();
+                    if (query) {
+                        searchArticles(query);
+                    }
+                });
+            }
+            
+            if (searchInput) {
+                searchInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        const query = searchInput.value.trim();
+                        if (query) {
+                            searchArticles(query);
+                        }
+                    }
+                });
+            }
             
             // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1203,59 +1747,374 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     }
                 });
             });
-            
-            // Lazy load images
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            if (img.dataset.src) {
-                                img.src = img.dataset.src;
-                            }
-                            img.classList.add('loaded');
-                            observer.unobserve(img);
-                        }
-                    });
-                });
-                
-                images.forEach(img => imageObserver.observe(img));
-            }
-            
-            // Pagination functionality
-            document.querySelectorAll('.pagination-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    if (!this.classList.contains('active')) {
-                        document.querySelectorAll('.pagination-btn').forEach(b => b.classList.remove('active'));
-                        this.classList.add('active');
-                        
-                        // Simulate page change
-                        const mainArticles = document.querySelector('.main-articles');
-                        mainArticles.style.opacity = '0.5';
-                        setTimeout(() => {
-                            mainArticles.style.opacity = '1';
-                        }, 300);
-                    }
-                });
-            });
         });
 
-        // Tawk.to Configuration
-        var Tawk_API = Tawk_API || {};
-        var Tawk_LoadStart = new Date();
-        
-        (function() {
-            var s1 = document.createElement('script'),
-                s0 = document.getElementsByTagName('script')[0];
+        // Initialize blog
+        function initializeBlog() {
+            loadArticles();
+            loadCategories();
+            loadRecentPosts();
+            loadPopularTags();
+            loadFooterCategories();
+            setupPagination();
+        }
+
+        // Load articles with pagination
+        function loadArticles(page = 1, category = 'all', searchQuery = '') {
+            currentPage = page;
+            currentCategory = category;
+            currentSearch = searchQuery;
             
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/6931502bf1aec6197f66e7ba/1jbka2b07';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
+            const container = document.getElementById('articles-container');
+            const searchResults = document.getElementById('search-results');
+            
+            if (!container) return;
+            
+            // Filter articles
+            let filteredArticles = blogData.articles;
+            
+            // Apply category filter
+            if (category !== 'all') {
+                filteredArticles = filteredArticles.filter(article => 
+                    article.category.toLowerCase().includes(category.toLowerCase())
+                );
+            }
+            
+            // Apply search filter
+            if (searchQuery) {
+                const query = searchQuery.toLowerCase();
+                filteredArticles = filteredArticles.filter(article => 
+                    article.title.toLowerCase().includes(query) ||
+                    article.excerpt.toLowerCase().includes(query) ||
+                    article.content.toLowerCase().includes(query) ||
+                    article.tags.some(tag => tag.toLowerCase().includes(query)) ||
+                    article.category.toLowerCase().includes(query)
+                );
+                
+                // Show search results
+                if (searchResults) {
+                    searchResults.style.display = 'block';
+                    document.getElementById('search-query').textContent = searchQuery;
+                    document.getElementById('search-count').textContent = filteredArticles.length;
+                }
+            } else {
+                // Hide search results
+                if (searchResults) {
+                    searchResults.style.display = 'none';
+                }
+            }
+            
+            // Calculate pagination
+            totalPages = Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE);
+            const startIndex = (page - 1) * ARTICLES_PER_PAGE;
+            const endIndex = startIndex + ARTICLES_PER_PAGE;
+            const articlesToShow = filteredArticles.slice(startIndex, endIndex);
+            
+            // Clear container
+            container.innerHTML = '';
+            
+            // Show message if no articles found
+            if (articlesToShow.length === 0) {
+                container.innerHTML = `
+                    <div class="no-articles" style="text-align: center; padding: 4rem 2rem; background: var(--dark-secondary); border-radius: 15px;">
+                        <i class="fas fa-search" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--text-light); margin-bottom: 1rem;">No articles found</h3>
+                        <p style="color: var(--text-gray);">Try a different search or browse our categories.</p>
+                        ${currentSearch ? `<button id="clear-search" style="background: var(--primary-color); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 8px; margin-top: 1rem; cursor: pointer;">Clear Search</button>` : ''}
+                    </div>
+                `;
+                
+                // Add clear search button event listener
+                const clearSearchBtn = document.getElementById('clear-search');
+                if (clearSearchBtn) {
+                    clearSearchBtn.addEventListener('click', () => {
+                        document.getElementById('search-input').value = '';
+                        loadArticles(1, 'all', '');
+                    });
+                }
+                
+                // Update pagination
+                updatePagination();
+                return;
+            }
+            
+            // Add articles
+            articlesToShow.forEach(article => {
+                const articleHTML = `
+                    <article class="blog-article fade-in">
+                        <div class="article-image">
+                            <img src="${article.image}" alt="${article.title}" loading="lazy">
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span><i class="far fa-calendar"></i> ${article.date}</span>
+                                <span><i class="far fa-clock"></i> ${article.readTime}</span>
+                                <span><i class="far fa-user"></i> By ${article.author}</span>
+                            </div>
+                            <h3>${article.title}</h3>
+                            <p>${article.excerpt}</p>
+                            <div class="article-tags">
+                                ${article.tags.map(tag => `<span class="article-tag">${tag}</span>`).join('')}
+                            </div>
+                            <a href="blog-post.html?slug=${article.slug}" class="read-more" data-article-id="${article.id}">
+                                Read Full Article <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                `;
+                container.innerHTML += articleHTML;
+            });
+            
+            // Update pagination
+            updatePagination();
+            
+            // Re-initialize animations
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                            }
+                        });
+                    }, { threshold: 0.1 });
+                    observer.observe(el);
+                });
+            }, 100);
+        }
+
+        // Search articles
+        function searchArticles(query) {
+            loadArticles(1, 'all', query);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Load categories
+        function loadCategories() {
+            const container = document.getElementById('categories-list');
+            if (!container) return;
+            
+            container.innerHTML = `
+                <li><a href="#" data-category="all" class="category-link">All Categories <span class="category-count">${blogData.articles.length}</span></a></li>
+            `;
+            
+            blogData.categories.forEach(category => {
+                const count = blogData.articles.filter(article => 
+                    article.category === category.name
+                ).length;
+                
+                container.innerHTML += `
+                    <li><a href="#" data-category="${category.slug}" class="category-link">${category.name} <span class="category-count">${count}</span></a></li>
+                `;
+            });
+            
+            // Add category click handlers
+            document.querySelectorAll('.category-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const category = this.getAttribute('data-category');
+                    loadArticles(1, category, currentSearch);
+                    
+                    // Update active category
+                    document.querySelectorAll('.category-link').forEach(l => {
+                        l.parentElement.classList.remove('active');
+                    });
+                    this.parentElement.classList.add('active');
+                    
+                    // Clear search
+                    document.getElementById('search-input').value = '';
+                    currentSearch = '';
+                });
+            });
+        }
+
+        // Load recent posts
+        function loadRecentPosts() {
+            const container = document.getElementById('recent-posts-container');
+            if (!container) return;
+            
+            // Get 3 most recent articles
+            const recentArticles = [...blogData.articles]
+                .sort((a, b) => new Date(b.date) - new Date(a.date))
+                .slice(0, 3);
+            
+            container.innerHTML = '';
+            
+            recentArticles.forEach(article => {
+                container.innerHTML += `
+                    <div class="recent-post">
+                        <img src="${article.thumbnail}" alt="${article.title}" loading="lazy">
+                        <div class="recent-post-content">
+                            <h5><a href="blog-post.html?slug=${article.slug}">${article.title}</a></h5>
+                            <div class="recent-post-date">${article.date}</div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Load popular tags
+        function loadPopularTags() {
+            const container = document.getElementById('popular-tags');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            blogData.popularTags.forEach(tag => {
+                container.innerHTML += `<span class="article-tag">${tag}</span>`;
+            });
+        }
+
+        // Load footer categories
+        function loadFooterCategories() {
+            const container = document.getElementById('footer-categories');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            blogData.categories.slice(0, 5).forEach(category => {
+                container.innerHTML += `
+                    <li><a href="blog.html?category=${category.slug}">${category.name}</a></li>
+                `;
+            });
+        }
+
+        // Setup pagination
+        function setupPagination() {
+            updatePagination();
+        }
+
+        // Update pagination buttons
+        function updatePagination() {
+            const container = document.getElementById('pagination-container');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            if (totalPages <= 1) return;
+            
+            // Previous button
+            const prevBtn = document.createElement('button');
+            prevBtn.className = `pagination-btn ${currentPage === 1 ? 'disabled' : ''}`;
+            prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i> Previous';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    loadArticles(currentPage - 1, currentCategory, currentSearch);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+            container.appendChild(prevBtn);
+            
+            // Page numbers
+            const maxVisiblePages = 3;
+            let startPage = Math.max(1, currentPage - 1);
+            let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+            
+            if (endPage - startPage + 1 < maxVisiblePages) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
+            
+            for (let i = startPage; i <= endPage; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = `pagination-btn ${i === currentPage ? 'active' : ''}`;
+                pageBtn.textContent = i;
+                pageBtn.addEventListener('click', () => {
+                    if (i !== currentPage) {
+                        loadArticles(i, currentCategory, currentSearch);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                });
+                container.appendChild(pageBtn);
+            }
+            
+            // Next button
+            const nextBtn = document.createElement('button');
+            nextBtn.className = `pagination-btn ${currentPage === totalPages ? 'disabled' : ''}`;
+            nextBtn.innerHTML = 'Next <i class="fas fa-chevron-right"></i>';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    loadArticles(currentPage + 1, currentCategory, currentSearch);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+            container.appendChild(nextBtn);
+        }
+
+        // Validate email
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // Simulate newsletter API call
+        function simulateNewsletterAPI(email) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    // In a real implementation, you would:
+                    // 1. Send POST request to your backend
+                    // 2. Integrate with Mailchimp/ConvertKit API
+                    // 3. Store in your database
+                    
+                    // Simulate 90% success rate
+                    if (Math.random() > 0.1) {
+                        // Log subscription (in real app, this would go to your backend)
+                        console.log(`New subscriber: ${email}`);
+                        
+                        // Store in localStorage for demo purposes
+                        const subscribers = JSON.parse(localStorage.getItem('newsletter_subscribers') || '[]');
+                        subscribers.push({
+                            email: email,
+                            date: new Date().toISOString(),
+                            source: 'blog'
+                        });
+                        localStorage.setItem('newsletter_subscribers', JSON.stringify(subscribers));
+                        
+                        resolve({ success: true, message: 'Subscribed successfully' });
+                    } else {
+                        reject(new Error('API error'));
+                    }
+                }, 1500);
+            });
+        }
+
+        // Show notification
+        function showNotification(message, type = 'info') {
+            // Remove existing notification
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${type === 'success' ? '#4CAF50' : '#f44336'};
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                z-index: 10000;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                animation: slideIn 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 5000);
+        }
     </script>
 </body>
-</html>
+</html> 

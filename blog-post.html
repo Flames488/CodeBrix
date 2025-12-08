@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KXQR3RDD');</script>
+<!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Dynamic Meta Tags will be set by JavaScript -->
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Prism.js for code highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #FF6B35;
+            --primary-dark: #E55A2B;
+            --primary-light: #FF8C5A;
+            --dark-bg: #0A0A0A;
+            --dark-secondary: #1A1A1A;
+            --light-bg: #FFFFFF;
+            --text-light: #FFFFFF;
+            --text-dark: #333333;
+            --text-gray: #888888;
+            --text-light-gray: #CCCCCC;
+            --border-color: #333333;
+            --section-spacing: 100px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(10, 10, 10, 0.98) !important;
+            backdrop-filter: blur(20px);
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .navbar-brand img {
+            height: 100px;
+            width: auto;
+        }
+        
+        @media (max-width: 1000px) {
+            .navbar-brand img {
+                height: 50px;
+            }
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 500;
+            margin: 0 0.3rem;
+            padding: 0.5rem 1rem !important;
+        }
+        
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+        
+        /* Blog Post Hero */
+        .post-hero {
+            padding: 180px 0 80px;
+            background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(10,10,10,1) 100%);
+        }
+        
+        .post-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .post-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+        
+        .post-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .post-meta i {
+            color: var(--primary-color);
+        }
+        
+        .post-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .post-tag {
+            background: rgba(255, 107, 53, 0.1);
+            color: var(--primary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        /* Post Content */
+        .post-content {
+            padding: 4rem 0;
+        }
+        
+        .post-body {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .post-body h2 {
+            font-size: 2rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--text-light);
+        }
+        
+        .post-body h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--text-light);
+        }
+        
+        .post-body p {
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+        
+        .post-body ul, .post-body ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-gray);
+        }
+        
+        .post-body li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .post-body blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .post-body pre {
+            background: var(--dark-secondary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+        
+        .post-body code {
+            background: rgba(255, 107, 53, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .post-body img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        /* Author Bio */
+        .author-bio {
+            background: var(--dark-secondary);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            border: 1px solid var(--border-color);
+        }
+        
+        .author-info {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .author-details h4 {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .author-details p {
+            color: var(--text-gray);
+            margin-bottom: 0;
+        }
+        
+        /* Share Buttons */
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+        
+        .share-btn {
+            width: 45px;
+            height: 45px;
+            background: var(--dark-secondary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .share-facebook:hover {
+            background: #1877F2;
+        }
+        
+        .share-twitter:hover {
+            background: #1DA1F2;
+        }
+        
+        .share-linkedin:hover {
+            background: #0077B5;
+        }
+        
+        .share-whatsapp:hover {
+            background: #25D366;
+        }
+        
+        /* Related Posts */
+        .related-posts {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .related-posts h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .related-article {
+            background: var(--dark-secondary);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .related-article:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+        
+        .related-article img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .related-content {
+            padding: 1.5rem;
+        }
+        
+        .related-content h4 {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .related-content p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Comments Section */
+        .comments-section {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .comments-section h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+        
+        .comment-form {
+            background: var(--dark-secondary);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            background: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Back to Blog */
+        .back-to-blog {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .back-to-blog a {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .back-to-blog a:hover {
+            color: var(--primary-light);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-bg);
+            padding: 5rem 0 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-brand h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-brand p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: var(--dark-secondary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links h4 {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .post-hero {
+                padding: 140px 0 60px;
+            }
+            
+            .post-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .post-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .author-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .post-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .post-body h2 {
+                font-size: 1.75rem;
+            }
+            
+            .post-body h3 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXQR3RDD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo-2.png" alt="CodeBrix Logo" width="200" height="50" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#portfolio">Our Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Content -->
+    <div id="blog-post-container">
+        <!-- Content will be loaded dynamically -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><i class="fas fa-cube"></i> CodeBrix</h3>
+                    <p>Creating exceptional digital experiences that drive results and transform businesses. Visit us at codebrixweb.com</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/codebrix_" class="social-link" target="_blank" rel="noopener" aria-label="Follow CodeBrix on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/2349113180149" class="social-link" target="_blank" rel="noopener" aria-label="Chat with CodeBrix on WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="tel:+2349113180149" class="social-link" aria-label="Call CodeBrix">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Blog Categories</h4>
+                    <ul id="footer-categories">
+                        <!-- Will be loaded dynamically -->
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>Codebrix48@gmail.com</li>
+                        <li>+234 911 318 0149</li>
+                        <li>Ibeju Lekki, Lagos</li>
+                        <li>Mon - Fri: 9AM - 6PM</li>
+                        <li>codebrixweb.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 <strong>CodeBrix</strong> - Web Development Agency Lagos Nigeria. All rights reserved. | codebrixweb.com | <a href="privacy-policy.html" style="color: var(--primary-color);">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Prism.js for code highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    
+    <!-- Blog Post JavaScript -->
+    <script>
+        // Blog Data (same as in blog.html)
+        const blogData = {
+            articles: [
+                {
+                    id: 1,
+                    slug: "how-to-choose-right-web-developer-lagos",
+                    title: "How to Choose the Right Web Developer in Lagos: 7 Essential Questions to Ask",
+                    excerpt: "Finding a reliable web developer in Lagos can be challenging. Learn the key questions to ask before hiring to ensure you get quality work that delivers results for your business.",
+                    content: `<h2>Why Choosing the Right Web Developer Matters</h2>
+                    <p>In today's digital age, your website is often the first point of contact between your business and potential customers. For Lagos-based businesses, having a professional, functional website is no longer optional—it's essential for growth and credibility.</p>
+                    
+                    <h2>The 7 Essential Questions to Ask</h2>
+                    
+                    <h3>1. Can You Show Me Examples of Your Previous Work?</h3>
+                    <p>Always ask for a portfolio. Look for diversity in their projects and pay attention to:</p>
+                    <ul>
+                        <li>Design quality and user experience</li>
+                        <li>Mobile responsiveness</li>
+                        <li>Loading speed</li>
+                        <li>Functionality across different devices</li>
+                    </ul>
+                    
+                    <h3>2. What's Your Development Process?</h3>
+                    <p>A structured process indicates professionalism. Look for developers who:</p>
+                    <ul>
+                        <li>Conduct discovery sessions to understand your business</li>
+                        <li>Provide wireframes and mockups before development</li>
+                        <li>Use version control systems like Git</li>
+                        <li>Have testing and quality assurance procedures</li>
+                        <li>Provide documentation and training</li>
+                    </ul>
+                    
+                    <h3>3. How Do You Handle Ongoing Maintenance?</h3>
+                    <p>Websites require regular updates. Ask about:</p>
+                    <ul>
+                        <li>Security updates and patches</li>
+                        <li>Backup procedures</li>
+                        <li>Technical support availability</li>
+                        <li>Update policies and costs</li>
+                    </ul>
+                    
+                    <h2>Key Considerations for Lagos Businesses</h2>
+                    <p>When hiring a web developer in Lagos, consider these local factors:</p>
+                    
+                    <h3>Local Market Understanding</h3>
+                    <p>A developer who understands the Lagos market will:</p>
+                    <ul>
+                        <li>Design for local internet speeds and conditions</li>
+                        <li>Incorporate popular local payment gateways (Paystack, Flutterwave)</li>
+                        <li>Optimize for mobile-first users (over 70% in Nigeria)</li>
+                        <li>Understand local SEO requirements</li>
+                    </ul>
+                    
+                    <h3>Pricing Transparency</h3>
+                    <p>Get clear answers about:</p>
+                    <ul>
+                        <li>Total project cost (with breakdown)</li>
+                        <li>Payment schedule</li>
+                        <li>Additional costs (domain, hosting, SSL certificates)</li>
+                        <li>Ongoing maintenance fees</li>
+                    </ul>
+                    
+                    <h2>Red Flags to Watch Out For</h2>
+                    <ul>
+                        <li>🚩 No portfolio or unwilling to share previous work</li>
+                        <li>🚩 Unclear communication or delayed responses</li>
+                        <li>🚩 No written contract or agreement</li>
+                        <li>🚩 Promises that sound too good to be true</li>
+                        <li>🚩 No support or maintenance plan</li>
+                    </ul>
+                    
+                    <h2>Conclusion</h2>
+                    <p>Choosing the right web developer in Lagos requires due diligence. Take your time, ask the right questions, and don't base your decision solely on price. A good developer is an investment that will pay off through a professional online presence that attracts and converts customers.</p>
+                    
+                    <div class="callout-box" style="background: rgba(255,107,53,0.1); padding: 1.5rem; border-radius: 10px; margin: 2rem 0;">
+                        <h3>💡 Pro Tip</h3>
+                        <p>Always start with a small project or consultation before committing to a large website build. This allows you to assess their work quality and communication style.</p>
+                    </div>`,
+                    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop",
+                    thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=200&auto=format&fit=crop",
+                    author: "Emmanuel Nwobodo",
+                    authorRole: "Lead Developer",
+                    authorBio: "Emmanuel has 8+ years of web development experience and has helped over 50 Nigerian businesses establish their online presence.",
+                    date: "March 15, 2024",
+                    readTime: "5 min read",
+                    category: "Web Development",
+                    tags: ["Web Development", "Lagos Business", "Hiring Tips", "Website Design", "Freelancers"]
+                },
+                // ... other articles same as in blog.html
+            ],
+            categories: [
+                { name: "Web Development", count: 12, slug: "web-development" },
+                { name: "SEO & Digital Marketing", count: 8, slug: "seo-digital-marketing" },
+                { name: "UI/UX Design", count: 6, slug: "ui-ux-design" },
+                { name: "E-commerce", count: 5, slug: "ecommerce" },
+                { name: "Business Growth", count: 7, slug: "business-growth" },
+                { name: "Technology Trends", count: 4, slug: "technology-trends" }
+            ]
+        };
+
+        // Get article slug from URL
+        function getSlugFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('slug');
+        }
+
+        // Load blog post
+        function loadBlogPost() {
+            const slug = getSlugFromURL();
+            const container = document.getElementById('blog-post-container');
+            
+            if (!slug) {
+                container.innerHTML = `
+                    <section class="post-hero">
+                        <div class="container">
+                            <h1>Article Not Found</h1>
+                            <p>The article you're looking for doesn't exist or has been moved.</p>
+                            <a href="blog.html" style="color: var(--primary-color); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem;">
+                                <i class="fas fa-arrow-left"></i> Back to Blog
+                            </a>
+                        </div>
+                    </section>
+                `;
+                return;
+            }
+            
+            // Find article by slug
+            const article = blogData.articles.find(a => a.slug === slug);
+            
+            if (!article) {
+                container.innerHTML = `
+                    <section class="post-hero">
+                        <div class="container">
+                            <h1>Article Not Found</h1>
+                            <p>The article you're looking for doesn't exist or has been moved.</p>
+                            <a href="blog.html" style="color: var(--primary-color); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem;">
+                                <i class="fas fa-arrow-left"></i> Back to Blog
+                            </a>
+                        </div>
+                    </section>
+                `;
+                return;
+            }
+            
+            // Set dynamic meta tags
+            setMetaTags(article);
+            
+            // Generate related articles (excluding current article)
+            const relatedArticles = blogData.articles
+                .filter(a => a.id !== article.id && a.category === article.category)
+                .slice(0, 3);
+            
+            // Build the post HTML
+            container.innerHTML = `
+                <!-- Post Hero -->
+                <section class="post-hero">
+                    <div class="container">
+                        <h1>${article.title}</h1>
+                        <div class="post-meta">
+                            <span><i class="far fa-calendar"></i> ${article.date}</span>
+                            <span><i class="far fa-clock"></i> ${article.readTime}</span>
+                            <span><i class="far fa-user"></i> By ${article.author}</span>
+                            <span><i class="far fa-folder"></i> ${article.category}</span>
+                        </div>
+                        <div class="post-tags">
+                            ${article.tags.map(tag => `<span class="post-tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Post Content -->
+                <section class="post-content">
+                    <div class="container">
+                        <div class="post-body">
+                            ${article.content}
+                        </div>
+                        
+                        <!-- Author Bio -->
+                        <div class="author-bio">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    ${article.author.charAt(0)}
+                                </div>
+                                <div class="author-details">
+                                    <h4>${article.author}</h4>
+                                    <p><strong>${article.authorRole}</strong></p>
+                                    <p>${article.authorBio}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Share Buttons -->
+                        <div class="share-buttons">
+                            <a href="#" class="share-btn share-facebook" onclick="shareOnFacebook()">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="share-btn share-twitter" onclick="shareOnTwitter()">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="share-btn share-linkedin" onclick="shareOnLinkedIn()">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="share-btn share-whatsapp" onclick="shareOnWhatsApp()">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Related Posts -->
+                ${relatedArticles.length > 0 ? `
+                <section class="related-posts">
+                    <div class="container">
+                        <h3>Related Articles</h3>
+                        <div class="related-grid">
+                            ${relatedArticles.map(related => `
+                            <article class="related-article">
+                                <img src="${related.thumbnail}" alt="${related.title}" loading="lazy">
+                                <div class="related-content">
+                                    <h4><a href="blog-post.html?slug=${related.slug}">${related.title}</a></h4>
+                                    <p>${related.excerpt}</p>
+                                    <a href="blog-post.html?slug=${related.slug}" style="color: var(--primary-color); text-decoration: none; font-size: 0.9rem;">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </article>
+                            `).join('')}
+                        </div>
+                    </div>
+                </section>
+                ` : ''}
+                
+                <!-- Comments Section -->
+                <section class="comments-section">
+                    <div class="container">
+                        <h3>Leave a Comment</h3>
+                        <form class="comment-form" id="comment-form">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="comment">Comment *</label>
+                                <textarea id="comment" class="form-control" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Post Comment</button>
+                        </form>
+                    </div>
+                </section>
+                
+                <!-- Back to Blog -->
+                <div class="back-to-blog">
+                    <div class="container">
+                        <a href="blog.html">
+                            <i class="fas fa-arrow-left"></i> Back to All Articles
+                        </a>
+                    </div>
+                </div>
+            `;
+            
+            // Initialize Prism.js for code highlighting
+            if (typeof Prism !== 'undefined') {
+                Prism.highlightAll();
+            }
+            
+            // Add comment form handler
+            const commentForm = document.getElementById('comment-form');
+            if (commentForm) {
+                commentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const comment = document.getElementById('comment').value;
+                    
+                    // In a real implementation, you would send this to your backend
+                    console.log('New comment:', { name, email, comment, articleSlug: slug });
+                    
+                    // Show success message
+                    alert('Thank you for your comment! It will be reviewed before publishing.');
+                    
+                    // Reset form
+                    commentForm.reset();
+                });
+            }
+            
+            // Load footer categories
+            loadFooterCategories();
+        }
+
+        // Set dynamic meta tags
+        function setMetaTags(article) {
+            // Update title
+            document.title = `${article.title} | CodeBrix Blog`;
+            
+            // Create and update meta tags
+            const metaDescription = document.querySelector('meta[name="description"]') || document.createElement('meta');
+            metaDescription.name = 'description';
+            metaDescription.content = article.excerpt;
+            
+            const metaKeywords = document.querySelector('meta[name="keywords"]') || document.createElement('meta');
+            metaKeywords.name = 'keywords';
+            metaKeywords.content = article.tags.join(', ');
+            
+            // Open Graph meta tags
+            const ogTitle = document.querySelector('meta[property="og:title"]') || document.createElement('meta');
+            ogTitle.setAttribute('property', 'og:title');
+            ogTitle.content = article.title;
+            
+            const ogDescription = document.querySelector('meta[property="og:description"]') || document.createElement('meta');
+            ogDescription.setAttribute('property', 'og:description');
+            ogDescription.content = article.excerpt;
+            
+            const ogImage = document.querySelector('meta[property="og:image"]') || document.createElement('meta');
+            ogImage.setAttribute('property', 'og:image');
+            ogImage.content = article.image;
+            
+            const ogUrl = document.querySelector('meta[property="og:url"]') || document.createElement('meta');
+            ogUrl.setAttribute('property', 'og:url');
+            ogUrl.content = window.location.href;
+            
+            // Twitter meta tags
+            const twitterTitle = document.querySelector('meta[property="twitter:title"]') || document.createElement('meta');
+            twitterTitle.setAttribute('property', 'twitter:title');
+            twitterTitle.content = article.title;
+            
+            const twitterDescription = document.querySelector('meta[property="twitter:description"]') || document.createElement('meta');
+            twitterDescription.setAttribute('property', 'twitter:description');
+            twitterDescription.content = article.excerpt;
+            
+            const twitterImage = document.querySelector('meta[property="twitter:image"]') || document.createElement('meta');
+            twitterImage.setAttribute('property', 'twitter:image');
+            twitterImage.content = article.image;
+            
+            // Canonical URL
+            const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
+            canonicalLink.rel = 'canonical';
+            canonicalLink.href = window.location.href;
+            
+            // Add all meta tags to head
+            const head = document.head;
+            const metaTags = [
+                metaDescription, metaKeywords,
+                ogTitle, ogDescription, ogImage, ogUrl,
+                twitterTitle, twitterDescription, twitterImage,
+                canonicalLink
+            ];
+            
+            metaTags.forEach(tag => {
+                if (!document.querySelector(`${tag.tagName}[${tag.name ? 'name' : 'property'}="${tag.name || tag.getAttribute('property')}"]`)) {
+                    head.appendChild(tag);
+                }
+            });
+            
+            // Add structured data
+            addStructuredData(article);
+        }
+
+        // Add structured data for SEO
+        function addStructuredData(article) {
+            const structuredData = {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "headline": article.title,
+                "description": article.excerpt,
+                "image": article.image,
+                "author": {
+                    "@type": "Person",
+                    "name": article.author
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "CodeBrix",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://codebrixweb.com/images/logo.png"
+                    }
+                },
+                "datePublished": article.date,
+                "dateModified": article.date,
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": window.location.href
+                }
+            };
+            
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.textContent = JSON.stringify(structuredData);
+            document.head.appendChild(script);
+        }
+
+        // Social sharing functions
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+
+        function shareOnTwitter() {
+            const text = encodeURIComponent(document.title);
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+        }
+
+        function shareOnLinkedIn() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${url}`, '_blank');
+        }
+
+        function shareOnWhatsApp() {
+            const text = encodeURIComponent(`${document.title} - ${window.location.href}`);
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+        }
+
+        // Load footer categories
+        function loadFooterCategories() {
+            const container = document.getElementById('footer-categories');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            blogData.categories.slice(0, 5).forEach(category => {
+                container.innerHTML += `
+                    <li><a href="blog.html?category=${category.slug}">${category.name}</a></li>
+                `;
+            });
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            loadBlogPost();
+            
+            // Update active nav link
+            function updateActiveNav() {
+                const currentPage = window.location.pathname;
+                const navLinks = document.querySelectorAll('.nav-link');
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === 'blog.html' || 
+                        link.getAttribute('href') === './blog.html' ||
+                        currentPage.includes('blog')) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            updateActiveNav();
+        });
+    </script>
+</body>
+</html>
