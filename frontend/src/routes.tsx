@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Home";
-import Services from "./pages/Services";
+import HomePage from "./pages/HomePage";
+import ServicesPage from "./pages/ServicesPage";
 import CaseStudies from "./pages/CaseStudies";
 import Blog from "./pages/Blog";
 import Support from "./pages/Support";
@@ -12,8 +12,8 @@ export default function AppRoutes() {
     <BrowserRouter>
       <Routes>
 
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/services" element={<ServicesPage />} />
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/support" element={<Support />} />

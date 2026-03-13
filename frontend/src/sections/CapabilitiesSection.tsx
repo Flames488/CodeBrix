@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Globe, Workflow, Bot, TrendingUp, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Globe, Workflow, Bot, TrendingUp } from 'lucide-react';
 
 const CapabilitiesSection = () => {
   const [isVisible, setIsVisible] = useState(false);
