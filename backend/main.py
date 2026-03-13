@@ -1,4 +1,3 @@
-
 """
 main.py
 -------
@@ -31,8 +30,6 @@ from middleware.rate_limiter import RateLimitMiddleware
 from middleware.auth import AuthMiddleware
 
 from routes import lead
-
-app.include_router(lead.router)
 
 # ---------------------------------------------------------------------------
 # Shared loggers
@@ -190,6 +187,12 @@ app.include_router(
     tags=["AI Receptionist"],
 )
 
+app.include_router(
+    lead.router,
+    prefix="/api/v1/lead",
+    tags=["Lead"],
+)
+
 # ---------------------------------------------------------------------------
 # Monitoring
 # ---------------------------------------------------------------------------
@@ -236,3 +239,15 @@ def health(request: Request):
             "ai_receptionist": "ok",
         },
     }
+
+
+# ---------------------------------------------------------------------------
+# Render deployment entry point
+# ---------------------------------------------------------------------------
+
+if __name__ == "__main__":
+    import os
+    import uvicorn
+
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
