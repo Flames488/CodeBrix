@@ -1,0 +1,27 @@
+
+version: '3'
+
+services:
+
+  api:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_HOST=redis
+      - API_KEY=codebrix-secret
+    depends_on:
+      - redis
+
+  worker:
+    build: ./backend
+    command: python app/workers/worker.py
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"

@@ -1,0 +1,79 @@
+# =============================================================================
+# Codebrix AI — Python Dependencies
+# =============================================================================
+# Pin major.minor, leave patch flexible (e.g. ">=1.2,<2.0") so security
+# patches apply automatically while breaking changes are blocked.
+# Run `pip install -r requirements.txt` to install.
+# Run `pip freeze > requirements.lock` to snapshot exact versions for deploys.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Web framework
+# -----------------------------------------------------------------------------
+fastapi>=0.111.0,<1.0.0          # ASGI web framework + OpenAPI generation
+uvicorn[standard]>=0.29.0,<1.0.0 # ASGI server (includes uvloop + httptools)
+
+# -----------------------------------------------------------------------------
+# Data validation & settings
+# -----------------------------------------------------------------------------
+pydantic>=2.7.0,<3.0.0           # Request / response schema validation (v2)
+pydantic[email]>=2.7.0,<3.0.0    # EmailStr support used in client schemas
+pydantic-settings>=2.2.0,<3.0.0  # Settings management via .env / env vars
+email-validator>=2.1.0,<3.0.0    # Backend for pydantic[email] / EmailStr
+
+# -----------------------------------------------------------------------------
+# AI / LLM
+# -----------------------------------------------------------------------------
+openai>=1.30.0,<2.0.0            # OpenAI Python SDK (function calling, streaming)
+
+# -----------------------------------------------------------------------------
+# Database
+# -----------------------------------------------------------------------------
+sqlalchemy>=2.0.0,<3.0.0          # ORM + core SQL toolkit (async-ready)
+asyncpg>=0.29.0,<1.0.0            # Async PostgreSQL driver (used by SQLAlchemy)
+psycopg2-binary>=2.9.0,<3.0.0     # Sync PostgreSQL driver (migrations / scripts)
+
+# -----------------------------------------------------------------------------
+# Cache & message queue
+# -----------------------------------------------------------------------------
+redis>=5.0.0,<6.0.0               # Redis client (caching, rate limiting, pub/sub)
+
+# -----------------------------------------------------------------------------
+# Vector memory
+# -----------------------------------------------------------------------------
+chromadb>=0.5.0,<1.0.0           # Local vector store for recall_memory / store_memory
+
+# -----------------------------------------------------------------------------
+# HTTP client (used by openai SDK, direct calls, and FastAPI testing)
+# -----------------------------------------------------------------------------
+httpx>=0.27.0,<1.0.0             # Async HTTP client
+anyio>=4.3.0,<5.0.0              # Async backend abstraction (required by httpx)
+
+# -----------------------------------------------------------------------------
+# Utilities
+# -----------------------------------------------------------------------------
+python-dotenv>=1.0.0,<2.0.0      # Load .env files into os.environ
+python-multipart>=0.0.9,<1.0.0   # Required by FastAPI for form / file uploads
+tenacity>=8.3.0,<9.0.0           # Retry logic with back-off (complement to manual retries)
+psutil>=5.9.0,<7.0.0             # System / process metrics (health checks, monitoring)
+
+# -----------------------------------------------------------------------------
+# Logging & observability
+# -----------------------------------------------------------------------------
+structlog>=24.1.0,<25.0.0        # Structured JSON logging
+python-json-logger>=2.0.7,<3.0.0 # JSONFormatter for stdlib logging integration
+
+# -----------------------------------------------------------------------------
+# Security
+# -----------------------------------------------------------------------------
+python-jose[cryptography]>=3.3.0,<4.0.0  # JWT encode / decode
+passlib[bcrypt]>=1.7.4,<2.0.0            # Password hashing
+
+# -----------------------------------------------------------------------------
+# Testing
+# -----------------------------------------------------------------------------
+pytest>=8.2.0,<9.0.0             # Test runner
+pytest-asyncio>=0.23.0,<1.0.0    # Async test support
+pytest-cov>=5.0.0,<6.0.0         # Coverage reporting
+
+anthropic

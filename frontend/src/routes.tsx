@@ -1,0 +1,25 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import CaseStudies from "./pages/CaseStudies";
+import Blog from "./pages/Blog";
+import Support from "./pages/Support";
+import FAQ from "./pages/FAQ";
+
+export default function AppRoutes() {
+  return (
+    <BrowserRouter>
+      <Routes>
+
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/support" element={<Support />} />
+        <Route path="/faq" element={<FAQ />} />
+
+      </Routes>
+    </BrowserRouter>
+  );
+}

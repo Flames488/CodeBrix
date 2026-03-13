@@ -1,0 +1,162 @@
+CODEBRIX PROJECT - CMD RUN GUIDE (WINDOWS)
+
+Project Path
+C:\Users\USER\Downloads\codebrix_new
+
+Project Structure
+
+codebrix_new
+ └ app
+    ├ backend
+    └ frontend
+
+
+
+STEP 1 — Open Command Prompt
+
+Press Windows + R
+Type: cmd
+Press Enter
+
+
+
+STEP 2 — Go To Your Project Folder
+
+Run:
+
+cd C:\Users\USER\Downloads\codebrix_new\app
+
+Check files:
+
+dir
+
+You should see:
+
+backend
+frontend
+docker-compose.yml
+
+
+
+STEP 3 — Activate Python Virtual Environment
+
+Run:
+
+backend\venv\Scripts\activate
+
+You should now see:
+
+(venv) C:\Users\USER\Downloads\codebrix_new\app>
+
+
+
+STEP 4 — Install Backend Requirements
+
+Run:
+
+pip install -r backend\requirements.txt
+
+
+
+STEP 5 — Create Python Package Files (IMPORTANT)
+
+Run these commands:
+
+cd backend
+
+type nul > __init__.py
+type nul > routes\__init__.py
+type nul > services\__init__.py
+type nul > models\__init__.py
+type nul > schemas\__init__.py
+type nul > agents\__init__.py
+type nul > memory\__init__.py
+type nul > tools\__init__.py
+type nul > database\__init__.py
+
+Then go back:
+
+cd ..
+
+
+
+STEP 6 — Start Backend Server
+
+Run:
+
+uvicorn backend.main:app --reload
+
+
+If successful you will see:
+
+INFO: Uvicorn running on http://127.0.0.1:8000
+
+
+
+STEP 7 — Open API Dashboard
+
+Open your browser and go to:
+
+http://127.0.0.1:8000/docs
+
+
+
+STEP 8 — Start Frontend (Open NEW CMD Window)
+
+Run:
+
+cd C:\Users\USER\Downloads\codebrix_new\app\frontend
+
+
+
+STEP 9 — Install Frontend Packages
+
+Run:
+
+npm install
+
+
+
+STEP 10 — Start Frontend Server
+
+Run:
+
+npm run dev
+
+
+
+STEP 11 — Open Frontend Website
+
+Open your browser and go to:
+
+http://localhost:5173
+
+
+
+FINAL RUNNING SETUP
+
+You should have TWO terminals running.
+
+
+Terminal 1 (Backend)
+
+uvicorn backend.main:app --reload
+
+
+
+Terminal 2 (Frontend)
+
+npm run dev
+
+
+
+PROJECT URLS
+
+Backend API
+http://127.0.0.1:8000
+
+API Documentation
+http://127.0.0.1:8000/docs
+
+Frontend App
+http://localhost:5173

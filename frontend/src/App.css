@@ -1,0 +1,190 @@
+/* App-specific styles */
+
+/* Smooth scrolling for the entire app */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure sections work correctly */
+section {
+  position: relative;
+}
+
+/* Card tile hover effects */
+.card-tile-hover {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-tile-hover:hover {
+  transform: translateY(-6px);
+  border-color: rgba(242, 201, 76, 0.3);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.6), 0 0 30px rgba(242, 201, 76, 0.1);
+}
+
+/* Button hover states */
+.btn-primary {
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(242, 201, 76, 0.4);
+}
+
+.btn-secondary {
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(242, 201, 76, 0.5);
+}
+
+/* Animation for floating elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Pulse animation for WhatsApp button */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid rgba(242, 201, 76, 0.7);
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0C0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(242, 201, 76, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(242, 201, 76, 0.5);
+}
+
+/* Selection */
+::selection {
+  background: rgba(242, 201, 76, 0.3);
+  color: #F4F6FA;
+}
+
+/* Responsive Utilities */
+@media (max-width: 640px) {
+  .card-tile {
+    border-radius: 16px;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .heading-xl {
+    font-size: clamp(28px, 8vw, 48px);
+  }
+  
+  .heading-lg {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+  
+  .heading-md {
+    font-size: clamp(20px, 5vw, 28px);
+  }
+}
+
+/* iPod Touch specific */
+@media (max-width: 320px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .card-tile {
+    padding: 1rem;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .card-tile {
+    border-radius: 20px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Image hover effects */
+.group:hover img {
+  transform: scale(1.05);
+}
+
+/* Form input focus states */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: rgba(242, 201, 76, 0.5);
+}
+
+/* Link underline animation */
+a.hover\:underline {
+  position: relative;
+}
+
+a.hover\:underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #F2C94C;
+  transition: width 0.3s ease;
+}
+
+a.hover\:underline:hover::after {
+  width: 100%;
+}
